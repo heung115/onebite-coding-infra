@@ -1,0 +1,20 @@
+auth:
+    username: "test_user_123"
+    password: "***REMOVED-DB-PASSWORD***"
+    database: "testdatabase"
+
+#################################
+# 마스터(프라이머리) PVC 설정
+#################################
+primary:
+    persistence:
+        enabled: true
+        size: 1Gi
+
+#################################
+# 아키텍처 (standalone 또는 replication)
+#################################
+architecture: standalone
+#################################
+# Docker 이미지 태그
+#################################
