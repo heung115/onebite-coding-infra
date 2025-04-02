@@ -1,9 +1,9 @@
 replicaCount: 1
 
 image:
-    repository: nginx
-    tag: latest
+    repository: "heung115/spaghetti-be"
+    pullPolicy: Always
 
 service:
     type: NodePort
-    port: 80
+    port: 8080
