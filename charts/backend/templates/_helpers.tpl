@@ -5,6 +5,21 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
+{% comment %} {{/*
+    브랜치 별로 도커 이미지를 다르게 받아오는 부분
+*/}}
+
+{{- define "backend.image.repository" -}}
+{{- $ns := .Release.Namespace -}}
+{{- $branch := .Values.branch | default "main" -}}
+
+{{- if eq $ns "prod" }}
+heung115/spaghetti-be-main
+{{- else }}
+heung115/spaghetti-be-{{ $branch }}
+{{- end }}
+{{- end }} {% endcomment %}
+
 {{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
