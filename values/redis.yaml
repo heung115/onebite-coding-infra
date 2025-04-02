@@ -1,3 +1,5 @@
 auth:
     enabled: true
-    existingSecret: my-redis-secret
+    existingSecret: redis-secret
+replica:
+    replicaCount: 1
