@@ -1,0 +1,12 @@
+# templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "backend.fullname" . }}-config
+  labels:
+    {{- include "backend.labels" . | nindent 4 }}
+data:
+  # .Values.config에 들어있는 key-value를 순회하며 ConfigMap에 주입
+  {{- range $key, $value := .Values.config }}
+  {{ $key }}: {{ $value | quote }}
+  {{- end }}

@@ -56,7 +56,7 @@ service:
     # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
     type: ClusterIP
     # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-    port: 80
+    port: 8080
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
@@ -90,14 +90,28 @@ resources:
     #   memory: 128Mi
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+# probe가 pod가 실행되고 나서 너무 빨리 실행되니까 오류가 자꾸 발생. 시간을 뒤로 미뤘음.
 livenessProbe:
     httpGet:
-        path: /
+        path: /test
         port: http
+    # 파드가 시작된 후 몇 초 뒤에 probe를 시작할지
+    initialDelaySeconds: 30
+    # probe를 몇 초마다 실행할지
+    periodSeconds: 10
+    # 연속 몇 번 실패하면 파드를 재시작할지
+    failureThreshold: 5
+    # probe 응답 대기 시간
+    timeoutSeconds: 2
+
 readinessProbe:
     httpGet:
-        path: /
+        path: /test
         port: http
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    failureThreshold: 5
+    timeoutSeconds: 2
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:

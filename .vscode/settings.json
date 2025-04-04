@@ -1,0 +1,45 @@
+{
+    // YAML 전체는 유효성 검사하도록 유지
+    "yaml.validate": true,
+
+    // Helm 템플릿 안의 {{ }} 문법을 허용하도록 설정
+    "yaml.customTags": [
+        "!Ref scalar",
+        "!Sub scalar",
+        "!GetAtt scalar",
+        "!Join sequence",
+        "!Split sequence",
+        "!Select sequence",
+        "!ImportValue scalar",
+        "!Condition scalar",
+        "!FindInMap sequence",
+        "!Base64 scalar",
+        "!If sequence",
+        "!Equals sequence",
+        "!Not sequence",
+        "!And sequence",
+        "!Or sequence",
+        "!Cidr sequence",
+        "!GetAZs scalar",
+        "!Length scalar",
+        "!Helm scalar",
+        "!Helm sequence"
+    ],
+
+    // Helm 템플릿 파일들은 YAML 확장자라도 검사하지 않도록 language override 설정
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Helm 템플릿 폴더 내 파일들은 YAML 검사 제외
+    "files.associations": {
+        "**/charts/**/templates/*.yaml": "helm"
+    },
+
+    // helm 파일타입은 검사 안 하도록 무효화
+    "[helm]": {
+        "yaml.validate": false
+    },
+    
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+}

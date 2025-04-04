@@ -7,3 +7,19 @@ image:
 service:
     type: NodePort
     port: 8080
+
+config:
+
+secret:
+    GOOGLE_CLIENT_ID: "104900170366-pl6s4qr1ppt44ocjsrv9aofcrbmetpgn.apps.googleusercontent.com"
+    GOOGLE_CLIENT_SECRET: "***REMOVED-GOOGLE-OAUTH-SECRET***"
+    GOOGLE_REDIRECT_URI: "http://localhost:8000/oauth/google/callback"
+    JWT_SECRET: "***REMOVED-JWT-SECRET***"
+
+    # DB_URI: "jdbc:postgresql://postgresql-dev-back:5432/testdatabase"
+    DB_USERNAME: "test_user_123"
+    DB_PASSWORD: "***REMOVED-DB-PASSWORD***"
+
+    # REDIS_HOST: "redis-dev-back-master:6379"
+    REDIS_PORT: "6379"
+    REDIS_PASS: "***REMOVED-REDIS-PASSWORD***"
