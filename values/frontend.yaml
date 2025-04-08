@@ -1,0 +1,11 @@
+web:
+    imagePullPolicy: Always
+    replicaCount: 1
+    service:
+        type: NodePort
+
+extraEnvs:
+    - name: NEXT_PUBLIC_GOOGLE_CLIENT_ID
+      value: "108243490992-p6ciiaheoflb5np99iq0jiqeal69l7nr.apps.googleusercontent.com"
+    - name: NEXT_PUBLIC_FRONTEND_URL
+      value: "http://localhost:3000/"
