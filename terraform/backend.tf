@@ -20,5 +20,10 @@ resource "helm_release" "backend" {
     name  = "db.secretName"
     value = "db-secret-${each.key}"
   }
+
+  depends_on = [
+    kubernetes_namespace.env,
+    kubernetes_secret.db
+  ]
 }
 
