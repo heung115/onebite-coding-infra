@@ -2,7 +2,7 @@ web:
     imagePullPolicy: Always
     replicaCount: 1
     service:
-        type: NodePort
+        type: ClusterIP
 
 extraEnvs:
     - name: NEXT_PUBLIC_GOOGLE_CLIENT_ID
