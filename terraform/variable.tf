@@ -45,7 +45,7 @@ variable "env_domains" {
         },
         {
           service_name = "backend-dev-front"
-          path         = "/api"
+          path         = "/api(/|$)(.*)"
           port         = 8080
         }
       ]
@@ -62,7 +62,7 @@ variable "env_domains" {
         },
         {
           service_name = "backend-dev-back"
-          path         = "/api"
+          path         = "/api(/|$)(.*)"
           port         = 8080
         }
       ]
@@ -79,7 +79,7 @@ variable "env_domains" {
         },
         {
           service_name = "backend-prod"
-          path         = "/api"
+          path         = "/api(/|$)(.*)"
           port         = 8080
         }
       ]

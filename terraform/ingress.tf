@@ -7,7 +7,9 @@ resource "kubernetes_ingress_v1" "ingress" {
     name      = "${each.key}-ingress"
     namespace = each.value.namespace
     annotations = {
-      "nginx.ingress.kubernetes.io/rewrite-target" = "/"
+      # ingress 컨트롤러가 요청 경로를 서비스에 전달하기 전에 재작성하는 규칙
+      # 지금은 슬래시 + 그 뒤 경로만 남겨서 전달.
+      "nginx.ingress.kubernetes.io/rewrite-target" = "/$2"
     }
   }
 
@@ -22,7 +24,7 @@ resource "kubernetes_ingress_v1" "ingress" {
           for_each = each.value.paths
           content {
             path      = path.value.path
-            path_type = "Prefix"
+            path_type = "ImplementationSpecific"
 
             backend {
               service {
