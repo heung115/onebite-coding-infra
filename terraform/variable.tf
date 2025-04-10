@@ -41,12 +41,12 @@ variable "env_domains" {
         {
           service_name = "nextjs-dev-front-web"
           path         = "/"
-          port         = 80
+          port         = 3000
         },
         {
           service_name = "backend-dev-front"
           path         = "/api"
-          port         = "8080"
+          port         = 8080
         }
       ]
     }
@@ -58,12 +58,12 @@ variable "env_domains" {
         {
           service_name = "nextjs-dev-back-web"
           path         = "/"
-          port         = 80
+          port         = 3000
         },
         {
           service_name = "backend-dev-back"
           path         = "/api"
-          port         = "8080"
+          port         = 8080
         }
       ]
     }
@@ -75,7 +75,7 @@ variable "env_domains" {
         {
           service_name = "nextjs-prod-web"
           path         = "/"
-          port         = 80
+          port         = 3000
         },
         {
           service_name = "backend-prod"
