@@ -20,7 +20,7 @@ resource "helm_release" "nginx_ingress" {
       controller = {
         ingressClass = "nginx"
         service = {
-          type = "NodePort"
+          type = "LoadBalancer"
         }
       }
     })
