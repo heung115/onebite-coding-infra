@@ -1,15 +1,12 @@
-resource "kubernetes_ingress_v1" "ingress" {
+resource "kubernetes_ingress_v1" "ingress_web" {
   for_each = {
-    for env in var.envs : env => var.env_domains[env]
+    for env in var.envs : env => var.env_domains_web[env]
   }
 
   metadata {
-    name      = "${each.key}-ingress"
+    name      = "${each.key}-ingress-web"
     namespace = each.value.namespace
     annotations = {
-      # ingress 컨트롤러가 요청 경로를 서비스에 전달하기 전에 재작성하는 규칙
-      # 지금은 슬래시 + 그 뒤 경로만 남겨서 전달.
-      "nginx.ingress.kubernetes.io/rewrite-target" = "/$2"
     }
   }
 
@@ -23,8 +20,9 @@ resource "kubernetes_ingress_v1" "ingress" {
         dynamic "path" {
           for_each = each.value.paths
           content {
-            path      = path.value.path
-            path_type = "ImplementationSpecific"
+            path = path.value.path
+            # path_type = "ImplementationSpecific"
+            path_type = lookup(path.value, "path_type", "ImplementationSpecific")
 
             backend {
               service {
