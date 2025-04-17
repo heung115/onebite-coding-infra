@@ -3,9 +3,12 @@ resource "helm_release" "backend" {
     for ns in var.envs : ns => ns
   }
 
-  timeout   = 300
-  name      = "backend-${each.key}"
-  chart     = "${path.module}/../charts/backend"
+  timeout = 500
+  name    = "backend-${each.key}"
+  chart   = "${path.module}/../charts/backend"
+  wait    = true
+  atomic  = true
+
   namespace = kubernetes_namespace.env[each.key].metadata[0].name
   values = [
     file("${path.module}/../charts/backend/values.yaml"),
