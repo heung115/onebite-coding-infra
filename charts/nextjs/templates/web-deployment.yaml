@@ -84,6 +84,9 @@ spec:
             - name: next-data
               mountPath: {{ .Values.web.dataVolume.mountPath }}
             {{- end }}
+            # - name: dotenv
+            #   mountPath: /app/.env.local
+            #   subPath: .env.local
         {{- if .Values.web.extraContainers }}
         {{- range .Values.web.extraContainers }}
         - name: {{ .name | quote }}
@@ -135,3 +138,9 @@ spec:
           persistentVolumeClaim:
             claimName: {{ include "app.web.name" . }}-next-data
         {{- end }}
+        # - name: dotenv
+        #   secret:
+        #     secretName: {{ template "app.web-env.name" . }}
+        #     items:
+        #       - key: .env.local
+        #         path: .env.local
