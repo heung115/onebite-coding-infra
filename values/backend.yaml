@@ -1,4 +1,4 @@
-replicaCount: 3
+replicaCount: 1
 
 image:
     repository: "heung115/spaghetti-be"
@@ -11,9 +11,9 @@ service:
 config:
 
 secret:
-    GOOGLE_CLIENT_ID: "104900170366-pl6s4qr1ppt44ocjsrv9aofcrbmetpgn.apps.googleusercontent.com"
+    GOOGLE_CLIENT_ID: "605412410536-0lj65h79rrh359nhmnch2qabm261mcjj.apps.googleusercontent.com"
     GOOGLE_CLIENT_SECRET: "***REMOVED-GOOGLE-OAUTH-SECRET***"
-    GOOGLE_REDIRECT_URI: "http://localhost:8000/oauth/google/callback"
+    GOOGLE_REDIRECT_URI: "http://one-bite-df.duckdns.org/login/oauth"
     JWT_SECRET: "***REMOVED-JWT-SECRET***"
 
     # DB_URI: "jdbc:postgresql://postgresql-dev-back:5432/testdatabase"
