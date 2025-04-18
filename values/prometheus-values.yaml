@@ -1,0 +1,15 @@
+grafana:
+    enabled: true
+    adminPassword: "V$XYjB8)*&sHy!6L"
+    service:
+        type: NodePort
+    ingress:
+        enabled: false
+
+    defaultDashboardsEnabled: true
+
+    sidecar:
+        dashboards:
+            enabled: true
+        datasources:
+            enabled: true
