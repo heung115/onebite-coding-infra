@@ -1,0 +1,18 @@
+adminUser: admin
+adminPassword: V$XYjB8)*&sHy!6L
+ingress:
+    enabled: false
+defaultDashboardsEnabled: true
+service:
+    type: NodePort
+persistence:
+    enabled: true
+    size: 10Gi
+
+sidecar:
+    dashboards:
+        enabled: true
+        label: grafana_dashboard # ConfigMap에 이 레이블이 있어야 로딩
+    datasources:
+        enabled: true
+        label: grafana_datasource # 마찬가지로 Datasource ConfigMap 레이블
