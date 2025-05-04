@@ -3,11 +3,3 @@ web:
     replicaCount: 1
     service:
         type: ClusterIP
-
-    extraEnvs:
-        - name: NEXT_PUBLIC_GOOGLE_CLIENT_ID
-          value: "605412410536-0lj65h79rrh359nhmnch2qabm261mcjj.apps.googleusercontent.com"
-        - name: NEXT_PUBLIC_FRONTEND_URL
-          value: "http://localhost:3000/"
-        - name: GOOGLE_CLIENT_SECRET
-          value: "***REMOVED-GOOGLE-OAUTH-SECRET***"
