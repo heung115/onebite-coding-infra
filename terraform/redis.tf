@@ -8,7 +8,7 @@ resource "kubernetes_secret" "redis_auth" {
   }
 
   data = {
-    redis-password = base64encode("***REMOVED-REDIS-PASSWORD***")
+    redis-password = "***REMOVED-REDIS-PASSWORD***"
   }
 
   type = "Opaque"
