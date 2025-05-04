@@ -45,3 +45,4 @@ terraform.rc
 
 **/.back/*
 .prettierignore
+**/env/**
