@@ -12,7 +12,17 @@ resource "helm_release" "nextjs" {
   ]
 
   set {
-    name  = "web.image"
-    value = "heung115/spaghetti-fe:${each.key == "dev-front" ? "dev" : "latest"}"
+    name = "web.image"
+    value = "heung115/spaghetti-fe:${lookup(
+      {
+        "dev-front" = "dev",
+        "dev-back"  = "latest",
+        "pord"      = "latest"
+      },
+      each.key,
+      "latest"
+    )}"
   }
+
+
 }
