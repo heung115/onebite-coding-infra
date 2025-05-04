@@ -20,7 +20,8 @@ resource "helm_release" "nginx_ingress" {
       controller = {
         ingressClass = "nginx"
         service = {
-          type = "LoadBalancer"
+          type                  = "LoadBalancer"
+          externalTrafficPolicy = "Local"
         }
       }
     })
