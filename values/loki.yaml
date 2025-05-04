@@ -1,0 +1,11 @@
+loki:
+    enabled: true
+    persistence:
+        enabled: true
+        size: 10Gi
+    config:
+        table_manager:
+            retention_deletes_enabled: true
+            retention_period: 7d
+promtail:
+    enabled: false
