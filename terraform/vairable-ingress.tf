@@ -13,7 +13,7 @@ variable "env_domains_api" {
   default = {
     dev-front = {
       namespace = "dev-front"
-      domain    = "one-bite-df.duckdns.org"
+      domain    = "one-bite-fe.site"
       paths = [
         {
           service_name = "backend-dev-front"
@@ -25,7 +25,7 @@ variable "env_domains_api" {
 
     dev-back = {
       namespace = "dev-back"
-      domain    = "one-bite-db.duckdns.org"
+      domain    = "one-bite-be.site"
       paths = [
         {
           service_name = "backend-dev-back"
@@ -37,7 +37,7 @@ variable "env_domains_api" {
 
     prod = {
       namespace = "prod"
-      domain    = "one-bite.duckdns.org"
+      domain    = "one-bite.dev"
       paths = [
         {
           service_name = "backend-prod"
@@ -64,7 +64,7 @@ variable "env_domains_web" {
   default = {
     dev-front = {
       namespace = "dev-front"
-      domain    = "one-bite-df.duckdns.org"
+      domain    = "one-bite-fe.site"
       paths = [
         {
           service_name = "nextjs-dev-front-web"
@@ -76,7 +76,7 @@ variable "env_domains_web" {
 
     dev-back = {
       namespace = "dev-back"
-      domain    = "one-bite-db.duckdns.org"
+      domain    = "one-bite-be.site"
       paths = [
         {
           service_name = "nextjs-dev-back-web"
@@ -88,7 +88,7 @@ variable "env_domains_web" {
 
     prod = {
       namespace = "prod"
-      domain    = "one-bite.duckdns.org"
+      domain    = "one-bite.dev"
       paths = [
         {
           service_name = "nextjs-prod-web"
