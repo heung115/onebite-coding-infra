@@ -1,0 +1,51 @@
+config:
+    clients:
+        - url: http://loki.observability.svc.cluster.local:3100/loki/api/v1/push
+    positions:
+        filename: /tmp/positions.yaml
+
+    scrape_configs:
+        - job_name: kubernetes-pods
+          pipeline_stages:
+              - docker: {} # docker 로그 포맷 파싱 (옵션)
+          kubernetes_sd_configs:
+              - role: pod
+          relabel_configs:
+              # app(label) 붙이기
+              - source_labels: [__meta_kubernetes_pod_label_app]
+                target_label: app
+              # namespace 붙이기
+              - source_labels: [__meta_kubernetes_namespace]
+                target_label: namespace
+              # pod 이름 붙이기
+              - source_labels: [__meta_kubernetes_pod_name]
+                target_label: pod
+              # container 이름 붙이기
+              - source_labels: [__meta_kubernetes_pod_container_name]
+                target_label: container
+              # ★ 로그 파일 경로(__path__) 지정하기
+              - action: replace
+                source_labels: [__meta_kubernetes_pod_container_name]
+                regex: (.+)
+                replacement: /var/log/containers/*$1*.log
+                target_label: __path__
+
+        - job_name: ingress-nginx
+          static_configs:
+              - targets:
+                    - localhost
+                labels:
+                    job: ingress-nginx
+                    __path__: /var/log/containers/*ingress-nginx*.log
+
+extraInitContainers:
+    - name: wait-for-loki
+      image: busybox
+      command:
+          - sh
+          - -c
+          - |
+              until nc -z loki.observability.svc.cluster.local 3100; do
+                echo "waiting for loki..."
+                sleep 2
+              done
