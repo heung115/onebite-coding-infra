@@ -7,8 +7,10 @@ variable "envs" {
 }
 
 variable "domains" {
-  type    = list(string)
-  default = ["one-bite-df.duckdns.org", "one-bite-db.duckdns.org", "one-bite.duckdns.org"]
+  type = list(string)
+  # default = ["one-bite-df.site", "one-bite-db.site", "one-bite.dev"]
+  default = ["one-bite-fe.site", "one-bite-be.site", "one-bite.dev"]
+
 }
 
 resource "kubernetes_secret" "db" {
@@ -22,6 +24,19 @@ resource "kubernetes_secret" "db" {
   data = {
     DB_URI     = "jdbc:postgresql://postgresql-${each.key}:5432/testdatabase"
     REDIS_HOST = "redis-${each.key}-master"
+  }
+
+  type = "Opaque"
+}
+
+resource "kubernetes_secret" "cloudflare_api_token" {
+  metadata {
+    name      = "cloudflare-api-token-secret"
+    namespace = "cert-manager"
+  }
+
+  data = {
+    api-token = "***REMOVED-CLOUDFLARE-TOKEN***"
   }
 
   type = "Opaque"
