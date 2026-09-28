@@ -42,6 +42,8 @@ spec:
           imagePullPolicy: {{ .Values.web.imagePullPolicy }}
           envFrom:
             - configMapRef:
+                name: timezone-config
+            - configMapRef:
                 name: {{ template "app.web-env.name" . }}
             - secretRef:
                 name: {{ template "app.web-env.name" . }}

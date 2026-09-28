@@ -94,7 +94,7 @@ resources:
 livenessProbe:
     httpGet:
         path: /test
-        port: http
+        port: 8080
     # 파드가 시작된 후 몇 초 뒤에 probe를 시작할지
     initialDelaySeconds: 70
     # probe를 몇 초마다 실행할지
@@ -107,7 +107,7 @@ livenessProbe:
 readinessProbe:
     httpGet:
         path: /test
-        port: http
+        port: 8080
     initialDelaySeconds: 70
     periodSeconds: 10
     failureThreshold: 3

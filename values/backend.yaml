@@ -1,5 +1,7 @@
 replicaCount: 1
 
+nameOverride: "backend"
+
 image:
     repository: "heung115/spaghetti-be"
     pullPolicy: Always
@@ -11,9 +13,10 @@ service:
 config:
 
 secret:
-    GOOGLE_CLIENT_ID: "605412410536-0lj65h79rrh359nhmnch2qabm261mcjj.apps.googleusercontent.com"
-    GOOGLE_CLIENT_SECRET: "***REMOVED-GOOGLE-OAUTH-SECRET***"
-    GOOGLE_REDIRECT_URI: "http://one-bite-df.duckdns.org/login/oauth"
+    # 테라폼 변수로 주입
+    # GOOGLE_CLIENT_ID: "988575195211-hd3btku9edranuvoos3lls4usib2a32c.apps.googleusercontent.com"
+    # GOOGLE_CLIENT_SECRET: "***REMOVED-GOOGLE-OAUTH-SECRET***"
+    # GOOGLE_REDIRECT_URI: "http://one-bite-fe.site/login/oauth"
     JWT_SECRET: "***REMOVED-JWT-SECRET***"
 
     # DB_URI: "jdbc:postgresql://postgresql-dev-back:5432/testdatabase"

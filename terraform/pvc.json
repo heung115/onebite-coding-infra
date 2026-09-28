@@ -1,0 +1,47 @@
+{
+    "apiVersion": "v1",
+    "kind": "PersistentVolumeClaim",
+    "metadata": {
+        "annotations": {
+            "pv.kubernetes.io/bind-completed": "yes",
+            "pv.kubernetes.io/bound-by-controller": "yes",
+            "volume.beta.kubernetes.io/storage-provisioner": "rancher.io/local-path",
+            "volume.kubernetes.io/selected-node": "mini-s",
+            "volume.kubernetes.io/storage-provisioner": "rancher.io/local-path"
+        },
+        "creationTimestamp": "2025-05-14T23:57:31Z",
+        "deletionGracePeriodSeconds": 0,
+        "deletionTimestamp": "2025-05-16T01:09:18Z",
+        "labels": {
+            "app.kubernetes.io/component": "primary",
+            "app.kubernetes.io/instance": "postgresql-dev-back",
+            "app.kubernetes.io/name": "postgresql"
+        },
+        "name": "data-postgresql-dev-back-0",
+        "namespace": "dev-back",
+        "resourceVersion": "76974",
+        "uid": "7b5fbe5d-5732-4447-9615-0a9c79c4f4ad"
+    },
+    "spec": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "resources": {
+            "requests": {
+                "storage": "1Gi"
+            }
+        },
+        "storageClassName": "local-path",
+        "volumeMode": "Filesystem",
+        "volumeName": "pvc-7b5fbe5d-5732-4447-9615-0a9c79c4f4ad"
+    },
+    "status": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "capacity": {
+            "storage": "1Gi"
+        },
+        "phase": "Bound"
+    }
+}

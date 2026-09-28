@@ -1,0 +1,24 @@
+replicaCount: 1
+
+nameOverride: "ai-backend"
+
+image:
+    repository: "heung115/onebite-ai"
+    pullPolicy: Always
+
+service:
+    type: ClusterIP
+    port: 8081
+
+livenessProbe:
+    httpGet:
+        path: /healthz
+        port: 8081
+
+readinessProbe:
+    httpGet:
+        path: /healthz
+        port: 8081
+secret:
+    GEMINI_API_KEY: "***REMOVED-GEMINI-API-KEY***"
+    GEMINI_MODEL: "gemini-2.0-flash-lite"

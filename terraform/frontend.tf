@@ -24,5 +24,5 @@ resource "helm_release" "nextjs" {
     )}"
   }
 
-
+  depends_on = [kubernetes_namespace.env]
 }

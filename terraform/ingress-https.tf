@@ -8,7 +8,7 @@ resource "kubernetes_ingress_v1" "https_ingress" {
       "nginx.ingress.kubernetes.io/force-ssl-redirect" = "true"
     }
   }
-
+  depends_on = [kubernetes_namespace.env]
   spec {
     ingress_class_name = "nginx"
 
@@ -40,7 +40,7 @@ resource "kubernetes_ingress_v1" "https_ingress" {
             service {
               name = "nextjs-prod-web"
               port {
-                number = 80
+                number = 3000
               }
             }
           }

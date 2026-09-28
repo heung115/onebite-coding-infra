@@ -9,6 +9,7 @@ resource "kubernetes_ingress_v1" "ingress_web" {
     annotations = {
     }
   }
+  depends_on = [kubernetes_namespace.env]
 
   spec {
     ingress_class_name = "nginx"

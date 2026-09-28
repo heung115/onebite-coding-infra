@@ -46,3 +46,5 @@ terraform.rc
 **/.back/*
 .prettierignore
 **/env/**
+logs/
+.DS_Store

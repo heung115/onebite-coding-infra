@@ -40,4 +40,5 @@ resource "kubernetes_ingress_v1" "ingress-api" {
       }
     }
   }
+  depends_on = [kubernetes_namespace.env]
 }

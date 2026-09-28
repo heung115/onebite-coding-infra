@@ -15,6 +15,8 @@ resource "helm_release" "nginx_ingress" {
   namespace        = "ingress-nginx"
   create_namespace = true
 
+  wait = true
+
   values = [
     yamlencode({
       controller = {

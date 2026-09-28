@@ -26,7 +26,8 @@ resource "kubernetes_secret" "db" {
     REDIS_HOST = "redis-${each.key}-master"
   }
 
-  type = "Opaque"
+  type       = "Opaque"
+  depends_on = [kubernetes_namespace.env]
 }
 
 resource "kubernetes_secret" "cloudflare_api_token" {
@@ -40,4 +41,18 @@ resource "kubernetes_secret" "cloudflare_api_token" {
   }
 
   type = "Opaque"
+}
+
+resource "kubernetes_secret" "github-deployer-token" {
+  metadata {
+    name      = "github-deployer-token"
+    namespace = "kube-system"
+    annotations = {
+      "kubernetes.io/service-account.name" = kubernetes_service_account.github_deployer.metadata[0].name
+    }
+  }
+
+  type = "kubernetes.io/service-account-token"
+
+  depends_on = [kubernetes_service_account.github_deployer]
 }
