@@ -1,0 +1,204 @@
+name: Build, Push and Update GitOps (EKS)
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: onebite-cicd-backend-gitops
+  cancel-in-progress: false
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      image_tag: ${{ steps.meta.outputs.image_tag }}
+      image_digest: ${{ steps.push.outputs.image_digest }}
+      bootjar_seconds: ${{ steps.package.outputs.bootjar_seconds }}
+      extraction_seconds: ${{ steps.package.outputs.extraction_seconds }}
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Mark workflow start
+        run: echo "T1_WORKFLOW_JOB_STARTED_UTC=$(date -u +%FT%TZ)" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Set up Temurin JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Restore Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build reproducible bootJar and prepare layered image context
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ci-image-evidence
+          chmod +x ./gradlew
+          echo "T2_GRADLE_BUILD_STARTED_UTC=$(date -u +%FT%TZ)" | tee -a "$GITHUB_STEP_SUMMARY"
+          gradle_start=$(date +%s%N)
+          ./gradlew --no-daemon clean bootJar -x test 2>&1 | tee ci-image-evidence/gradle.log
+          gradle_end=$(date +%s%N)
+          echo "T3_BOOTJAR_COMPLETED_UTC=$(date -u +%FT%TZ)" | tee -a "$GITHUB_STEP_SUMMARY"
+
+          jar_file=$(find build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*-plain.jar' -print -quit)
+          test -n "$jar_file"
+          test "$(find build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*-plain.jar' | wc -l | tr -d ' ')" = 1
+          sha256sum "$jar_file" | tee ci-image-evidence/bootjar.sha256
+
+          extraction_start=$(date +%s%N)
+          mkdir -p build/image-context
+          java -Djarmode=tools -jar "$jar_file" extract --layers --destination build/image-context 2>&1 | tee ci-image-evidence/extract.log
+          find build/image-context -exec touch -h -d '@315532800' {} +
+          for layer in dependencies spring-boot-loader snapshot-dependencies application; do
+            test -d "build/image-context/$layer"
+          done
+          cp dockerfile.ci-runner-gradle build/image-context/Dockerfile
+          extraction_end=$(date +%s%N)
+
+          bootjar_seconds=$(python3 -c 'import sys; print(f"{(int(sys.argv[2])-int(sys.argv[1]))/1e9:.3f}")' "$gradle_start" "$gradle_end")
+          extraction_seconds=$(python3 -c 'import sys; print(f"{(int(sys.argv[2])-int(sys.argv[1]))/1e9:.3f}")' "$extraction_start" "$extraction_end")
+          {
+            echo "bootjar_seconds=$bootjar_seconds"
+            echo "extraction_seconds=$extraction_seconds"
+          } >> "$GITHUB_OUTPUT"
+          {
+            echo "bootJar: ${bootjar_seconds}s"
+            echo "Layer extraction + deterministic mtime normalization: ${extraction_seconds}s"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Set up docker-container Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker-container
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: heung115
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Select immutable image tag
+        id: meta
+        shell: bash
+        run: echo "image_tag=sha-${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push directly with Buildx
+        id: push
+        env:
+          IMAGE_TAG: ${{ steps.meta.outputs.image_tag }}
+          BUILDER: ${{ steps.buildx.outputs.name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ci-image-evidence
+          echo "T4_DIRECT_BUILDX_PUSH_STARTED_UTC=$(date -u +%FT%TZ)" | tee -a "$GITHUB_STEP_SUMMARY"
+          docker buildx build \
+            --builder "$BUILDER" \
+            --platform linux/amd64 \
+            --provenance=false \
+            --progress=plain \
+            --push \
+            --tag "heung115/spaghetti-be:${IMAGE_TAG}" \
+            --metadata-file ci-image-evidence/buildx-metadata.json \
+            --file build/image-context/Dockerfile \
+            build/image-context 2>&1 | tee ci-image-evidence/buildx-push.log
+          digest=$(jq -r '.["containerimage.digest"]' ci-image-evidence/buildx-metadata.json)
+          test -n "$digest" && test "$digest" != null
+          echo "image_digest=$digest" >> "$GITHUB_OUTPUT"
+          echo "T4_REGISTRY_PUSH_COMPLETED_UTC=$(date -u +%FT%TZ)" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "Image: heung115/spaghetti-be:${IMAGE_TAG} (${digest})" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Record pushed manifest
+        env:
+          IMAGE_TAG: ${{ steps.meta.outputs.image_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker buildx imagetools inspect --raw "heung115/spaghetti-be:${IMAGE_TAG}" > ci-image-evidence/manifest.json
+          jq '{mediaType, config: .config.digest, layers: [.layers[] | {digest, size}]}' ci-image-evidence/manifest.json \
+            | tee ci-image-evidence/layers.json
+          {
+            echo '### Pushed image manifest'
+            echo '```json'
+            cat ci-image-evidence/layers.json
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload integration build evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-cd-integration-build-${{ github.run_id }}
+          path: ci-image-evidence/
+          if-no-files-found: error
+          retention-days: 30
+
+  update-gitops:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout GitOps eks branch
+        uses: actions/checkout@v4
+        with:
+          repository: heung115/tmp-onebite-gitops
+          ref: eks
+          path: gitops
+          ssh-key: ${{ secrets.GITOPS_DEPLOY_KEY }}
+
+      - name: Update only backend-dev-back image tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ github.sha }}
+          IMAGE_TAG: ${{ needs.build-and-push.outputs.image_tag }}
+          IMAGE_DIGEST: ${{ needs.build-and-push.outputs.image_digest }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          latest_source=$(gh api "repos/${GITHUB_REPOSITORY}/branches/main" --jq .commit.sha)
+          if [[ "$latest_source" != "$SOURCE_SHA" ]]; then
+            echo "Skipping stale source ${SOURCE_SHA}; main is now ${latest_source}." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          values_file='eks/cicd/values/backend-dev-back.yaml'
+          test -f "gitops/${values_file}"
+          sed -i -E "s|^  tag: .*|  tag: \"${IMAGE_TAG}\"|" "gitops/${values_file}"
+          grep -Fx "  tag: \"${IMAGE_TAG}\"" "gitops/${values_file}"
+          git -C gitops add "$values_file"
+          git -C gitops diff --check
+          git -C gitops config user.name 'github-actions[bot]'
+          git -C gitops config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git -C gitops diff --cached --quiet; then
+            echo "GitOps already points to ${IMAGE_TAG}." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git -C gitops commit -m "deploy(cicd): backend-dev-back ${IMAGE_TAG} source ${SOURCE_SHA} digest ${IMAGE_DIGEST} [skip ci]"
+
+          for attempt in 1 2 3 4 5; do
+            git -C gitops fetch origin eks
+            if ! git -C gitops rebase origin/eks; then
+              git -C gitops rebase --abort || true
+              sleep "$attempt"
+              continue
+            fi
+            if git -C gitops push origin HEAD:eks; then
+              echo "T5_GITOPS_COMMIT_COMPLETED_UTC=$(date -u +%FT%TZ)" | tee -a "$GITHUB_STEP_SUMMARY"
+              git -C gitops log -1 --format='GitOps commit: %H%nMessage: %s%nCommitted: %cI' | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep "$attempt"
+          done
+          echo 'Unable to push the GitOps update after five attempts.' >&2
+          exit 1

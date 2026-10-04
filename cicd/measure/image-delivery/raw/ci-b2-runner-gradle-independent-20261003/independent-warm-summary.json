@@ -1,0 +1,357 @@
+{
+  "runs": [
+    {
+      "run_id": "37129601674",
+      "url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37129601674",
+      "job_status": "success",
+      "source_commit": "8aa8ee2afda5409f1dde31420441011558d464af",
+      "cache_hit": true,
+      "cache_restore_step_seconds": 4.0,
+      "cache_compressed_archive_bytes": 221240664,
+      "cache_archive_entries": 6,
+      "gradle_home_files": 1285,
+      "gradle_home_bytes": 281536038,
+      "job_seconds": 97.0,
+      "bootjar_seconds": 25.8,
+      "extract_seconds": 1.12,
+      "packaging_seconds": 10.334,
+      "load_seconds": 7.011,
+      "push_seconds": 13.501,
+      "build_push_seconds": 57.766,
+      "pipeline_seconds": 58.368,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_bytes": 62484476,
+      "dependency_push_status": "Pushed",
+      "application_digest": "sha256:6c3ad49fd31e72b2c6317e9e145c02627c7216fc2842c9e08b3ad7cfab6cafd8",
+      "application_bytes": 196926,
+      "application_push_status": "Pushed",
+      "new_blob_bytes": 173504745,
+      "uploaded_layer_labels": [
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "dependencies",
+        "application"
+      ],
+      "manifest_digest": "sha256:291582f6480617aed47da7830deb8853c6be13d943e36624ebf23be73b6793c8"
+    },
+    {
+      "run_id": "37129738261",
+      "url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37129738261",
+      "job_status": "success",
+      "source_commit": "8aa8ee2afda5409f1dde31420441011558d464af",
+      "cache_hit": true,
+      "cache_restore_step_seconds": 7.0,
+      "cache_compressed_archive_bytes": 221243784,
+      "cache_archive_entries": 6,
+      "gradle_home_files": 1285,
+      "gradle_home_bytes": 281536251,
+      "job_seconds": 112.0,
+      "bootjar_seconds": 28.34,
+      "extract_seconds": 1.184,
+      "packaging_seconds": 11.151,
+      "load_seconds": 7.0,
+      "push_seconds": 16.307,
+      "build_push_seconds": 63.982,
+      "pipeline_seconds": 65.146,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_bytes": 62484476,
+      "dependency_push_status": "Pushed",
+      "application_digest": "sha256:0159f8fbb559ac113db48a2ac8f6bb696f9975263e9deef32134d0a5529a4715",
+      "application_bytes": 196927,
+      "application_push_status": "Pushed",
+      "new_blob_bytes": 173504747,
+      "uploaded_layer_labels": [
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "dependencies",
+        "application"
+      ],
+      "manifest_digest": "sha256:94bb84dd0c699b6eda80e5cd33eeec34f78a84de90c6f909c9542f5592b20fae"
+    },
+    {
+      "run_id": "37129869638",
+      "url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37129869638",
+      "job_status": "success",
+      "source_commit": "8aa8ee2afda5409f1dde31420441011558d464af",
+      "cache_hit": true,
+      "cache_restore_step_seconds": 7.0,
+      "cache_compressed_archive_bytes": 221243784,
+      "cache_archive_entries": 6,
+      "gradle_home_files": 1285,
+      "gradle_home_bytes": 281536251,
+      "job_seconds": 115.0,
+      "bootjar_seconds": 28.198,
+      "extract_seconds": 1.051,
+      "packaging_seconds": 11.277,
+      "load_seconds": 7.162,
+      "push_seconds": 16.115,
+      "build_push_seconds": 63.803,
+      "pipeline_seconds": 64.941,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_bytes": 62484476,
+      "dependency_push_status": "Pushed",
+      "application_digest": "sha256:af0f8bbe36b9e737748d32bea7d6c4de2dad73036408e3d45a31868ef0520e88",
+      "application_bytes": 196927,
+      "application_push_status": "Pushed",
+      "new_blob_bytes": 173504747,
+      "uploaded_layer_labels": [
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "dependencies",
+        "application"
+      ],
+      "manifest_digest": "sha256:cbf0aed60a072e83692f26c06d4f9beec4bf2926b7a257f96386d7299e61da50"
+    },
+    {
+      "run_id": "37130025915",
+      "url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37130025915",
+      "job_status": "success",
+      "source_commit": "8aa8ee2afda5409f1dde31420441011558d464af",
+      "cache_hit": true,
+      "cache_restore_step_seconds": 5.0,
+      "cache_compressed_archive_bytes": 221243784,
+      "cache_archive_entries": 6,
+      "gradle_home_files": 1285,
+      "gradle_home_bytes": 281536251,
+      "job_seconds": 97.0,
+      "bootjar_seconds": 18.438,
+      "extract_seconds": 0.575,
+      "packaging_seconds": 13.469,
+      "load_seconds": 10.732,
+      "push_seconds": 10.889,
+      "build_push_seconds": 54.103,
+      "pipeline_seconds": 54.83,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_bytes": 62484476,
+      "dependency_push_status": "Pushed",
+      "application_digest": "sha256:5f82176934e354b316fa1ded8644fc884977da1a47bc93654c2ab65d2595bfd6",
+      "application_bytes": 196923,
+      "application_push_status": "Pushed",
+      "new_blob_bytes": 173504743,
+      "uploaded_layer_labels": [
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "dependencies",
+        "application"
+      ],
+      "manifest_digest": "sha256:4445de1fe0f2c1a48d0651a4dd4dea719dd3b18627995d62af3931ea609af151"
+    },
+    {
+      "run_id": "37130143762",
+      "url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37130143762",
+      "job_status": "success",
+      "source_commit": "8aa8ee2afda5409f1dde31420441011558d464af",
+      "cache_hit": true,
+      "cache_restore_step_seconds": 4.0,
+      "cache_compressed_archive_bytes": 221243784,
+      "cache_archive_entries": 6,
+      "gradle_home_files": 1285,
+      "gradle_home_bytes": 281536251,
+      "job_seconds": 99.0,
+      "bootjar_seconds": 26.601,
+      "extract_seconds": 1.108,
+      "packaging_seconds": 10.036,
+      "load_seconds": 6.986,
+      "push_seconds": 13.12,
+      "build_push_seconds": 57.851,
+      "pipeline_seconds": 58.368,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_bytes": 62484476,
+      "dependency_push_status": "Pushed",
+      "application_digest": "sha256:b80b24d534e6fffcb2005bda8a0c85584dbdb8e07d0aac2ac3682b5bba7300f9",
+      "application_bytes": 196924,
+      "application_push_status": "Pushed",
+      "new_blob_bytes": 173504744,
+      "uploaded_layer_labels": [
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "other",
+        "dependencies",
+        "application"
+      ],
+      "manifest_digest": "sha256:021dda93bf5aebce54dd20405464e965a5f333911f1d5c89b59f97b9318f02b8"
+    }
+  ],
+  "statistics": {
+    "cache_restore_step_seconds": {
+      "median": 5.0,
+      "min": 4.0,
+      "max": 7.0,
+      "values": [
+        4.0,
+        7.0,
+        7.0,
+        5.0,
+        4.0
+      ]
+    },
+    "cache_compressed_archive_bytes": {
+      "median": 221243784,
+      "min": 221240664,
+      "max": 221243784,
+      "values": [
+        221240664,
+        221243784,
+        221243784,
+        221243784,
+        221243784
+      ]
+    },
+    "gradle_home_bytes": {
+      "median": 281536251,
+      "min": 281536038,
+      "max": 281536251,
+      "values": [
+        281536038,
+        281536251,
+        281536251,
+        281536251,
+        281536251
+      ]
+    },
+    "bootjar_seconds": {
+      "median": 26.601,
+      "min": 18.438,
+      "max": 28.34,
+      "values": [
+        25.8,
+        28.34,
+        28.198,
+        18.438,
+        26.601
+      ]
+    },
+    "extract_seconds": {
+      "median": 1.108,
+      "min": 0.575,
+      "max": 1.184,
+      "values": [
+        1.12,
+        1.184,
+        1.051,
+        0.575,
+        1.108
+      ]
+    },
+    "packaging_seconds": {
+      "median": 11.151,
+      "min": 10.036,
+      "max": 13.469,
+      "values": [
+        10.334,
+        11.151,
+        11.277,
+        13.469,
+        10.036
+      ]
+    },
+    "load_seconds": {
+      "median": 7.011,
+      "min": 6.986,
+      "max": 10.732,
+      "values": [
+        7.011,
+        7.0,
+        7.162,
+        10.732,
+        6.986
+      ]
+    },
+    "push_seconds": {
+      "median": 13.501,
+      "min": 10.889,
+      "max": 16.307,
+      "values": [
+        13.501,
+        16.307,
+        16.115,
+        10.889,
+        13.12
+      ]
+    },
+    "build_push_seconds": {
+      "median": 57.851,
+      "min": 54.103,
+      "max": 63.982,
+      "values": [
+        57.766,
+        63.982,
+        63.803,
+        54.103,
+        57.851
+      ]
+    },
+    "pipeline_seconds": {
+      "median": 58.368,
+      "min": 54.83,
+      "max": 65.146,
+      "values": [
+        58.368,
+        65.146,
+        64.941,
+        54.83,
+        58.368
+      ]
+    },
+    "job_seconds": {
+      "median": 99.0,
+      "min": 97.0,
+      "max": 115.0,
+      "values": [
+        97.0,
+        112.0,
+        115.0,
+        97.0,
+        99.0
+      ]
+    },
+    "new_blob_bytes": {
+      "median": 173504745,
+      "min": 173504743,
+      "max": 173504747,
+      "values": [
+        173504745,
+        173504747,
+        173504747,
+        173504743,
+        173504744
+      ]
+    },
+    "application_bytes": {
+      "median": 196926,
+      "min": 196923,
+      "max": 196927,
+      "values": [
+        196926,
+        196927,
+        196927,
+        196923,
+        196924
+      ]
+    }
+  }
+}

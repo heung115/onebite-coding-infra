@@ -1,0 +1,901 @@
+{
+  "source_commit": "1c624dc5c78aba6e3490d3d17323d256ee06d0a6",
+  "runner_os": "Linux",
+  "runner_arch": "X64",
+  "builder": "builder-be64cd34-ff25-41c8-ac74-25f7651f9008",
+  "platform": "linux/amd64",
+  "remote_buildkit_cache": false,
+  "started_at_utc": "2026-10-03T12:56:22.098194+00:00",
+  "completed_at_utc": "2026-10-03T13:04:18.932363+00:00",
+  "validation": {
+    "run_name": "validation",
+    "tag": "ci-b2-measure-37124486516-validation",
+    "pulse": null,
+    "source_sha256": "869011c4e04e12bcb75f95775db28d31fad1bbf15027303f7017403d524264ea",
+    "source_commit": "1c624dc5c78aba6e3490d3d17323d256ee06d0a6",
+    "timing_seconds": {
+      "bootjar_vertex": 60.4,
+      "layered_extraction_and_mtime_normalization_vertex": 1.2,
+      "image_assembly_residual": 17.884,
+      "buildx_build_total": 79.484,
+      "docker_load": 6.718,
+      "docker_hub_push": 14.803,
+      "build_and_push_total": 101.005,
+      "pipeline_wall_total": 113.691
+    },
+    "smoke_validation": {
+      "spring_started_log": true,
+      "http_status": "200",
+      "http_returncode": 0,
+      "container_logs": "\n  .   ____          _            __ _ _\n /\\\\ / ___'_ __ _ _(_)_ __  __ _ \\ \\ \\ \\\n( ( )\\___ | '_ | '_| | '_ \\/ _` | \\ \\ \\ \\\n \\\\/  ___)| |_)| | | | | || (_| |  ) ) ) )\n  '  |____| .__|_| |_|_| |_\\__, | / / / /\n =========|_|==============|___/=/_/_/_/\n\n :: Spring Boot ::                (v3.4.4)\n\n2026-10-03T12:57:49.555Z  INFO 1 --- [spaghetti] [           main] c.r.bowl.spaghetti.SpaghettiApplication  : Starting SpaghettiApplication v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 1 (/app/spaghetti-0.0.1-SNAPSHOT.jar started by root in /app)\n2026-10-03T12:57:49.560Z  INFO 1 --- [spaghetti] [           main] c.r.bowl.spaghetti.SpaghettiApplication  : No active profile set, falling back to 1 default profile: \"default\"\n2026-10-03T12:57:50.979Z  INFO 1 --- [spaghetti] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode\n2026-10-03T12:57:50.980Z  INFO 1 --- [spaghetti] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.\n2026-10-03T12:57:51.173Z  INFO 1 --- [spaghetti] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 182 ms. Found 14 JPA repository interfaces.\n2026-10-03T12:57:51.193Z  INFO 1 --- [spaghetti] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode\n2026-10-03T12:57:51.194Z  INFO 1 --- [spaghetti] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.\n2026-10-03T12:57:51.211Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.AdminRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.211Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.BadgeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.212Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.CategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.212Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.CourseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.212Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.ProblemRelationRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.213Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.ProblemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.213Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.RankRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.214Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.TodayProblemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.215Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.TopicRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.215Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.UserBadgeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.215Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.UserProblemHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.216Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.UserProgressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.216Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.217Z  INFO 1 --- [spaghetti] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface code.rice.bowl.spaghetti.repository.UserTopicRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository\n2026-10-03T12:57:51.217Z  INFO 1 --- [spaghetti] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.\n2026-10-03T12:57:52.056Z  INFO 1 --- [spaghetti] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)\n2026-10-03T12:57:52.068Z  INFO 1 --- [spaghetti] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-03T12:57:52.068Z  INFO 1 --- [spaghetti] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]\n2026-10-03T12:57:52.103Z  INFO 1 --- [spaghetti] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext\n2026-10-03T12:57:52.106Z  INFO 1 --- [spaghetti] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2490 ms\n2026-10-03T12:57:52.501Z  INFO 1 --- [spaghetti] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...\n2026-10-03T12:57:53.611Z  INFO 1 --- [spaghetti] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]\n2026-10-03T12:57:53.651Z  INFO 1 --- [spaghetti] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final\n2026-10-03T12:57:53.704Z  INFO 1 --- [spaghetti] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled\n2026-10-03T12:57:53.929Z  INFO 1 --- [spaghetti] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer\n2026-10-03T12:57:53.953Z  INFO 1 --- [spaghetti] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...\n2026-10-03T12:57:54.956Z  WARN 1 --- [spaghetti] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001\n2026-10-03T12:57:54.956Z ERROR 1 --- [spaghetti] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.\n2026-10-03T12:57:54.957Z  WARN 1 --- [spaghetti] [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata\n\norg.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]\n\tat org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.5.jar:6.2.5]\n\tat org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.5.jar:6.2.5]\n\tat org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.5.jar:6.2.5]\n\tat org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.5.jar:6.2.5]\n\tat org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.5.jar:6.2.5]\n\tat org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.5.jar:6.2.5]\n\tat org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]\n\tat org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.4.jar:3.4.4]\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.4.jar:3.4.4]\n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.4.jar:3.4.4]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.4.jar:3.4.4]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.4.jar:3.4.4]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.4.jar:3.4.4]\n\tat code.rice.bowl.spaghetti.SpaghettiApplication.main(SpaghettiApplication.java:13) ~[spaghetti-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]\nCaused by: org.postgresql.util.PSQLException: Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.\n\tat org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352) ~[postgresql-42.7.5.jar:42.7.5]\n\tat org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.5.jar:42.7.5]\n\tat org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.5.jar:42.7.5]\n\tat org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.5.jar:42.7.5]\n\tat org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.5.jar:42.7.5]\n\tat com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:na]\n\tat com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]\n\tat com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]\n\tat com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]\n\tat com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]\n\tat com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]\n\tat com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]\n\tat org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]\n\t... 35 common frames omitted\nCaused by: java.net.ConnectException: Connection refused\n\tat java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]\n\tat java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]\n\tat java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]\n\tat java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]\n\tat java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]\n\tat java.base/java.net.Socket.connect(Unknown Source) ~[na:na]\n\tat org.postgresql.core.PGStream.createSocket(PGStream.java:260) ~[postgresql-42.7.5.jar:42.7.5]\n\tat org.postgresql.core.PGStream.<init>(PGStream.java:121) ~[postgresql-42.7.5.jar:42.7.5]\n\tat org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140) ~[postgresql-42.7.5.jar:42.7.5]\n\tat org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268) ~[postgresql-42.7.5.jar:42.7.5]\n\t... 49 common frames omitted\n\n2026-10-03T12:57:54.977Z  WARN 1 --- [spaghetti] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)\n2026-10-03T12:57:54.990Z  INFO 1 --- [spaghetti] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:\n\tDatabase JDBC URL [Connecting through datasource 'HikariDataSource (null)']\n\tDatabase driver: undefined/unknown\n\tDatabase version: 12.0\n\tAutocommit mode: undefined/unknown\n\tIsolation level: undefined/unknown\n\tMinimum pool size: undefined/unknown\n\tMaximum pool size: undefined/unknown\n2026-10-03T12:57:56.271Z  INFO 1 --- [spaghetti] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)\n2026-10-03T12:57:56.275Z  INFO 1 --- [spaghetti] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'\nSuccessfully set time zone: Asia/Seoul\n2026-10-03T12:57:56.675Z  INFO 1 --- [spaghetti] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.\n2026-10-03T12:57:58.323Z  WARN 1 --- [spaghetti] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning\n2026-10-03T12:57:58.349Z  WARN 1 --- [spaghetti] [           main] .s.s.UserDetailsServiceAutoConfiguration : \n\nUsing generated security password: 852561eb-6839-4e13-bd0a-bc6ee73c4d75\n\nThis generated password is for development use only. Your security configuration must be updated before running your application in production.\n\n2026-10-03T12:57:58.376Z  INFO 1 --- [spaghetti] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager\n2026-10-03T12:57:58.699Z  INFO 1 --- [spaghetti] [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.\n2026-10-03T12:57:59.131Z  INFO 1 --- [spaghetti] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'\n2026-10-03T12:57:59.151Z  INFO 1 --- [spaghetti] [           main] c.r.bowl.spaghetti.SpaghettiApplication  : Started SpaghettiApplication in 10.231 seconds (process running for 10.652)\n2026-10-03T12:57:59.160Z  INFO 1 --- [spaghetti] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...\n"
+    },
+    "registry": {
+      "manifest_digest": "sha256:4f4517ce2158803340a411491ce4c478a5801cd2cc13eef6a4f1f267217707de",
+      "platform_manifest_digest": "sha256:4f4517ce2158803340a411491ce4c478a5801cd2cc13eef6a4f1f267217707de",
+      "compressed_layer_bytes": 173503974,
+      "dependencies": {
+        "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+        "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+        "compressed_bytes": 62484476,
+        "push_status": "Pushed",
+        "label": "dependencies",
+        "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+      },
+      "application": {
+        "digest": "sha256:05d0c435b71b032a4c897f7517ef859b09a1600b49d05719a6c9b39491b3945e",
+        "diff_id": "sha256:08e30bb3149c8a51617b5b22a96a64204a7289a3e7004d2657d045273ea41489",
+        "compressed_bytes": 196090,
+        "push_status": "Pushed",
+        "label": "application",
+        "history": "COPY /app/extracted/application/ ./ # buildkit"
+      },
+      "layers": [
+        {
+          "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+          "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+          "compressed_bytes": 40192566,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+        },
+        {
+          "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+          "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+          "compressed_bytes": 361,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+        },
+        {
+          "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+          "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+          "compressed_bytes": 23107585,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+        },
+        {
+          "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+          "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+          "compressed_bytes": 47520117,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+        },
+        {
+          "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+          "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+          "compressed_bytes": 158,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+        },
+        {
+          "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+          "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+          "compressed_bytes": 2464,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+        },
+        {
+          "digest": "sha256:296b21eced7d3ff041108dd115e26f277cf805e2ee30f2fb3a80c59936b1dd83",
+          "diff_id": "sha256:726e59daf649ff5de2afad8462918dfe3b945d9dc8e62f65dff42ce61d49bebb",
+          "compressed_bytes": 93,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "WORKDIR /app"
+        },
+        {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Pushed",
+          "label": "dependencies",
+          "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+        },
+        {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "spring-boot-loader",
+          "history": "COPY /app/extracted/spring-boot-loader/ ./ # buildkit"
+        },
+        {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "snapshot-dependencies",
+          "history": "COPY /app/extracted/snapshot-dependencies/ ./ # buildkit"
+        },
+        {
+          "digest": "sha256:05d0c435b71b032a4c897f7517ef859b09a1600b49d05719a6c9b39491b3945e",
+          "diff_id": "sha256:08e30bb3149c8a51617b5b22a96a64204a7289a3e7004d2657d045273ea41489",
+          "compressed_bytes": 196090,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY /app/extracted/application/ ./ # buildkit"
+        }
+      ]
+    },
+    "new_blob_bytes": 173503910,
+    "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\n08e30bb3149c: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\n726e59daf649: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\n5f70bf18a086: Layer already exists\n7de77111c509: Pushed\n726e59daf649: Pushed\n08e30bb3149c: Pushed\nb9796b1f52d1: Pushed\nf98d83061adc: Pushed\nc18fceea2878: Pushed\n3bc295b94679: Pushed\n012f3c474d69: Pushed\nf6e0e88dd8e1: Pushed\nci-b2-measure-37124486516-validation: digest: sha256:4f4517ce2158803340a411491ce4c478a5801cd2cc13eef6a4f1f267217707de size: 2616\n"
+  },
+  "pulses": [
+    {
+      "run_name": "pulse-1",
+      "tag": "ci-b2-measure-37124486516-pulse-1",
+      "pulse": 1,
+      "source_sha256": "4c8db23b7886ddc475b222b54207f4d21d535a6231e1060e93be2cbcb024b7ef",
+      "source_commit": "1c624dc5c78aba6e3490d3d17323d256ee06d0a6",
+      "timing_seconds": {
+        "bootjar_vertex": 57.9,
+        "layered_extraction_and_mtime_normalization_vertex": 1.2,
+        "image_assembly_residual": 3.918,
+        "buildx_build_total": 63.018,
+        "docker_load": 1.611,
+        "docker_hub_push": 4.86,
+        "build_and_push_total": 69.489,
+        "pipeline_wall_total": 70.201
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:4eb7c13ef9386262e4b7cf21d348b4f8446e29f8822d1e1b52da24a1b55cdacb",
+        "platform_manifest_digest": "sha256:4eb7c13ef9386262e4b7cf21d348b4f8446e29f8822d1e1b52da24a1b55cdacb",
+        "compressed_layer_bytes": 173503975,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:e4c8850ea6f3cfa11e3d7bf449d021347593590dc3651486555aeed70e239f13",
+          "diff_id": "sha256:72d00d84f2ce0302e309dd9fb8edba2e699987c6b40b86bf9e749edb87535b08",
+          "compressed_bytes": 196091,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY /app/extracted/application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:296b21eced7d3ff041108dd115e26f277cf805e2ee30f2fb3a80c59936b1dd83",
+            "diff_id": "sha256:726e59daf649ff5de2afad8462918dfe3b945d9dc8e62f65dff42ce61d49bebb",
+            "compressed_bytes": 93,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY /app/extracted/spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY /app/extracted/snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:e4c8850ea6f3cfa11e3d7bf449d021347593590dc3651486555aeed70e239f13",
+            "diff_id": "sha256:72d00d84f2ce0302e309dd9fb8edba2e699987c6b40b86bf9e749edb87535b08",
+            "compressed_bytes": 196091,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY /app/extracted/application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196091,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\n72d00d84f2ce: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\n726e59daf649: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\n726e59daf649: Layer already exists\n5f70bf18a086: Layer already exists\nc18fceea2878: Layer already exists\n7de77111c509: Layer already exists\nb9796b1f52d1: Layer already exists\n3bc295b94679: Layer already exists\nf98d83061adc: Layer already exists\n012f3c474d69: Layer already exists\nf6e0e88dd8e1: Layer already exists\n72d00d84f2ce: Pushed\nci-b2-measure-37124486516-pulse-1: digest: sha256:4eb7c13ef9386262e4b7cf21d348b4f8446e29f8822d1e1b52da24a1b55cdacb size: 2616\n"
+    },
+    {
+      "run_name": "pulse-2",
+      "tag": "ci-b2-measure-37124486516-pulse-2",
+      "pulse": 2,
+      "source_sha256": "1ccf10c91355ea096580707a3ebfd8fc345c4561ac8a7a724c5e233ee1e54b19",
+      "source_commit": "1c624dc5c78aba6e3490d3d17323d256ee06d0a6",
+      "timing_seconds": {
+        "bootjar_vertex": 59.7,
+        "layered_extraction_and_mtime_normalization_vertex": 1.2,
+        "image_assembly_residual": 3.996,
+        "buildx_build_total": 64.896,
+        "docker_load": 1.591,
+        "docker_hub_push": 4.925,
+        "build_and_push_total": 71.412,
+        "pipeline_wall_total": 72.162
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:fc8fdf4c13ce274ad9b73f8ac2711994496a98949007c5a872cf9d06f2e2a6b5",
+        "platform_manifest_digest": "sha256:fc8fdf4c13ce274ad9b73f8ac2711994496a98949007c5a872cf9d06f2e2a6b5",
+        "compressed_layer_bytes": 173503975,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:0f9c2f9855063f547ed7e1a6a453ce17062fe2c4efde69316bcaa36eb4d023d0",
+          "diff_id": "sha256:abc3dfbfd349e6df99f1b9c5bb4e2526eadffd41c5aec0c1260fd33ca66c557c",
+          "compressed_bytes": 196091,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY /app/extracted/application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:296b21eced7d3ff041108dd115e26f277cf805e2ee30f2fb3a80c59936b1dd83",
+            "diff_id": "sha256:726e59daf649ff5de2afad8462918dfe3b945d9dc8e62f65dff42ce61d49bebb",
+            "compressed_bytes": 93,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY /app/extracted/spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY /app/extracted/snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:0f9c2f9855063f547ed7e1a6a453ce17062fe2c4efde69316bcaa36eb4d023d0",
+            "diff_id": "sha256:abc3dfbfd349e6df99f1b9c5bb4e2526eadffd41c5aec0c1260fd33ca66c557c",
+            "compressed_bytes": 196091,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY /app/extracted/application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196091,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\nabc3dfbfd349: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\n726e59daf649: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\n726e59daf649: Layer already exists\nc18fceea2878: Layer already exists\n7de77111c509: Layer already exists\n5f70bf18a086: Layer already exists\nb9796b1f52d1: Layer already exists\n3bc295b94679: Layer already exists\n012f3c474d69: Layer already exists\nf6e0e88dd8e1: Layer already exists\nf98d83061adc: Layer already exists\nabc3dfbfd349: Pushed\nci-b2-measure-37124486516-pulse-2: digest: sha256:fc8fdf4c13ce274ad9b73f8ac2711994496a98949007c5a872cf9d06f2e2a6b5 size: 2616\n"
+    },
+    {
+      "run_name": "pulse-3",
+      "tag": "ci-b2-measure-37124486516-pulse-3",
+      "pulse": 3,
+      "source_sha256": "e4e0fb90580d849941286e42a1763ef197f8fc63f1965a7d9857fd5a7a7bdc50",
+      "source_commit": "1c624dc5c78aba6e3490d3d17323d256ee06d0a6",
+      "timing_seconds": {
+        "bootjar_vertex": 61.3,
+        "layered_extraction_and_mtime_normalization_vertex": 1.2,
+        "image_assembly_residual": 4.283,
+        "buildx_build_total": 66.783,
+        "docker_load": 1.645,
+        "docker_hub_push": 4.791,
+        "build_and_push_total": 73.219,
+        "pipeline_wall_total": 73.98
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:471136bc6e962ef768ff80c75cec493e59e055e5d9e6d5e9c96e231f873c3e01",
+        "platform_manifest_digest": "sha256:471136bc6e962ef768ff80c75cec493e59e055e5d9e6d5e9c96e231f873c3e01",
+        "compressed_layer_bytes": 173503975,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:effeea5c895d276408a1ec125d2fe5b25e80da50ac288ce6441f3f091ce9e1cd",
+          "diff_id": "sha256:a23bf4faad8bccb8cac4b111ec2e7f97c1ff8b53a23ef2737bbd5c257ccd5fc3",
+          "compressed_bytes": 196091,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY /app/extracted/application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:296b21eced7d3ff041108dd115e26f277cf805e2ee30f2fb3a80c59936b1dd83",
+            "diff_id": "sha256:726e59daf649ff5de2afad8462918dfe3b945d9dc8e62f65dff42ce61d49bebb",
+            "compressed_bytes": 93,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY /app/extracted/spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY /app/extracted/snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:effeea5c895d276408a1ec125d2fe5b25e80da50ac288ce6441f3f091ce9e1cd",
+            "diff_id": "sha256:a23bf4faad8bccb8cac4b111ec2e7f97c1ff8b53a23ef2737bbd5c257ccd5fc3",
+            "compressed_bytes": 196091,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY /app/extracted/application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196091,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\na23bf4faad8b: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\n726e59daf649: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\nc18fceea2878: Layer already exists\n5f70bf18a086: Layer already exists\n726e59daf649: Layer already exists\n7de77111c509: Layer already exists\n3bc295b94679: Layer already exists\n012f3c474d69: Layer already exists\nb9796b1f52d1: Layer already exists\nf98d83061adc: Layer already exists\nf6e0e88dd8e1: Layer already exists\na23bf4faad8b: Pushed\nci-b2-measure-37124486516-pulse-3: digest: sha256:471136bc6e962ef768ff80c75cec493e59e055e5d9e6d5e9c96e231f873c3e01 size: 2616\n"
+    },
+    {
+      "run_name": "pulse-4",
+      "tag": "ci-b2-measure-37124486516-pulse-4",
+      "pulse": 4,
+      "source_sha256": "5291931bd6843739302e4e2b3422e9caba9e1d6624477190ddeb8be57aac2a99",
+      "source_commit": "1c624dc5c78aba6e3490d3d17323d256ee06d0a6",
+      "timing_seconds": {
+        "bootjar_vertex": 60.3,
+        "layered_extraction_and_mtime_normalization_vertex": 1.2,
+        "image_assembly_residual": 4.344,
+        "buildx_build_total": 65.844,
+        "docker_load": 1.586,
+        "docker_hub_push": 5.076,
+        "build_and_push_total": 72.506,
+        "pipeline_wall_total": 73.258
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:3d7d0832fed9e6764afd72b969010a1cf5c5db1d7376dbb0f25e81bfeeb42f12",
+        "platform_manifest_digest": "sha256:3d7d0832fed9e6764afd72b969010a1cf5c5db1d7376dbb0f25e81bfeeb42f12",
+        "compressed_layer_bytes": 173503975,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:ec29486c403e8625cc392cde4e8f40af8910108960973f9d7f616c1ecedb5ca4",
+          "diff_id": "sha256:d0423dd0faebda5733f57e94f0bcd5974d01a1a09e3f134ae4a8e2986a6d2d6e",
+          "compressed_bytes": 196091,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY /app/extracted/application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:296b21eced7d3ff041108dd115e26f277cf805e2ee30f2fb3a80c59936b1dd83",
+            "diff_id": "sha256:726e59daf649ff5de2afad8462918dfe3b945d9dc8e62f65dff42ce61d49bebb",
+            "compressed_bytes": 93,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY /app/extracted/spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY /app/extracted/snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:ec29486c403e8625cc392cde4e8f40af8910108960973f9d7f616c1ecedb5ca4",
+            "diff_id": "sha256:d0423dd0faebda5733f57e94f0bcd5974d01a1a09e3f134ae4a8e2986a6d2d6e",
+            "compressed_bytes": 196091,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY /app/extracted/application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196091,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\nd0423dd0faeb: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\n726e59daf649: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\nc18fceea2878: Layer already exists\n7de77111c509: Layer already exists\n5f70bf18a086: Layer already exists\n726e59daf649: Layer already exists\nf98d83061adc: Layer already exists\n012f3c474d69: Layer already exists\n3bc295b94679: Layer already exists\nb9796b1f52d1: Layer already exists\nf6e0e88dd8e1: Layer already exists\nd0423dd0faeb: Pushed\nci-b2-measure-37124486516-pulse-4: digest: sha256:3d7d0832fed9e6764afd72b969010a1cf5c5db1d7376dbb0f25e81bfeeb42f12 size: 2616\n"
+    },
+    {
+      "run_name": "pulse-5",
+      "tag": "ci-b2-measure-37124486516-pulse-5",
+      "pulse": 5,
+      "source_sha256": "ee491fbe12b8d7af88a44c36eb5f056167dda9edf5016b4d02ea4e776cbb7e1a",
+      "source_commit": "1c624dc5c78aba6e3490d3d17323d256ee06d0a6",
+      "timing_seconds": {
+        "bootjar_vertex": 60.8,
+        "layered_extraction_and_mtime_normalization_vertex": 1.2,
+        "image_assembly_residual": 4.21,
+        "buildx_build_total": 66.21,
+        "docker_load": 1.618,
+        "docker_hub_push": 4.984,
+        "build_and_push_total": 72.811,
+        "pipeline_wall_total": 73.536
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:ddc241e0d774aca405f36ddb5b0aa6dce96d8b118bba7b5702d7107b5b202d45",
+        "platform_manifest_digest": "sha256:ddc241e0d774aca405f36ddb5b0aa6dce96d8b118bba7b5702d7107b5b202d45",
+        "compressed_layer_bytes": 173503975,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:dadf6480174d61692b2fa630bfc0db5b3c8b738794cb55b5f14a0bed81170a84",
+          "diff_id": "sha256:bc815c4ae65094cc8dc40aab9604e5ae4bb1470a81682bd886d8895625155f81",
+          "compressed_bytes": 196091,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY /app/extracted/application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:296b21eced7d3ff041108dd115e26f277cf805e2ee30f2fb3a80c59936b1dd83",
+            "diff_id": "sha256:726e59daf649ff5de2afad8462918dfe3b945d9dc8e62f65dff42ce61d49bebb",
+            "compressed_bytes": 93,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY /app/extracted/dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY /app/extracted/spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY /app/extracted/snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:dadf6480174d61692b2fa630bfc0db5b3c8b738794cb55b5f14a0bed81170a84",
+            "diff_id": "sha256:bc815c4ae65094cc8dc40aab9604e5ae4bb1470a81682bd886d8895625155f81",
+            "compressed_bytes": 196091,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY /app/extracted/application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196091,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\nbc815c4ae650: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\n726e59daf649: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\nc18fceea2878: Layer already exists\n7de77111c509: Layer already exists\n5f70bf18a086: Layer already exists\n726e59daf649: Layer already exists\nb9796b1f52d1: Layer already exists\n3bc295b94679: Layer already exists\nf98d83061adc: Layer already exists\n012f3c474d69: Layer already exists\nf6e0e88dd8e1: Layer already exists\nbc815c4ae650: Pushed\nci-b2-measure-37124486516-pulse-5: digest: sha256:ddc241e0d774aca405f36ddb5b0aa6dce96d8b118bba7b5702d7107b5b202d45 size: 2616\n"
+    }
+  ],
+  "pulse_timing_summary": {
+    "bootjar_vertex": {
+      "median": 60.3,
+      "min": 57.9,
+      "max": 61.3,
+      "values": [
+        57.9,
+        59.7,
+        61.3,
+        60.3,
+        60.8
+      ]
+    },
+    "layered_extraction_and_mtime_normalization_vertex": {
+      "median": 1.2,
+      "min": 1.2,
+      "max": 1.2,
+      "values": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "image_assembly_residual": {
+      "median": 4.21,
+      "min": 3.918,
+      "max": 4.344,
+      "values": [
+        3.918,
+        3.996,
+        4.283,
+        4.344,
+        4.21
+      ]
+    },
+    "buildx_build_total": {
+      "median": 65.844,
+      "min": 63.018,
+      "max": 66.783,
+      "values": [
+        63.018,
+        64.896,
+        66.783,
+        65.844,
+        66.21
+      ]
+    },
+    "docker_load": {
+      "median": 1.611,
+      "min": 1.586,
+      "max": 1.645,
+      "values": [
+        1.611,
+        1.591,
+        1.645,
+        1.586,
+        1.618
+      ]
+    },
+    "docker_hub_push": {
+      "median": 4.925,
+      "min": 4.791,
+      "max": 5.076,
+      "values": [
+        4.86,
+        4.925,
+        4.791,
+        5.076,
+        4.984
+      ]
+    },
+    "build_and_push_total": {
+      "median": 72.506,
+      "min": 69.489,
+      "max": 73.219,
+      "values": [
+        69.489,
+        71.412,
+        73.219,
+        72.506,
+        72.811
+      ]
+    },
+    "pipeline_wall_total": {
+      "median": 73.258,
+      "min": 70.201,
+      "max": 73.98,
+      "values": [
+        70.201,
+        72.162,
+        73.98,
+        73.258,
+        73.536
+      ]
+    }
+  }
+}

@@ -1,0 +1,1275 @@
+{
+  "mode": "warm",
+  "source_commit": "4952966523b78c4b75ba13a2180f5d2cae803dd8",
+  "runner_os": "Linux",
+  "runner_arch": "X64",
+  "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)\n",
+  "gradle_user_home": "/home/runner/.gradle",
+  "builder": "builder-fe88eda8-6d3f-42cd-93a2-16778964b724",
+  "platform": "linux/amd64",
+  "remote_buildkit_cache": false,
+  "started_at_utc": "2026-10-03T13:50:20.038599+00:00",
+  "completed_at_utc": "2026-10-03T13:52:53.664518+00:00",
+  "gradle_cache_at_warm_job_start": {
+    "gradle_user_home": "/home/runner/.gradle",
+    "paths": {
+      "caches/modules-2/files-2.1": {
+        "exists": true,
+        "file_count": 351,
+        "bytes": 84104321
+      },
+      "wrapper/dists": {
+        "exists": true,
+        "file_count": 315,
+        "bytes": 151645130
+      },
+      "caches/8.13": {
+        "exists": true,
+        "file_count": 619,
+        "bytes": 45785096
+      }
+    },
+    "file_count": 1285,
+    "bytes": 281534547
+  },
+  "baseline": {
+    "run_name": "warm-baseline",
+    "tag": "ci-b2-measure-runner-37127514976-warm-baseline",
+    "pulse": null,
+    "source_sha256": "869011c4e04e12bcb75f95775db28d31fad1bbf15027303f7017403d524264ea",
+    "source_commit": "4952966523b78c4b75ba13a2180f5d2cae803dd8",
+    "bootjar_bytes": 69932988,
+    "bootjar_sha256": "bdbffb832978c7095b85e6034f661a56ab0fefe76e58f4267c282590c62ef13f",
+    "gradle_cache_before": {
+      "gradle_user_home": "/home/runner/.gradle",
+      "paths": {
+        "caches/modules-2/files-2.1": {
+          "exists": true,
+          "file_count": 351,
+          "bytes": 84104321
+        },
+        "wrapper/dists": {
+          "exists": true,
+          "file_count": 315,
+          "bytes": 151645130
+        },
+        "caches/8.13": {
+          "exists": true,
+          "file_count": 619,
+          "bytes": 45785096
+        }
+      },
+      "file_count": 1285,
+      "bytes": 281534547
+    },
+    "gradle_cache_after": {
+      "gradle_user_home": "/home/runner/.gradle",
+      "paths": {
+        "caches/modules-2/files-2.1": {
+          "exists": true,
+          "file_count": 351,
+          "bytes": 84104321
+        },
+        "wrapper/dists": {
+          "exists": true,
+          "file_count": 316,
+          "bytes": 151645311
+        },
+        "caches/8.13": {
+          "exists": true,
+          "file_count": 619,
+          "bytes": 45785159
+        }
+      },
+      "file_count": 1286,
+      "bytes": 281534791
+    },
+    "timing_seconds": {
+      "gradle_bootjar": 23.419,
+      "layered_extraction_and_mtime_normalization": 0.937,
+      "docker_image_packaging": 10.234,
+      "docker_load": 6.378,
+      "docker_hub_push": 14.841,
+      "build_to_push_total": 55.809,
+      "pipeline_wall_total": 56.96
+    },
+    "smoke_validation": null,
+    "registry": {
+      "manifest_digest": "sha256:91fd8e401c7c6d1a4954e27decd533948283b9ce8706641e4141944b3e3de435",
+      "platform_manifest_digest": "sha256:91fd8e401c7c6d1a4954e27decd533948283b9ce8706641e4141944b3e3de435",
+      "compressed_layer_bytes": 173504807,
+      "dependencies": {
+        "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+        "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+        "compressed_bytes": 62484476,
+        "push_status": "Pushed",
+        "label": "dependencies",
+        "history": "COPY dependencies/ ./ # buildkit"
+      },
+      "spring-boot-loader": {
+        "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "compressed_bytes": 32,
+        "push_status": "Layer already exists",
+        "label": "spring-boot-loader",
+        "history": "COPY spring-boot-loader/ ./ # buildkit"
+      },
+      "snapshot-dependencies": {
+        "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "compressed_bytes": 32,
+        "push_status": "Layer already exists",
+        "label": "snapshot-dependencies",
+        "history": "COPY snapshot-dependencies/ ./ # buildkit"
+      },
+      "application": {
+        "digest": "sha256:08474719266a9d3356a0dee52f8d1bae640a925732de9a19e537660ad59adacc",
+        "diff_id": "sha256:ceb45c43c32c72f04ca2ab0b752b5ac65354a64c7b948c4f782897d9d42e095c",
+        "compressed_bytes": 196924,
+        "push_status": "Pushed",
+        "label": "application",
+        "history": "COPY application/ ./ # buildkit"
+      },
+      "layers": [
+        {
+          "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+          "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+          "compressed_bytes": 40192566,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+        },
+        {
+          "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+          "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+          "compressed_bytes": 361,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+        },
+        {
+          "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+          "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+          "compressed_bytes": 23107585,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+        },
+        {
+          "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+          "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+          "compressed_bytes": 47520117,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+        },
+        {
+          "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+          "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+          "compressed_bytes": 158,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+        },
+        {
+          "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+          "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+          "compressed_bytes": 2464,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+        },
+        {
+          "digest": "sha256:e538787c4d1a4cd389b1f1d961109de4281ce8def26e25ae9a732b0d9876d658",
+          "diff_id": "sha256:df8ac5fd2a69283d7d7c0adade8246f2ac80f4c4f031a71a772871500e38a772",
+          "compressed_bytes": 92,
+          "push_status": "Pushed",
+          "label": "other",
+          "history": "WORKDIR /app"
+        },
+        {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Pushed",
+          "label": "dependencies",
+          "history": "COPY dependencies/ ./ # buildkit"
+        },
+        {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "spring-boot-loader",
+          "history": "COPY spring-boot-loader/ ./ # buildkit"
+        },
+        {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "snapshot-dependencies",
+          "history": "COPY snapshot-dependencies/ ./ # buildkit"
+        },
+        {
+          "digest": "sha256:08474719266a9d3356a0dee52f8d1bae640a925732de9a19e537660ad59adacc",
+          "diff_id": "sha256:ceb45c43c32c72f04ca2ab0b752b5ac65354a64c7b948c4f782897d9d42e095c",
+          "compressed_bytes": 196924,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY application/ ./ # buildkit"
+        }
+      ]
+    },
+    "new_blob_bytes": 173504743,
+    "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\nceb45c43c32c: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\ndf8ac5fd2a69: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\n5f70bf18a086: Layer already exists\n7de77111c509: Pushed\ndf8ac5fd2a69: Pushed\nceb45c43c32c: Pushed\nb9796b1f52d1: Pushed\nf98d83061adc: Pushed\nc18fceea2878: Pushed\n012f3c474d69: Pushed\nf6e0e88dd8e1: Pushed\n3bc295b94679: Pushed\nci-b2-measure-runner-37127514976-warm-baseline: digest: sha256:91fd8e401c7c6d1a4954e27decd533948283b9ce8706641e4141944b3e3de435 size: 2616\n"
+  },
+  "runs": [
+    {
+      "run_name": "pulse-1",
+      "tag": "ci-b2-measure-runner-37127514976-pulse-1",
+      "pulse": 1,
+      "source_sha256": "da2a2119e06ec2895a339e4a81d7229ec424feb619bbd1d36a26e5b8ab7c8ecb",
+      "source_commit": "4952966523b78c4b75ba13a2180f5d2cae803dd8",
+      "bootjar_bytes": 69932987,
+      "bootjar_sha256": "d15e7b6467008064811cfaaa1471362e670f2675f1d58b265bbfe70001bd44ad",
+      "gradle_cache_before": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785159
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281534791
+      },
+      "gradle_cache_after": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785159
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281534791
+      },
+      "timing_seconds": {
+        "gradle_bootjar": 6.423,
+        "layered_extraction_and_mtime_normalization": 0.978,
+        "docker_image_packaging": 4.868,
+        "docker_load": 1.563,
+        "docker_hub_push": 5.339,
+        "build_to_push_total": 19.171,
+        "pipeline_wall_total": 20.293
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:41baa7a126cc6567becac83fda397778530afc51a693568f4cb9ef58fb2387ba",
+        "platform_manifest_digest": "sha256:41baa7a126cc6567becac83fda397778530afc51a693568f4cb9ef58fb2387ba",
+        "compressed_layer_bytes": 173504820,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY dependencies/ ./ # buildkit"
+        },
+        "spring-boot-loader": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "spring-boot-loader",
+          "history": "COPY spring-boot-loader/ ./ # buildkit"
+        },
+        "snapshot-dependencies": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "snapshot-dependencies",
+          "history": "COPY snapshot-dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:364bdad5f43c692798e9b1f502257497e85ab4803e03b4583ecfd6c1bf8e1f88",
+          "diff_id": "sha256:95c568ff9606b7a2a70633f4fe172c297b430f179990927401c9032a3195e930",
+          "compressed_bytes": 196937,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:e538787c4d1a4cd389b1f1d961109de4281ce8def26e25ae9a732b0d9876d658",
+            "diff_id": "sha256:df8ac5fd2a69283d7d7c0adade8246f2ac80f4c4f031a71a772871500e38a772",
+            "compressed_bytes": 92,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:364bdad5f43c692798e9b1f502257497e85ab4803e03b4583ecfd6c1bf8e1f88",
+            "diff_id": "sha256:95c568ff9606b7a2a70633f4fe172c297b430f179990927401c9032a3195e930",
+            "compressed_bytes": 196937,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196937,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\n95c568ff9606: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\ndf8ac5fd2a69: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\n5f70bf18a086: Layer already exists\n7de77111c509: Layer already exists\nc18fceea2878: Layer already exists\ndf8ac5fd2a69: Layer already exists\n3bc295b94679: Layer already exists\n012f3c474d69: Layer already exists\nb9796b1f52d1: Layer already exists\nf98d83061adc: Layer already exists\nf6e0e88dd8e1: Layer already exists\n95c568ff9606: Pushed\nci-b2-measure-runner-37127514976-pulse-1: digest: sha256:41baa7a126cc6567becac83fda397778530afc51a693568f4cb9ef58fb2387ba size: 2616\n"
+    },
+    {
+      "run_name": "pulse-2",
+      "tag": "ci-b2-measure-runner-37127514976-pulse-2",
+      "pulse": 2,
+      "source_sha256": "c0515e51d76d1570b737bf38df98387d8789e4c2b17def504ff19a9f5c35da87",
+      "source_commit": "4952966523b78c4b75ba13a2180f5d2cae803dd8",
+      "bootjar_bytes": 69932989,
+      "bootjar_sha256": "5e220daa176aa2a4e0a0f5b3faf5e29c2fa57e90ce0659ff534012c98670de0b",
+      "gradle_cache_before": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785159
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281534791
+      },
+      "gradle_cache_after": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785372
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281535004
+      },
+      "timing_seconds": {
+        "gradle_bootjar": 5.597,
+        "layered_extraction_and_mtime_normalization": 0.942,
+        "docker_image_packaging": 4.69,
+        "docker_load": 1.53,
+        "docker_hub_push": 6.005,
+        "build_to_push_total": 18.764,
+        "pipeline_wall_total": 19.934
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:1f1ddf5d882f1993bef29d65d74bcbb023e80a42046d0dd42c9395ddd848defd",
+        "platform_manifest_digest": "sha256:1f1ddf5d882f1993bef29d65d74bcbb023e80a42046d0dd42c9395ddd848defd",
+        "compressed_layer_bytes": 173504823,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY dependencies/ ./ # buildkit"
+        },
+        "spring-boot-loader": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "spring-boot-loader",
+          "history": "COPY spring-boot-loader/ ./ # buildkit"
+        },
+        "snapshot-dependencies": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "snapshot-dependencies",
+          "history": "COPY snapshot-dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:aaa010852687f4df44078a975997129cbb94b96982d3cc8b6c9efe6a8e3832b6",
+          "diff_id": "sha256:2d052849d75f5a9661a1b9432c644b8d34af1f1a3fe016dc6a7c6b78def180a1",
+          "compressed_bytes": 196940,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:e538787c4d1a4cd389b1f1d961109de4281ce8def26e25ae9a732b0d9876d658",
+            "diff_id": "sha256:df8ac5fd2a69283d7d7c0adade8246f2ac80f4c4f031a71a772871500e38a772",
+            "compressed_bytes": 92,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:aaa010852687f4df44078a975997129cbb94b96982d3cc8b6c9efe6a8e3832b6",
+            "diff_id": "sha256:2d052849d75f5a9661a1b9432c644b8d34af1f1a3fe016dc6a7c6b78def180a1",
+            "compressed_bytes": 196940,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196940,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\n2d052849d75f: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\ndf8ac5fd2a69: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\nc18fceea2878: Layer already exists\ndf8ac5fd2a69: Layer already exists\n7de77111c509: Layer already exists\n5f70bf18a086: Layer already exists\nb9796b1f52d1: Layer already exists\nf98d83061adc: Layer already exists\n012f3c474d69: Layer already exists\n3bc295b94679: Layer already exists\nf6e0e88dd8e1: Layer already exists\n2d052849d75f: Pushed\nci-b2-measure-runner-37127514976-pulse-2: digest: sha256:1f1ddf5d882f1993bef29d65d74bcbb023e80a42046d0dd42c9395ddd848defd size: 2616\n"
+    },
+    {
+      "run_name": "pulse-3",
+      "tag": "ci-b2-measure-runner-37127514976-pulse-3",
+      "pulse": 3,
+      "source_sha256": "2107b3c654df8b11d39bac2d452f273a1f640d9f2c8bcf8163182a9a58664936",
+      "source_commit": "4952966523b78c4b75ba13a2180f5d2cae803dd8",
+      "bootjar_bytes": 69932988,
+      "bootjar_sha256": "568f6f5c04c71a9bb3d1177443cbc08e6c6294d3ec7678ee07c8a23f90bba451",
+      "gradle_cache_before": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785372
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281535004
+      },
+      "gradle_cache_after": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785585
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281535217
+      },
+      "timing_seconds": {
+        "gradle_bootjar": 5.136,
+        "layered_extraction_and_mtime_normalization": 0.948,
+        "docker_image_packaging": 4.8,
+        "docker_load": 1.531,
+        "docker_hub_push": 5.377,
+        "build_to_push_total": 17.791,
+        "pipeline_wall_total": 19.021
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:914d85290a961b6433897355ab357b70b34cbc917071bbfdb26a4cffbf148848",
+        "platform_manifest_digest": "sha256:914d85290a961b6433897355ab357b70b34cbc917071bbfdb26a4cffbf148848",
+        "compressed_layer_bytes": 173504821,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY dependencies/ ./ # buildkit"
+        },
+        "spring-boot-loader": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "spring-boot-loader",
+          "history": "COPY spring-boot-loader/ ./ # buildkit"
+        },
+        "snapshot-dependencies": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "snapshot-dependencies",
+          "history": "COPY snapshot-dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:de5ca107940cb161f46de0b2ff79b56f5fea385bfebeba88ffcda227add58ddc",
+          "diff_id": "sha256:452adb88c1234e98bfeb7353f4ac98b7d1eb1f34d35d9fcd52eea6af17945b1d",
+          "compressed_bytes": 196938,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:e538787c4d1a4cd389b1f1d961109de4281ce8def26e25ae9a732b0d9876d658",
+            "diff_id": "sha256:df8ac5fd2a69283d7d7c0adade8246f2ac80f4c4f031a71a772871500e38a772",
+            "compressed_bytes": 92,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:de5ca107940cb161f46de0b2ff79b56f5fea385bfebeba88ffcda227add58ddc",
+            "diff_id": "sha256:452adb88c1234e98bfeb7353f4ac98b7d1eb1f34d35d9fcd52eea6af17945b1d",
+            "compressed_bytes": 196938,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196938,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\n452adb88c123: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\ndf8ac5fd2a69: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\nc18fceea2878: Layer already exists\n7de77111c509: Layer already exists\ndf8ac5fd2a69: Layer already exists\n5f70bf18a086: Layer already exists\nf98d83061adc: Layer already exists\nb9796b1f52d1: Layer already exists\n012f3c474d69: Layer already exists\n3bc295b94679: Layer already exists\nf6e0e88dd8e1: Layer already exists\n452adb88c123: Pushed\nci-b2-measure-runner-37127514976-pulse-3: digest: sha256:914d85290a961b6433897355ab357b70b34cbc917071bbfdb26a4cffbf148848 size: 2616\n"
+    },
+    {
+      "run_name": "pulse-4",
+      "tag": "ci-b2-measure-runner-37127514976-pulse-4",
+      "pulse": 4,
+      "source_sha256": "884180ec46474a138b3c326b12e9855a696cbcc8ccfd00e694a2d39c767f87dd",
+      "source_commit": "4952966523b78c4b75ba13a2180f5d2cae803dd8",
+      "bootjar_bytes": 69932989,
+      "bootjar_sha256": "e445e065e2df302fc74d3976af28b77ee6ede93cade9e34b7ea62cf0b8a527e8",
+      "gradle_cache_before": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785585
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281535217
+      },
+      "gradle_cache_after": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785798
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281535430
+      },
+      "timing_seconds": {
+        "gradle_bootjar": 4.682,
+        "layered_extraction_and_mtime_normalization": 1.472,
+        "docker_image_packaging": 4.824,
+        "docker_load": 1.528,
+        "docker_hub_push": 5.19,
+        "build_to_push_total": 17.697,
+        "pipeline_wall_total": 18.71
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:5899f9e22575ae11d3118f3a65572c8dbe7483a2ab2f5234b53127616a227147",
+        "platform_manifest_digest": "sha256:5899f9e22575ae11d3118f3a65572c8dbe7483a2ab2f5234b53127616a227147",
+        "compressed_layer_bytes": 173504823,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY dependencies/ ./ # buildkit"
+        },
+        "spring-boot-loader": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "spring-boot-loader",
+          "history": "COPY spring-boot-loader/ ./ # buildkit"
+        },
+        "snapshot-dependencies": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "snapshot-dependencies",
+          "history": "COPY snapshot-dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:c9e26b69a54bc1284161cf45ee93d067839ca867c1801930d53b56f20b7e9569",
+          "diff_id": "sha256:c3ac47749b5cdf004fbbedf6a6750f40519e435d89885e0815fe55b5c4264a5c",
+          "compressed_bytes": 196940,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:e538787c4d1a4cd389b1f1d961109de4281ce8def26e25ae9a732b0d9876d658",
+            "diff_id": "sha256:df8ac5fd2a69283d7d7c0adade8246f2ac80f4c4f031a71a772871500e38a772",
+            "compressed_bytes": 92,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:c9e26b69a54bc1284161cf45ee93d067839ca867c1801930d53b56f20b7e9569",
+            "diff_id": "sha256:c3ac47749b5cdf004fbbedf6a6750f40519e435d89885e0815fe55b5c4264a5c",
+            "compressed_bytes": 196940,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196940,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\nc3ac47749b5c: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\ndf8ac5fd2a69: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\n5f70bf18a086: Layer already exists\n7de77111c509: Layer already exists\nc18fceea2878: Layer already exists\ndf8ac5fd2a69: Layer already exists\n3bc295b94679: Layer already exists\n012f3c474d69: Layer already exists\nb9796b1f52d1: Layer already exists\nf98d83061adc: Layer already exists\nf6e0e88dd8e1: Layer already exists\nc3ac47749b5c: Pushed\nci-b2-measure-runner-37127514976-pulse-4: digest: sha256:5899f9e22575ae11d3118f3a65572c8dbe7483a2ab2f5234b53127616a227147 size: 2616\n"
+    },
+    {
+      "run_name": "pulse-5",
+      "tag": "ci-b2-measure-runner-37127514976-pulse-5",
+      "pulse": 5,
+      "source_sha256": "fcebe43e1ec242e541e2f315146b4aa53371308749b25143c3a726de910fc6c6",
+      "source_commit": "4952966523b78c4b75ba13a2180f5d2cae803dd8",
+      "bootjar_bytes": 69932988,
+      "bootjar_sha256": "4c452d946e1b49101541032eea32725ce30147c2d87189632a7afba318f52113",
+      "gradle_cache_before": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45785798
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281535430
+      },
+      "gradle_cache_after": {
+        "gradle_user_home": "/home/runner/.gradle",
+        "paths": {
+          "caches/modules-2/files-2.1": {
+            "exists": true,
+            "file_count": 351,
+            "bytes": 84104321
+          },
+          "wrapper/dists": {
+            "exists": true,
+            "file_count": 316,
+            "bytes": 151645311
+          },
+          "caches/8.13": {
+            "exists": true,
+            "file_count": 619,
+            "bytes": 45786011
+          }
+        },
+        "file_count": 1286,
+        "bytes": 281535643
+      },
+      "timing_seconds": {
+        "gradle_bootjar": 4.448,
+        "layered_extraction_and_mtime_normalization": 1.108,
+        "docker_image_packaging": 4.767,
+        "docker_load": 1.561,
+        "docker_hub_push": 5.473,
+        "build_to_push_total": 17.356,
+        "pipeline_wall_total": 18.498
+      },
+      "smoke_validation": null,
+      "registry": {
+        "manifest_digest": "sha256:bc62d45167d98bcd18515dc4a74c2e708dc2ad341ac4784739acff8da8c852cc",
+        "platform_manifest_digest": "sha256:bc62d45167d98bcd18515dc4a74c2e708dc2ad341ac4784739acff8da8c852cc",
+        "compressed_layer_bytes": 173504819,
+        "dependencies": {
+          "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+          "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+          "compressed_bytes": 62484476,
+          "push_status": "Layer already exists",
+          "label": "dependencies",
+          "history": "COPY dependencies/ ./ # buildkit"
+        },
+        "spring-boot-loader": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "spring-boot-loader",
+          "history": "COPY spring-boot-loader/ ./ # buildkit"
+        },
+        "snapshot-dependencies": {
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "compressed_bytes": 32,
+          "push_status": "Layer already exists",
+          "label": "snapshot-dependencies",
+          "history": "COPY snapshot-dependencies/ ./ # buildkit"
+        },
+        "application": {
+          "digest": "sha256:b6dccaa637d456b8c5fa58f688d600498897e5351260d68a2a4714af992f006b",
+          "diff_id": "sha256:304db89b251b366cae1bc5ee10a5b3b2b6a79cb39076b8ffb827d27ea3a45bf4",
+          "compressed_bytes": 196936,
+          "push_status": "Pushed",
+          "label": "application",
+          "history": "COPY application/ ./ # buildkit"
+        },
+        "layers": [
+          {
+            "digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+            "diff_id": "sha256:f6e0e88dd8e11c81dba77d657b271e1ed7c33882e8f4dfaa7768cbaee94d94fc",
+            "compressed_bytes": 40192566,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:rockcraft-base /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.9550.tar --tag 26.04"
+          },
+          {
+            "digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+            "diff_id": "sha256:f98d83061adc18abc1ffea46400be62b16d3da85c4e28563a97b3ff4cf7cca14",
+            "compressed_bytes": 361,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "umoci raw add-layer --image /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/ubuntu:26.04 /home/buildd/rockcraft-ubuntu-1b6090acdaa4d41535f88b18cf344a81/images/.temp_layer.control_data.9550.tar"
+          },
+          {
+            "digest": "sha256:109bc5b81bb63c3d24a369b867d6ff180fe2cc5e2d1a3cb2d44f4fd52147d103",
+            "diff_id": "sha256:012f3c474d69da341617c644072968fa9ba7e94cfc2dccd87aaa4b15ded25e39",
+            "compressed_bytes": 23107585,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+          },
+          {
+            "digest": "sha256:a7267ff71f0e484fd3473729d1137c6466573f5759b17549197455b229d0e181",
+            "diff_id": "sha256:3bc295b946796d3118c96695eb0ffade4db07f8e370fab20dee4d70739a4be90",
+            "compressed_bytes": 47520117,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='0b2b640e3046b64c8ec504de0ab9d91bb5610182bda21fad454681ce54d45a62';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        arm64)          ESUM='b8efcd5acc9109fe8d35bed132499643048a257b4f6042906ece37d03c839d77';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        armhf)          ESUM='f31a2a481a358c67f9a035212e9514ff58b1166f0811635cb127829af1ee40ec';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_arm_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        ppc64el)          ESUM='a84ba93f536d2773a8f086ecf39e6fb56c1690ffbea2ead7b108fe520bf51bf6';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_ppc64le_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        s390x)          ESUM='162ca8775d96b8c9d71e672fb498ddc61bd2cd62c8ce3f7d05e2e228ca53f2f4';          BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_s390x_linux_hotspot_17.0.20.1_1.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+          },
+          {
+            "digest": "sha256:15bf01d33b4f1b347e7c6c10b8354b3c65c96a7d1949d91957c631c76ade75c6",
+            "diff_id": "sha256:b9796b1f52d14665e70420104857b6f6030ee2e9d274bf1bdb7c54e8364e30e8",
+            "compressed_bytes": 158,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+          },
+          {
+            "digest": "sha256:a920497d91be321d362568a1339a3cdc5356bce4d1a785a46589078bd5a7dc50",
+            "diff_id": "sha256:7de77111c509d32bc287ff0b2212ed7b56804361ad9f674db86ba122154bcf30",
+            "compressed_bytes": 2464,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+          },
+          {
+            "digest": "sha256:e538787c4d1a4cd389b1f1d961109de4281ce8def26e25ae9a732b0d9876d658",
+            "diff_id": "sha256:df8ac5fd2a69283d7d7c0adade8246f2ac80f4c4f031a71a772871500e38a772",
+            "compressed_bytes": 92,
+            "push_status": "Layer already exists",
+            "label": "other",
+            "history": "WORKDIR /app"
+          },
+          {
+            "digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+            "diff_id": "sha256:c18fceea2878b9385612dea29055d56c86ee573032bacff3276bd994a27ac4b3",
+            "compressed_bytes": 62484476,
+            "push_status": "Layer already exists",
+            "label": "dependencies",
+            "history": "COPY dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "spring-boot-loader",
+            "history": "COPY spring-boot-loader/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+            "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "compressed_bytes": 32,
+            "push_status": "Layer already exists",
+            "label": "snapshot-dependencies",
+            "history": "COPY snapshot-dependencies/ ./ # buildkit"
+          },
+          {
+            "digest": "sha256:b6dccaa637d456b8c5fa58f688d600498897e5351260d68a2a4714af992f006b",
+            "diff_id": "sha256:304db89b251b366cae1bc5ee10a5b3b2b6a79cb39076b8ffb827d27ea3a45bf4",
+            "compressed_bytes": 196936,
+            "push_status": "Pushed",
+            "label": "application",
+            "history": "COPY application/ ./ # buildkit"
+          }
+        ]
+      },
+      "new_blob_bytes": 196936,
+      "docker_push_output": "The push refers to repository [docker.io/heung115/spaghetti-be]\n304db89b251b: Preparing\n5f70bf18a086: Preparing\n5f70bf18a086: Preparing\nc18fceea2878: Preparing\ndf8ac5fd2a69: Preparing\n7de77111c509: Preparing\nb9796b1f52d1: Preparing\n3bc295b94679: Preparing\n012f3c474d69: Preparing\nf98d83061adc: Preparing\nf6e0e88dd8e1: Preparing\nb9796b1f52d1: Waiting\n3bc295b94679: Waiting\n012f3c474d69: Waiting\nf98d83061adc: Waiting\nf6e0e88dd8e1: Waiting\n5f70bf18a086: Layer already exists\ndf8ac5fd2a69: Layer already exists\nc18fceea2878: Layer already exists\n7de77111c509: Layer already exists\nb9796b1f52d1: Layer already exists\nf98d83061adc: Layer already exists\n3bc295b94679: Layer already exists\n012f3c474d69: Layer already exists\nf6e0e88dd8e1: Layer already exists\n304db89b251b: Pushed\nci-b2-measure-runner-37127514976-pulse-5: digest: sha256:bc62d45167d98bcd18515dc4a74c2e708dc2ad341ac4784739acff8da8c852cc size: 2616\n"
+    }
+  ],
+  "timing_summary": {
+    "gradle_bootjar": {
+      "median": 5.136,
+      "min": 4.448,
+      "max": 6.423,
+      "values": [
+        6.423,
+        5.597,
+        5.136,
+        4.682,
+        4.448
+      ]
+    },
+    "layered_extraction_and_mtime_normalization": {
+      "median": 0.978,
+      "min": 0.942,
+      "max": 1.472,
+      "values": [
+        0.978,
+        0.942,
+        0.948,
+        1.472,
+        1.108
+      ]
+    },
+    "docker_image_packaging": {
+      "median": 4.8,
+      "min": 4.69,
+      "max": 4.868,
+      "values": [
+        4.868,
+        4.69,
+        4.8,
+        4.824,
+        4.767
+      ]
+    },
+    "docker_load": {
+      "median": 1.531,
+      "min": 1.528,
+      "max": 1.563,
+      "values": [
+        1.563,
+        1.53,
+        1.531,
+        1.528,
+        1.561
+      ]
+    },
+    "docker_hub_push": {
+      "median": 5.377,
+      "min": 5.19,
+      "max": 6.005,
+      "values": [
+        5.339,
+        6.005,
+        5.377,
+        5.19,
+        5.473
+      ]
+    },
+    "build_to_push_total": {
+      "median": 17.791,
+      "min": 17.356,
+      "max": 19.171,
+      "values": [
+        19.171,
+        18.764,
+        17.791,
+        17.697,
+        17.356
+      ]
+    },
+    "pipeline_wall_total": {
+      "median": 19.021,
+      "min": 18.498,
+      "max": 20.293,
+      "values": [
+        20.293,
+        19.934,
+        19.021,
+        18.71,
+        18.498
+      ]
+    }
+  }
+}

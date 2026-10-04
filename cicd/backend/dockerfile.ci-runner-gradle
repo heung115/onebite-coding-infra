@@ -1,0 +1,10 @@
+# Candidate B packages a runner-built and pre-extracted Spring Boot layered JAR.
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+COPY dependencies/ ./
+COPY spring-boot-loader/ ./
+COPY snapshot-dependencies/ ./
+COPY application/ ./
+
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "/app/spaghetti-0.0.1-SNAPSHOT.jar"]

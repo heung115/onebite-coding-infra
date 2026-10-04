@@ -1,0 +1,396 @@
+{
+  "experiment": "B2 direct Buildx push warm-cache validation",
+  "private_repository": "heung115/tmp-onebite-be",
+  "source_commit": "f1461527ef176570d075d1da274ec176d12d6427",
+  "workflow": "Diagnose Docker Hub layer reuse",
+  "runner": "GitHub-hosted ubuntu-latest (five distinct workflow runs/fresh runners)",
+  "builder": "docker-container",
+  "remote_buildkit_cache": false,
+  "application_source_pulse_sha256": "a910649583aa3d0279e90a106042903d86fa7f8f7d4c259193320cb6d2924f31",
+  "all_cache_restored": true,
+  "cache_bytes_at_build_per_run": [
+    281536921
+  ],
+  "all_bootjar_hashes_same": true,
+  "all_dependency_digests_same": true,
+  "all_dependency_digests_match_reference": true,
+  "all_prebuild_and_prepush_reference_heads_200": true,
+  "all_application_digests_same": false,
+  "all_runs_avoided_docker_load": true,
+  "summary_seconds_and_bytes": {
+    "gradle_cache_restore_action_seconds": {
+      "median": 6.0,
+      "min": 3.0,
+      "max": 8.0
+    },
+    "bootjar_seconds": {
+      "median": 19.465,
+      "min": 15.211,
+      "max": 31.853
+    },
+    "extraction_normalization_seconds": {
+      "median": 0.863,
+      "min": 0.678,
+      "max": 1.053
+    },
+    "image_context_prep_seconds": {
+      "median": 0.025,
+      "min": 0.023,
+      "max": 0.032
+    },
+    "buildx_pre_push_seconds": {
+      "median": 12.782,
+      "min": 7.916,
+      "max": 13.884
+    },
+    "exporter_layers_seconds": {
+      "median": 1.7,
+      "min": 1.5,
+      "max": 1.9
+    },
+    "buildx_registry_push_section_seconds": {
+      "median": 2.505,
+      "min": 2.403,
+      "max": 2.883
+    },
+    "buildx_push_layers_reported_seconds": {
+      "median": 1.1,
+      "min": 1.0,
+      "max": 1.4
+    },
+    "buildx_push_manifest_reported_seconds": {
+      "median": 1.6,
+      "min": 1.5,
+      "max": 1.6
+    },
+    "buildx_command_seconds": {
+      "median": 15.185,
+      "min": 10.422,
+      "max": 16.767
+    },
+    "bootjar_ready_to_push_complete_seconds": {
+      "median": 17.329,
+      "min": 13.477,
+      "max": 20.112
+    },
+    "gradle_start_to_push_complete_seconds": {
+      "median": 39.109,
+      "min": 32.751,
+      "max": 45.33
+    },
+    "job_seconds": {
+      "median": 97.0,
+      "min": 74.0,
+      "max": 112.0
+    },
+    "outbound_tcp_payload_bytes": {
+      "median": 350532,
+      "min": 345597,
+      "max": 368772
+    },
+    "application_compressed_bytes": {
+      "median": 196922,
+      "min": 196922,
+      "max": 196923
+    }
+  },
+  "runs": [
+    {
+      "run_number": 1,
+      "run_id": "37132699334",
+      "run_url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37132699334",
+      "conclusion": "success",
+      "job_started_at_utc": "2026-10-03T15:17:11Z",
+      "job_completed_at_utc": "2026-10-03T15:19:03Z",
+      "job_seconds": 112.0,
+      "gradle_cache_restore_action_seconds": 6.0,
+      "gradle_cache_restored": true,
+      "gradle_cache_bytes_at_build": 281536921,
+      "gradle_cache_files_at_build": 1286,
+      "bootjar_seconds": 18.997,
+      "bootjar_sha256": "b9eb24dabb68381b012e9e319e1ccd21fa6f64b83b885b75c1f1c2427a4fee0e",
+      "bootjar_bytes": 69932986,
+      "extraction_normalization_seconds": 0.863,
+      "image_context_prep_seconds": 0.025,
+      "buildx_pre_push_seconds": 13.884,
+      "exporter_layers_seconds": 1.9,
+      "buildx_registry_push_section_seconds": 2.883,
+      "buildx_push_layers_reported_seconds": 1.4,
+      "buildx_push_manifest_reported_seconds": 1.6,
+      "buildx_command_seconds": 16.767,
+      "bootjar_ready_to_push_complete_seconds": 20.112,
+      "gradle_start_to_push_complete_seconds": 39.109,
+      "outbound_tcp_payload_bytes": 362271,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_compressed_bytes": 62484476,
+      "dependency_digest_same_as_reference": true,
+      "reference_blob_http_statuses_before_build": [
+        200
+      ],
+      "reference_blob_http_statuses_before_push": [
+        200
+      ],
+      "application_digest": "sha256:d1518a5dc8c5184ed1e09785eb9d9909f621a54a9092206606c241b06e31e876",
+      "application_compressed_bytes": 196922,
+      "application_digest_same_as_reference": false,
+      "manifest_digest": "sha256:f1bcd29f3b4838d2552f05b05116ad34a62e95d85401db923de12d1807e04466",
+      "layer_digests_changed_vs_reference": [
+        {
+          "index": 0,
+          "label": "other",
+          "reference_digest": "sha256:bb55dba1a9869607763aad06178aae215048b2b0139f9ae3f94eba425db571f8",
+          "current_digest": "sha256:4e07a0f12b2c009f98326fa391e869bd52fc63728c482400af6cb752bc16744b"
+        },
+        {
+          "index": 1,
+          "label": "other",
+          "reference_digest": "sha256:935783f05fcd1a9b89d94cbd0e78c8e0ae1ac01d4ecac7b9b0af9bfc899aec47",
+          "current_digest": "sha256:06ad70e463aa4a17833d00d6d5d346c895ebb66fee637eefd67024dc6cdc2f1c"
+        },
+        {
+          "index": 6,
+          "label": "other",
+          "reference_digest": "sha256:16d606cd85a75cc164e55412d53b4d33d4376150ff3fb17b43c8d7b271f06eb5",
+          "current_digest": "sha256:8c980bf168229195ccb354bd6f5828553e2703cbca38dcd42dfbc09ac1a9bcc7"
+        },
+        {
+          "index": 10,
+          "label": "application",
+          "reference_digest": "sha256:b80b24d534e6fffcb2005bda8a0c85584dbdb8e07d0aac2ac3682b5bba7300f9",
+          "current_digest": "sha256:d1518a5dc8c5184ed1e09785eb9d9909f621a54a9092206606c241b06e31e876"
+        }
+      ],
+      "docker_load_used": false,
+      "source_pulse_sha256": "a910649583aa3d0279e90a106042903d86fa7f8f7d4c259193320cb6d2924f31",
+      "source_commit": "f1461527ef176570d075d1da274ec176d12d6427"
+    },
+    {
+      "run_number": 2,
+      "run_id": "37132839517",
+      "run_url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37132839517",
+      "conclusion": "success",
+      "job_started_at_utc": "2026-10-03T15:19:34Z",
+      "job_completed_at_utc": "2026-10-03T15:21:14Z",
+      "job_seconds": 100.0,
+      "gradle_cache_restore_action_seconds": 7.0,
+      "gradle_cache_restored": true,
+      "gradle_cache_bytes_at_build": 281536921,
+      "gradle_cache_files_at_build": 1286,
+      "bootjar_seconds": 31.853,
+      "bootjar_sha256": "b9eb24dabb68381b012e9e319e1ccd21fa6f64b83b885b75c1f1c2427a4fee0e",
+      "bootjar_bytes": 69932986,
+      "extraction_normalization_seconds": 0.961,
+      "image_context_prep_seconds": 0.028,
+      "buildx_pre_push_seconds": 7.916,
+      "exporter_layers_seconds": 1.5,
+      "buildx_registry_push_section_seconds": 2.505,
+      "buildx_push_layers_reported_seconds": 1.1,
+      "buildx_push_manifest_reported_seconds": 1.6,
+      "buildx_command_seconds": 10.422,
+      "bootjar_ready_to_push_complete_seconds": 13.477,
+      "gradle_start_to_push_complete_seconds": 45.33,
+      "outbound_tcp_payload_bytes": 348968,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_compressed_bytes": 62484476,
+      "dependency_digest_same_as_reference": true,
+      "reference_blob_http_statuses_before_build": [
+        200
+      ],
+      "reference_blob_http_statuses_before_push": [
+        200
+      ],
+      "application_digest": "sha256:4230ab068102852dfabde7b909959d83bdf8a701521f9045bacbd3a5de652516",
+      "application_compressed_bytes": 196923,
+      "application_digest_same_as_reference": false,
+      "manifest_digest": "sha256:90b3bdbbdb572eb2b27baa30c4962a81b187afb002c9da4fc7c2ee849fe8aea9",
+      "layer_digests_changed_vs_reference": [
+        {
+          "index": 6,
+          "label": "other",
+          "reference_digest": "sha256:8c980bf168229195ccb354bd6f5828553e2703cbca38dcd42dfbc09ac1a9bcc7",
+          "current_digest": "sha256:78a17d129a39ac582ad1e5f935ee35f6937d2a4438073a90e5883dcbe94a15ec"
+        },
+        {
+          "index": 10,
+          "label": "application",
+          "reference_digest": "sha256:d1518a5dc8c5184ed1e09785eb9d9909f621a54a9092206606c241b06e31e876",
+          "current_digest": "sha256:4230ab068102852dfabde7b909959d83bdf8a701521f9045bacbd3a5de652516"
+        }
+      ],
+      "docker_load_used": false,
+      "source_pulse_sha256": "a910649583aa3d0279e90a106042903d86fa7f8f7d4c259193320cb6d2924f31",
+      "source_commit": "f1461527ef176570d075d1da274ec176d12d6427"
+    },
+    {
+      "run_number": 3,
+      "run_id": "37132984446",
+      "run_url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37132984446",
+      "conclusion": "success",
+      "job_started_at_utc": "2026-10-03T15:22:05Z",
+      "job_completed_at_utc": "2026-10-03T15:23:42Z",
+      "job_seconds": 97.0,
+      "gradle_cache_restore_action_seconds": 8.0,
+      "gradle_cache_restored": true,
+      "gradle_cache_bytes_at_build": 281536921,
+      "gradle_cache_files_at_build": 1286,
+      "bootjar_seconds": 29.011,
+      "bootjar_sha256": "b9eb24dabb68381b012e9e319e1ccd21fa6f64b83b885b75c1f1c2427a4fee0e",
+      "bootjar_bytes": 69932986,
+      "extraction_normalization_seconds": 1.053,
+      "image_context_prep_seconds": 0.032,
+      "buildx_pre_push_seconds": 9.326,
+      "exporter_layers_seconds": 1.7,
+      "buildx_registry_push_section_seconds": 2.672,
+      "buildx_push_layers_reported_seconds": 1.3,
+      "buildx_push_manifest_reported_seconds": 1.6,
+      "buildx_command_seconds": 11.999,
+      "bootjar_ready_to_push_complete_seconds": 15.531,
+      "gradle_start_to_push_complete_seconds": 44.542,
+      "outbound_tcp_payload_bytes": 350532,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_compressed_bytes": 62484476,
+      "dependency_digest_same_as_reference": true,
+      "reference_blob_http_statuses_before_build": [
+        200
+      ],
+      "reference_blob_http_statuses_before_push": [
+        200
+      ],
+      "application_digest": "sha256:115d241ee6858a12a82743000647e49e5a3299ddd05233a16af92245bb9727c3",
+      "application_compressed_bytes": 196922,
+      "application_digest_same_as_reference": false,
+      "manifest_digest": "sha256:90da2a7ac6f47d227409ccbef0a63f25dfcab1b158547c63798754cab83207ec",
+      "layer_digests_changed_vs_reference": [
+        {
+          "index": 6,
+          "label": "other",
+          "reference_digest": "sha256:78a17d129a39ac582ad1e5f935ee35f6937d2a4438073a90e5883dcbe94a15ec",
+          "current_digest": "sha256:b75eb44dd1ea2a2aeeeacbe9e864ad677a0fb69f81b212d3e03b284275db87b6"
+        },
+        {
+          "index": 10,
+          "label": "application",
+          "reference_digest": "sha256:4230ab068102852dfabde7b909959d83bdf8a701521f9045bacbd3a5de652516",
+          "current_digest": "sha256:115d241ee6858a12a82743000647e49e5a3299ddd05233a16af92245bb9727c3"
+        }
+      ],
+      "docker_load_used": false,
+      "source_pulse_sha256": "a910649583aa3d0279e90a106042903d86fa7f8f7d4c259193320cb6d2924f31",
+      "source_commit": "f1461527ef176570d075d1da274ec176d12d6427"
+    },
+    {
+      "run_number": 4,
+      "run_id": "37133107515",
+      "run_url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37133107515",
+      "conclusion": "success",
+      "job_started_at_utc": "2026-10-03T15:24:09Z",
+      "job_completed_at_utc": "2026-10-03T15:25:23Z",
+      "job_seconds": 74.0,
+      "gradle_cache_restore_action_seconds": 3.0,
+      "gradle_cache_restored": true,
+      "gradle_cache_bytes_at_build": 281536921,
+      "gradle_cache_files_at_build": 1286,
+      "bootjar_seconds": 15.211,
+      "bootjar_sha256": "b9eb24dabb68381b012e9e319e1ccd21fa6f64b83b885b75c1f1c2427a4fee0e",
+      "bootjar_bytes": 69932986,
+      "extraction_normalization_seconds": 0.678,
+      "image_context_prep_seconds": 0.023,
+      "buildx_pre_push_seconds": 12.955,
+      "exporter_layers_seconds": 1.6,
+      "buildx_registry_push_section_seconds": 2.473,
+      "buildx_push_layers_reported_seconds": 1.0,
+      "buildx_push_manifest_reported_seconds": 1.6,
+      "buildx_command_seconds": 15.428,
+      "bootjar_ready_to_push_complete_seconds": 17.54,
+      "gradle_start_to_push_complete_seconds": 32.751,
+      "outbound_tcp_payload_bytes": 345597,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_compressed_bytes": 62484476,
+      "dependency_digest_same_as_reference": true,
+      "reference_blob_http_statuses_before_build": [
+        200
+      ],
+      "reference_blob_http_statuses_before_push": [
+        200
+      ],
+      "application_digest": "sha256:f39244333f57ebd661f27daa0a767980b5911ed3ba73db6d95a8d3ed6b321c7d",
+      "application_compressed_bytes": 196922,
+      "application_digest_same_as_reference": false,
+      "manifest_digest": "sha256:832a8334ee27bb81d276353929cc2a0d48eb43b13079b39ae0341391fa7b8b7c",
+      "layer_digests_changed_vs_reference": [
+        {
+          "index": 6,
+          "label": "other",
+          "reference_digest": "sha256:b75eb44dd1ea2a2aeeeacbe9e864ad677a0fb69f81b212d3e03b284275db87b6",
+          "current_digest": "sha256:26178b69cc07a0a53ef335bbedab0e2b5b789bed166fbe2f6ff0a77534687daa"
+        },
+        {
+          "index": 10,
+          "label": "application",
+          "reference_digest": "sha256:115d241ee6858a12a82743000647e49e5a3299ddd05233a16af92245bb9727c3",
+          "current_digest": "sha256:f39244333f57ebd661f27daa0a767980b5911ed3ba73db6d95a8d3ed6b321c7d"
+        }
+      ],
+      "docker_load_used": false,
+      "source_pulse_sha256": "a910649583aa3d0279e90a106042903d86fa7f8f7d4c259193320cb6d2924f31",
+      "source_commit": "f1461527ef176570d075d1da274ec176d12d6427"
+    },
+    {
+      "run_number": 5,
+      "run_id": "37133201177",
+      "run_url": "https://github.com/heung115/tmp-onebite-be/actions/runs/37133201177",
+      "conclusion": "success",
+      "job_started_at_utc": "2026-10-03T15:25:51Z",
+      "job_completed_at_utc": "2026-10-03T15:27:15Z",
+      "job_seconds": 84.0,
+      "gradle_cache_restore_action_seconds": 3.0,
+      "gradle_cache_restored": true,
+      "gradle_cache_bytes_at_build": 281536921,
+      "gradle_cache_files_at_build": 1286,
+      "bootjar_seconds": 19.465,
+      "bootjar_sha256": "b9eb24dabb68381b012e9e319e1ccd21fa6f64b83b885b75c1f1c2427a4fee0e",
+      "bootjar_bytes": 69932986,
+      "extraction_normalization_seconds": 0.793,
+      "image_context_prep_seconds": 0.024,
+      "buildx_pre_push_seconds": 12.782,
+      "exporter_layers_seconds": 1.8,
+      "buildx_registry_push_section_seconds": 2.403,
+      "buildx_push_layers_reported_seconds": 1.0,
+      "buildx_push_manifest_reported_seconds": 1.5,
+      "buildx_command_seconds": 15.185,
+      "bootjar_ready_to_push_complete_seconds": 17.329,
+      "gradle_start_to_push_complete_seconds": 36.794,
+      "outbound_tcp_payload_bytes": 368772,
+      "dependency_digest": "sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d",
+      "dependency_compressed_bytes": 62484476,
+      "dependency_digest_same_as_reference": true,
+      "reference_blob_http_statuses_before_build": [
+        200
+      ],
+      "reference_blob_http_statuses_before_push": [
+        200
+      ],
+      "application_digest": "sha256:ab7dc120684b4f4a399d2a008692d98e39eb4e677a983eed6005c85ce519be83",
+      "application_compressed_bytes": 196922,
+      "application_digest_same_as_reference": false,
+      "manifest_digest": "sha256:beb4222a2c0c71ad3ce56579267900515d82f1c9842e09108d2c4f780862984f",
+      "layer_digests_changed_vs_reference": [
+        {
+          "index": 6,
+          "label": "other",
+          "reference_digest": "sha256:26178b69cc07a0a53ef335bbedab0e2b5b789bed166fbe2f6ff0a77534687daa",
+          "current_digest": "sha256:01cf7417230a585e909c9d803230e12dccc329a8a6725dffab80bfa5249decaf"
+        },
+        {
+          "index": 10,
+          "label": "application",
+          "reference_digest": "sha256:f39244333f57ebd661f27daa0a767980b5911ed3ba73db6d95a8d3ed6b321c7d",
+          "current_digest": "sha256:ab7dc120684b4f4a399d2a008692d98e39eb4e677a983eed6005c85ce519be83"
+        }
+      ],
+      "docker_load_used": false,
+      "source_pulse_sha256": "a910649583aa3d0279e90a106042903d86fa7f8f7d4c259193320cb6d2924f31",
+      "source_commit": "f1461527ef176570d075d1da274ec176d12d6427"
+    }
+  ]
+}

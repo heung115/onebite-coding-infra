@@ -1,0 +1,85 @@
+name: B2 runner Gradle cache measurement
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Run cold, seed cache, measure five pulses in one warm job, or run one pulse on a fresh warm-cache runner
+        required: true
+        type: choice
+        options:
+          - cold
+          - seed
+          - warm
+          - warm-single
+        default: warm
+      pulse:
+        description: Comment pulse index for warm-single runs (use distinct indexes 21 through 25)
+        required: false
+        type: choice
+        options:
+          - '21'
+          - '22'
+          - '23'
+          - '24'
+          - '25'
+        default: '21'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-b2-runner-gradle-${{ github.ref }}-${{ inputs.mode }}
+  cancel-in-progress: false
+
+jobs:
+  measure:
+    name: B2 runner Gradle (${{ inputs.mode }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout personal measurement commit
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle User Home cache
+        id: gradle-cache
+        if: inputs.mode != 'cold'
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: heung115
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Set up docker-container Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker-container
+
+      - name: Measure runner Gradle build and image delivery
+        env:
+          IMAGE_REPO: heung115/spaghetti-be
+          IMAGE_TAG_PREFIX: ci-b2-measure-runner-${{ github.run_id }}
+          BUILDER: ${{ steps.buildx.outputs.name }}
+          MEASURE_MODE: ${{ inputs.mode }}
+          MEASURE_PULSE_INDEX: ${{ inputs.pulse }}
+          GRADLE_BUILD_ACTION_CACHE_RESTORED: ${{ env.GRADLE_BUILD_ACTION_CACHE_RESTORED }}
+          EXPECTED_DEPENDENCIES_DIGEST: sha256:2eb1e23efc9357f789958473886c1bd03af5bd997b85f88b005b07d2e8cd3e7d
+        run: python3 .github/scripts/measure-ci-b2-runner-gradle.py
+
+      - name: Upload raw runner build, package, push, and summary logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-b2-measure-runner-${{ inputs.mode }}-${{ github.run_id }}
+          path: measure-output/ci-b2-measure-runner-${{ github.run_id }}/
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,49 @@
+name: B2 hosted CI measurement
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-b2-measure-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  measure:
+    name: B2 validation and five source pulses
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout measurement commit
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: heung115
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Set up docker-container Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker-container
+
+      - name: Validate baseline and measure five source-only pulses
+        id: measure
+        env:
+          IMAGE_REPO: heung115/spaghetti-be
+          IMAGE_TAG_PREFIX: ci-b2-measure-${{ github.run_id }}
+          BUILDER: ${{ steps.buildx.outputs.name }}
+        run: python3 .github/scripts/measure-ci-b2-hosted.py
+
+      - name: Upload raw build, push, and summary logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-b2-measure-${{ github.run_id }}
+          path: measure-output/ci-b2-measure-${{ github.run_id }}/
+          if-no-files-found: error
+          retention-days: 30
