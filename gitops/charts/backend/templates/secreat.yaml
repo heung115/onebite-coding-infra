@@ -1,0 +1,16 @@
+# templates/secret.yaml
+{{- /* [gitops] 시크릿을 ExternalSecret 이 소유할 때는 차트 Secret 을 만들지 않는다 (원본 값: 항상 생성) */}}
+{{- if .Values.secret }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ include "backend.fullname" . }}-secret
+  labels:
+    {{- include "backend.labels" . | nindent 4 }}
+type: Opaque
+stringData:
+  # .Values.secret에 들어있는 key-value를 순회하며 Secret에 주입
+  {{- range $key, $value := .Values.secret }}
+  {{ $key }}: {{ $value | quote }}
+  {{- end }}
+{{- end }}

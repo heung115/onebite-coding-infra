@@ -1,0 +1,7 @@
+image:
+  repository: heung115/spaghetti-be
+  pullPolicy: Always
+  tag: "sha-aa3311adda78ae157c0f8fceaeddb6e6d2ca0777"
+secret: null
+db:
+  secretName: backend-prod-secret

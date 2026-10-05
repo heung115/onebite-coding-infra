@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: timezone-config
+  namespace: prod
+data:
+  TZ: Asia/Seoul

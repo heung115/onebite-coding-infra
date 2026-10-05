@@ -1,0 +1,12 @@
+scenario	trial	trigger_to_terminal_s	operation	hook	app_sync	app_health	backend_ready	hook_job_duration_s
+normal	integration-success-1	21.928	Succeeded	Succeeded	Synced	Healthy	1/1	4.000
+normal	integration-success-2	20.276	Succeeded	Succeeded	Synced	Healthy	1/1	5.000
+normal	integration-success-3	22.772	Succeeded	Succeeded	Synced	Healthy	1/1	5.000
+normal	median	21.928	Succeeded	Succeeded	Synced	Healthy	1/1	5.000
+normal	range	20.276-22.772	-	-	-	-	-	4.000-5.000
+failure	integration-failure-1	32.435	Failed	Failed	Synced	Healthy	1/1	4.000
+failure	integration-failure-2	31.196	Failed	Failed	Synced	Healthy	1/1	3.000
+failure	integration-failure-3	40.642	Failed	Failed	Synced	Healthy	1/1	4.000
+failure	median	32.435	Failed	Failed	Synced	Healthy	1/1	4.000
+failure	range	31.196-40.642	-	-	-	-	-	3.000-4.000
+recovery	integration-restore-success	32.354	Succeeded	Succeeded	Synced	Healthy	1/1	5.000

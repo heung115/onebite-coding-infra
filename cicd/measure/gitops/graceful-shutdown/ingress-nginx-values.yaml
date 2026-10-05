@@ -1,0 +1,7 @@
+# 원본 terraform/main.tf 의 ingress-nginx 설정. 차트 버전은 원본 state 와 같은 4.12.2
+controller:
+  ingressClass: nginx
+  service:
+    # 원본은 LoadBalancer(MetalLB) + externalTrafficPolicy: Local.
+    # 부하를 클러스터 내부 controller Service로 보내 ingress 종료 구간을 측정한다.
+    type: ClusterIP

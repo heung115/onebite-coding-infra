@@ -1,0 +1,9 @@
+cohort	trial	push_to_OutOfSync_s	push_to_operation_started_s	push_to_ConfigMap_NotFound_s	OutOfSync_to_ConfigMap_NotFound_s	push_to_Synced_Healthy_and_operation_Succeeded_s	evidence
+prune-false-control	1	46.167	NA	retained_30.161s_after_OutOfSync	NA	no_automated_operation	prune-false-control-rerun/results.tsv
+prune-true-guarded-initial	1	31.330	blocked_by_allowEmpty_false	177.774	146.444	187.952	prune-true-result/meta.txt; postcompletion-app.json
+prune-true-after-allowEmpty-enable	1	0.590	29.358	29.358	28.769	39.536	prune-true-allowempty/meta.txt; postcompletion-app.json
+prune-true-steady-policy	1	30.869	30.869	31.854	0.985	31.854	prune-true-rep2/events.tsv; prune-true-rep2/timeline.tsv; prune-true-rep2/app-final.json
+prune-true-steady-policy	2	38.208	38.208	39.279	1.071	39.279	prune-true-rep3/events.tsv; prune-true-rep3/results.tsv; prune-true-rep3/app-final.json
+prune-true-steady-policy	3	42.361	42.361	43.338	0.977	43.338	prune-true-rep4/events.tsv; prune-true-rep4/results.tsv; prune-true-rep4/app-final.json
+prune-true-steady-policy	median	38.208	38.208	39.279	0.985	39.279	three same-condition manifest-delete trials
+prune-true-steady-policy	range	30.869-42.361	30.869-42.361	31.854-43.338	0.977-1.071	31.854-43.338	Kubernetes Event time for OutOfSync/operation; client polling for ConfigMap absence and completed app state

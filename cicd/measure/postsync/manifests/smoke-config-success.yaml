@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-postsync-smoke-20260930
+  namespace: dev-back
+data:
+  RUN_ID: example-success
+  SMOKE_URL: http://backend-dev-back:8080/

@@ -1,0 +1,5 @@
+# prod 환경 값. 원본 terraform/backend.tf 의 set 블록을 그대로 옮김.
+image:
+    tag: "latest"
+db:
+    secretName: db-secret-prod

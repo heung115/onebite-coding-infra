@@ -1,0 +1,28 @@
+# ArgoCD (단일 노드 홈서버용 최소 구성)
+# - Dex(SSO), notifications 는 이번 측정 범위 밖이라 끔
+# - 외부 노출 없음: UI 는 kubectl port-forward 로만 접근
+# - reconciliation: 기본값(120s + jitter 60s)으로 before/after 를 측정한 뒤,
+#   배포 반영 대기를 줄이려고 30s(jitter 0) + repo-server 브랜치 커밋 캐시 30s(기본 2m) 로 조정
+global:
+    domain: argocd.local
+
+configs:
+    params:
+        server.insecure: true
+    cm:
+        timeout.reconciliation: 30s
+        timeout.reconciliation.jitter: 0s
+
+repoServer:
+    extraArgs:
+        - --revision-cache-expiration=30s
+
+dex:
+    enabled: false
+
+notifications:
+    enabled: false
+
+server:
+    service:
+        type: ClusterIP

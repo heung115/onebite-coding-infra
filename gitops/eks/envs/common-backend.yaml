@@ -1,0 +1,5 @@
+# EKS 에서만 다른 값. 이미지는 GHCR(private) 대신 같은 계정 ECR 복사본을 노드 IAM 으로 받는다.
+# (onebite-infra-eks/scripts/sync-backend-image.sh 가 envs/<env>/backend.yaml 의 태그를 복사)
+image:
+    repository: "591109180497.dkr.ecr.ap-northeast-2.amazonaws.com/onebite/tmp-onebite-be"
+imagePullSecrets: []

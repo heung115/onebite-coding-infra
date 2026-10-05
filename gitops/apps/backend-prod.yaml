@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: backend-prod
+    namespace: argocd
+spec:
+    project: default
+    sources:
+        - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+          targetRevision: main
+          path: charts/backend
+          helm:
+              releaseName: backend-prod
+              valueFiles:
+                  - values.yaml
+                  - $values/envs/common-backend.yaml
+                  - $values/envs/prod/backend.yaml
+        - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+          targetRevision: main
+          ref: values
+          path: envs/prod
+          directory:
+              include: external-secret.yaml
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+    syncPolicy:
+        automated:
+            prune: true
+            selfHeal: true

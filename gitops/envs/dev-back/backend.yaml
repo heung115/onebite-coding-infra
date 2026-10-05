@@ -1,0 +1,5 @@
+# dev-back 환경 값. 원본 terraform/backend.tf 의 set 블록을 그대로 옮김.
+image:
+    tag: "sha-41d2e0f5c5f73bda313b35302f077ba6587ddad2"
+db:
+    secretName: db-secret-dev-back

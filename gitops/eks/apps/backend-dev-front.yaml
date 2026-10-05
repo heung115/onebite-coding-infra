@@ -1,0 +1,35 @@
+# EKS 용 ArgoCD Application. main 의 apps/backend-dev-front.yaml 과 같고 targetRevision 만 eks 브랜치.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: backend-dev-front
+    namespace: argocd
+    # 앱을 지우면 배포된 리소스도 같이 지운다 (destroy 순서 보장)
+    finalizers:
+        - resources-finalizer.argocd.argoproj.io
+spec:
+    project: default
+    sources:
+        - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+          targetRevision: eks
+          path: charts/backend
+          helm:
+              releaseName: backend-dev-front
+              valueFiles:
+                  - values.yaml
+                  - $values/envs/common-backend.yaml
+                  - $values/envs/dev-front/backend.yaml
+                  - $values/eks/envs/common-backend.yaml
+        - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+          targetRevision: eks
+          ref: values
+          path: eks/envs/dev-front
+          directory:
+              include: external-secret.yaml
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: dev-front
+    syncPolicy:
+        automated:
+            prune: true
+            selfHeal: true

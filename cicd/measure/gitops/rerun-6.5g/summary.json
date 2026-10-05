@@ -1,0 +1,371 @@
+{
+  "runs": {
+    "before_deploy": [
+      {
+        "i": 1,
+        "conclusion": "success",
+        "push_to_ready": 194.24599981307983,
+        "push_to_restart": 108.76899981498718,
+        "restart_to_ready": 85.47699999809265,
+        "build": 84.0,
+        "run_total": 107.0
+      },
+      {
+        "i": 2,
+        "conclusion": "success",
+        "push_to_ready": 199.1230001449585,
+        "push_to_restart": 112.0680000782013,
+        "restart_to_ready": 87.0550000667572,
+        "build": 87.0,
+        "run_total": 110.0
+      },
+      {
+        "i": 3,
+        "conclusion": "success",
+        "push_to_ready": 195.76900005340576,
+        "push_to_restart": 114.7170000076294,
+        "restart_to_ready": 81.05200004577637,
+        "build": 91.0,
+        "run_total": 115.0
+      }
+    ],
+    "before_failure": [
+      {
+        "i": 1,
+        "conclusion": "success",
+        "ci_done_after_push": 110.76199984550476,
+        "first_fail_after_ci_success": 57.6010000705719,
+        "recover_after_fix_push": 196.53200006484985,
+        "old_pod_ready": "1"
+      },
+      {
+        "i": 2,
+        "conclusion": "success",
+        "ci_done_after_push": 130.1449999809265,
+        "first_fail_after_ci_success": 41.823999881744385,
+        "recover_after_fix_push": 205.77099990844727,
+        "old_pod_ready": "1"
+      },
+      {
+        "i": 3,
+        "conclusion": "success",
+        "ci_done_after_push": 123.49399995803833,
+        "first_fail_after_ci_success": 55.97699999809265,
+        "recover_after_fix_push": 186.606999874115,
+        "old_pod_ready": "1"
+      }
+    ],
+    "after_deploy_default": [
+      {
+        "i": 1,
+        "conclusion": "success",
+        "push_to_ready": 245.03800010681152,
+        "build": 94.0,
+        "push_to_gitops_commit": 115.78200006484985,
+        "gitops_commit_to_applied": 43.884000062942505,
+        "applied_to_ready": 85.37199997901917,
+        "app_state": "Synced/Healthy"
+      },
+      {
+        "i": 2,
+        "conclusion": "success",
+        "push_to_ready": 321.7660000324249,
+        "build": 85.0,
+        "push_to_gitops_commit": 105.81200003623962,
+        "gitops_commit_to_applied": 131.56399989128113,
+        "applied_to_ready": 84.39000010490417,
+        "app_state": "Synced/Healthy"
+      },
+      {
+        "i": 3,
+        "conclusion": "success",
+        "push_to_ready": 346.2979998588562,
+        "build": 99.0,
+        "push_to_gitops_commit": 119.46499991416931,
+        "gitops_commit_to_applied": 142.95600008964539,
+        "applied_to_ready": 83.8769998550415,
+        "app_state": "Synced/Healthy"
+      }
+    ],
+    "after_deploy_poll30": [
+      {
+        "i": 1,
+        "conclusion": "success",
+        "push_to_ready": 354.3359999656677,
+        "build": 95.0,
+        "push_to_gitops_commit": 117.26999998092651,
+        "gitops_commit_to_applied": 155.7170000076294,
+        "applied_to_ready": 81.34899997711182,
+        "app_state": "Synced/Healthy"
+      },
+      {
+        "i": 2,
+        "conclusion": "success",
+        "push_to_ready": 268.414999961853,
+        "build": 86.0,
+        "push_to_gitops_commit": 106.70199990272522,
+        "gitops_commit_to_applied": 80.44400000572205,
+        "applied_to_ready": 81.26900005340576,
+        "app_state": "Synced/Healthy"
+      },
+      {
+        "i": 3,
+        "conclusion": "success",
+        "push_to_ready": 265.19000005722046,
+        "build": 86.0,
+        "push_to_gitops_commit": 106.44400000572205,
+        "gitops_commit_to_applied": 78.06200003623962,
+        "applied_to_ready": 80.68400001525879,
+        "app_state": "Synced/Healthy"
+      }
+    ],
+    "after_failure_app": [
+      {
+        "i": 1,
+        "conclusion": "success",
+        "first_fail_after_ci_success": 85.44400000572205,
+        "degraded_after_bad_applied": 601.489000082016,
+        "degraded_after_first_fail": 534.3280000686646,
+        "recover_after_fix_push": 307.46399998664856,
+        "old_pod_ready": "1"
+      },
+      {
+        "i": 2,
+        "conclusion": "success",
+        "first_fail_after_ci_success": 282.6119999885559,
+        "degraded_after_bad_applied": 601.8389999866486,
+        "degraded_after_first_fail": 525.9760000705719,
+        "recover_after_fix_push": 342.7079999446869,
+        "old_pod_ready": "1"
+      },
+      {
+        "i": 3,
+        "conclusion": "success",
+        "first_fail_after_ci_success": 80.31200003623962,
+        "degraded_after_bad_applied": 601.3689999580383,
+        "degraded_after_first_fail": 543.4459998607635,
+        "recover_after_fix_push": 291.8310000896454,
+        "old_pod_ready": "1"
+      }
+    ],
+    "after_failure_gitops": [
+      {
+        "i": 1,
+        "conclusion": "success",
+        "first_fail_after_ci_success": 72.01300001144409,
+        "degraded_after_bad_applied": null,
+        "degraded_after_first_fail": null,
+        "recover_after_fix_push": 98.36899995803833,
+        "old_pod_ready": "1"
+      },
+      {
+        "i": 2,
+        "conclusion": "success",
+        "first_fail_after_ci_success": 143.0369999408722,
+        "degraded_after_bad_applied": null,
+        "degraded_after_first_fail": null,
+        "recover_after_fix_push": 105.45799994468689,
+        "old_pod_ready": "1"
+      },
+      {
+        "i": 3,
+        "conclusion": "success",
+        "first_fail_after_ci_success": 69.15000009536743,
+        "degraded_after_bad_applied": null,
+        "degraded_after_first_fail": null,
+        "recover_after_fix_push": 109.50200009346008,
+        "old_pod_ready": "1"
+      }
+    ]
+  },
+  "summary": {
+    "before_deploy": {
+      "push_to_ready": {
+        "median": 195.8,
+        "min": 194.2,
+        "max": 199.1,
+        "n": 3
+      },
+      "push_to_restart": {
+        "median": 112.1,
+        "min": 108.8,
+        "max": 114.7,
+        "n": 3
+      },
+      "restart_to_ready": {
+        "median": 85.5,
+        "min": 81.1,
+        "max": 87.1,
+        "n": 3
+      },
+      "build": {
+        "median": 87.0,
+        "min": 84.0,
+        "max": 91.0,
+        "n": 3
+      },
+      "run_total": {
+        "median": 110.0,
+        "min": 107.0,
+        "max": 115.0,
+        "n": 3
+      },
+      "conclusions": [
+        "success",
+        "success",
+        "success"
+      ]
+    },
+    "before_failure": {
+      "ci_done_after_push": {
+        "median": 123.5,
+        "min": 110.8,
+        "max": 130.1,
+        "n": 3
+      },
+      "first_fail_after_ci_success": {
+        "median": 56.0,
+        "min": 41.8,
+        "max": 57.6,
+        "n": 3
+      },
+      "recover_after_fix_push": {
+        "median": 196.5,
+        "min": 186.6,
+        "max": 205.8,
+        "n": 3
+      },
+      "conclusions": [
+        "success",
+        "success",
+        "success"
+      ]
+    },
+    "after_deploy_default": {
+      "push_to_ready": {
+        "median": 321.8,
+        "min": 245.0,
+        "max": 346.3,
+        "n": 3
+      },
+      "build": {
+        "median": 94.0,
+        "min": 85.0,
+        "max": 99.0,
+        "n": 3
+      },
+      "push_to_gitops_commit": {
+        "median": 115.8,
+        "min": 105.8,
+        "max": 119.5,
+        "n": 3
+      },
+      "gitops_commit_to_applied": {
+        "median": 131.6,
+        "min": 43.9,
+        "max": 143.0,
+        "n": 3
+      },
+      "applied_to_ready": {
+        "median": 84.4,
+        "min": 83.9,
+        "max": 85.4,
+        "n": 3
+      },
+      "conclusions": [
+        "success",
+        "success",
+        "success"
+      ]
+    },
+    "after_deploy_poll30": {
+      "push_to_ready": {
+        "median": 268.4,
+        "min": 265.2,
+        "max": 354.3,
+        "n": 3
+      },
+      "build": {
+        "median": 86.0,
+        "min": 86.0,
+        "max": 95.0,
+        "n": 3
+      },
+      "push_to_gitops_commit": {
+        "median": 106.7,
+        "min": 106.4,
+        "max": 117.3,
+        "n": 3
+      },
+      "gitops_commit_to_applied": {
+        "median": 80.4,
+        "min": 78.1,
+        "max": 155.7,
+        "n": 3
+      },
+      "applied_to_ready": {
+        "median": 81.3,
+        "min": 80.7,
+        "max": 81.3,
+        "n": 3
+      },
+      "conclusions": [
+        "success",
+        "success",
+        "success"
+      ]
+    },
+    "after_failure_app": {
+      "first_fail_after_ci_success": {
+        "median": 85.4,
+        "min": 80.3,
+        "max": 282.6,
+        "n": 3
+      },
+      "degraded_after_bad_applied": {
+        "median": 601.5,
+        "min": 601.4,
+        "max": 601.8,
+        "n": 3
+      },
+      "degraded_after_first_fail": {
+        "median": 534.3,
+        "min": 526.0,
+        "max": 543.4,
+        "n": 3
+      },
+      "recover_after_fix_push": {
+        "median": 307.5,
+        "min": 291.8,
+        "max": 342.7,
+        "n": 3
+      },
+      "conclusions": [
+        "success",
+        "success",
+        "success"
+      ]
+    },
+    "after_failure_gitops": {
+      "first_fail_after_ci_success": {
+        "median": 72.0,
+        "min": 69.2,
+        "max": 143.0,
+        "n": 3
+      },
+      "degraded_after_bad_applied": null,
+      "degraded_after_first_fail": null,
+      "recover_after_fix_push": {
+        "median": 105.5,
+        "min": 98.4,
+        "max": 109.5,
+        "n": 3
+      },
+      "conclusions": [
+        "success",
+        "success",
+        "success"
+      ]
+    }
+  }
+}

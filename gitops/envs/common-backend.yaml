@@ -1,0 +1,26 @@
+# 원본 spaghetti-infra/values/backend.yaml 에서 시크릿(secret:) 블록만 뺀 공통 값.
+# 시크릿은 envs/<env>/external-secret.yaml 이 Git 밖 저장소에서 주입한다.
+replicaCount: 1
+
+# 깨진 배포를 빨리 Degraded 로 판정하게 한다(k8s 기본 600초).
+# 앱 시작(readiness initialDelay 70초 + 기동 40초 안팎)보다 충분히 길게 180초.
+progressDeadlineSeconds: 180
+
+nameOverride: "backend"
+
+image:
+    # 원본: heung115/spaghetti-be (Docker Hub). 측정 중에는 임시 private GHCR 사용.
+    repository: "ghcr.io/heung115/tmp-onebite-be"
+    pullPolicy: Always
+
+imagePullSecrets:
+    - name: ghcr-tmp-pull
+
+service:
+    type: ClusterIP
+    port: 8080
+
+config:
+
+# 차트 Secret 템플릿이 빈 Secret 을 만들지 않게 비워 둔다(실제 Secret 은 ExternalSecret 이 소유)
+secret: {}

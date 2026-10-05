@@ -1,0 +1,21 @@
+# dev-back ingress 경로와 rewrite 설정
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev-back-ingress-api
+  namespace: dev-back
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: devback-api.heung.shop
+      http:
+        paths:
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: backend-dev-back
+                port:
+                  number: 8080

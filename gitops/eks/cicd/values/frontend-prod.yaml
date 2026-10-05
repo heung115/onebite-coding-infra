@@ -1,0 +1,6 @@
+web:
+  image: "heung115/spaghetti-fe:sha-6b1813f7f02005f9793df01fcacb8849f625f10c-prod"
+  imagePullPolicy: Always
+  replicaCount: 1
+  service:
+    type: ClusterIP

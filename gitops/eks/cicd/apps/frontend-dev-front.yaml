@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cicd-frontend-dev-front
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  sources:
+    - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+      targetRevision: eks
+      path: eks/cicd/charts/nextjs
+      helm:
+        releaseName: nextjs-dev-front
+        valueFiles:
+          - values.yaml
+          - $cicd/eks/cicd/values/frontend-dev-front.yaml
+    - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+      targetRevision: eks
+      ref: cicd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev-front
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,323 @@
+{
+  "summary": {
+    "deploy": {
+      "base": {
+        "push_to_ready": {
+          "median": 321.8,
+          "min": 245.0,
+          "max": 346.3,
+          "n": 3
+        },
+        "gitops_commit_to_applied": {
+          "median": 131.6,
+          "min": 43.9,
+          "max": 143.0,
+          "n": 3
+        },
+        "applied_to_ready": {
+          "median": 84.4,
+          "min": 83.9,
+          "max": 85.4,
+          "n": 3
+        }
+      },
+      "poll30": {
+        "push_to_ready": {
+          "median": 268.4,
+          "min": 265.2,
+          "max": 354.3,
+          "n": 3
+        },
+        "gitops_commit_to_applied": {
+          "median": 80.4,
+          "min": 78.1,
+          "max": 155.7,
+          "n": 3
+        },
+        "applied_to_ready": {
+          "median": 81.3,
+          "min": 80.7,
+          "max": 81.3,
+          "n": 3
+        }
+      },
+      "opt1": {
+        "push_to_ready": {
+          "median": 248.5,
+          "min": 209.1,
+          "max": 269.0,
+          "n": 3
+        },
+        "gitops_commit_to_applied": {
+          "median": 32.9,
+          "min": 13.0,
+          "max": 64.9,
+          "n": 3
+        },
+        "applied_to_ready": {
+          "median": 83.8,
+          "min": 83.3,
+          "max": 98.9,
+          "n": 3
+        }
+      }
+    },
+    "failure_gitops": {
+      "base": {
+        "recover_after_fix_push": {
+          "median": 105.5,
+          "min": 98.4,
+          "max": 109.5,
+          "n": 3
+        },
+        "fix_push_to_applied": {
+          "median": 105.4,
+          "min": 98.3,
+          "max": 109.4,
+          "n": 3
+        }
+      },
+      "opt1": {
+        "recover_after_fix_push": {
+          "median": 36.4,
+          "min": 35.0,
+          "max": 58.4,
+          "n": 3
+        },
+        "fix_push_to_applied": {
+          "median": 36.3,
+          "min": 34.9,
+          "max": 58.3,
+          "n": 3
+        }
+      }
+    },
+    "failure_app": {
+      "base": {
+        "recover_after_fix_push": {
+          "median": 307.5,
+          "min": 291.8,
+          "max": 342.7,
+          "n": 3
+        },
+        "fix_push_to_applied": {
+          "median": 221.2,
+          "min": 209.1,
+          "max": 253.7,
+          "n": 3
+        },
+        "degraded_after_bad_applied": {
+          "median": 601.5,
+          "min": 601.4,
+          "max": 601.8,
+          "n": 3
+        },
+        "degraded_after_first_fail": {
+          "median": 534.3,
+          "min": 526.0,
+          "max": 543.4,
+          "n": 3
+        }
+      },
+      "opt1": {
+        "recover_after_fix_push": {
+          "median": 252.3,
+          "min": 229.4,
+          "max": 259.0,
+          "n": 3
+        },
+        "fix_push_to_applied": {
+          "median": 161.2,
+          "min": 143.6,
+          "max": 176.1,
+          "n": 3
+        },
+        "degraded_after_bad_applied": {
+          "median": 601.1,
+          "min": 600.7,
+          "max": 602.6,
+          "n": 3
+        },
+        "degraded_after_first_fail": {
+          "median": 544.9,
+          "min": 544.2,
+          "max": 546.3,
+          "n": 3
+        }
+      },
+      "opt2": {
+        "recover_after_fix_push": {
+          "median": 258.9,
+          "min": 232.1,
+          "max": 262.3,
+          "n": 3
+        },
+        "fix_push_to_applied": {
+          "median": 176.1,
+          "min": 146.7,
+          "max": 177.0,
+          "n": 3
+        },
+        "degraded_after_bad_applied": {
+          "median": 181.1,
+          "min": 179.6,
+          "max": 182.0,
+          "n": 3
+        },
+        "degraded_after_first_fail": {
+          "median": 125.3,
+          "min": 120.6,
+          "max": 125.3,
+          "n": 3
+        }
+      }
+    }
+  },
+  "runs": {
+    "deploy": {
+      "base": [
+        {
+          "push_to_ready": 245.03800010681152,
+          "gitops_commit_to_applied": 43.884000062942505,
+          "applied_to_ready": 85.37199997901917
+        },
+        {
+          "push_to_ready": 321.7660000324249,
+          "gitops_commit_to_applied": 131.56399989128113,
+          "applied_to_ready": 84.39000010490417
+        },
+        {
+          "push_to_ready": 346.2979998588562,
+          "gitops_commit_to_applied": 142.95600008964539,
+          "applied_to_ready": 83.8769998550415
+        }
+      ],
+      "poll30": [
+        {
+          "push_to_ready": 354.3359999656677,
+          "gitops_commit_to_applied": 155.7170000076294,
+          "applied_to_ready": 81.34899997711182
+        },
+        {
+          "push_to_ready": 268.414999961853,
+          "gitops_commit_to_applied": 80.44400000572205,
+          "applied_to_ready": 81.26900005340576
+        },
+        {
+          "push_to_ready": 265.19000005722046,
+          "gitops_commit_to_applied": 78.06200003623962,
+          "applied_to_ready": 80.68400001525879
+        }
+      ],
+      "opt1": [
+        {
+          "push_to_ready": 248.45299983024597,
+          "gitops_commit_to_applied": 32.94600009918213,
+          "applied_to_ready": 98.86399984359741
+        },
+        {
+          "push_to_ready": 209.05399990081787,
+          "gitops_commit_to_applied": 13.020999908447266,
+          "applied_to_ready": 83.30599999427795
+        },
+        {
+          "push_to_ready": 268.97300004959106,
+          "gitops_commit_to_applied": 64.91300010681152,
+          "applied_to_ready": 83.80999994277954
+        }
+      ]
+    },
+    "failure_gitops": {
+      "base": [
+        {
+          "recover_after_fix_push": 98.36899995803833,
+          "fix_push_to_applied": 98.27300000190735
+        },
+        {
+          "recover_after_fix_push": 105.45799994468689,
+          "fix_push_to_applied": 105.37199997901917
+        },
+        {
+          "recover_after_fix_push": 109.50200009346008,
+          "fix_push_to_applied": 109.41400003433228
+        }
+      ],
+      "opt1": [
+        {
+          "recover_after_fix_push": 58.44099998474121,
+          "fix_push_to_applied": 58.319000005722046
+        },
+        {
+          "recover_after_fix_push": 34.95300006866455,
+          "fix_push_to_applied": 34.85800004005432
+        },
+        {
+          "recover_after_fix_push": 36.38099980354309,
+          "fix_push_to_applied": 36.30199980735779
+        }
+      ]
+    },
+    "failure_app": {
+      "base": [
+        {
+          "recover_after_fix_push": 307.46399998664856,
+          "fix_push_to_applied": 221.18300008773804,
+          "degraded_after_bad_applied": 601.489000082016,
+          "degraded_after_first_fail": 534.3280000686646
+        },
+        {
+          "recover_after_fix_push": 342.7079999446869,
+          "fix_push_to_applied": 253.69199991226196,
+          "degraded_after_bad_applied": 601.8389999866486,
+          "degraded_after_first_fail": 525.9760000705719
+        },
+        {
+          "recover_after_fix_push": 291.8310000896454,
+          "fix_push_to_applied": 209.05299997329712,
+          "degraded_after_bad_applied": 601.3689999580383,
+          "degraded_after_first_fail": 543.4459998607635
+        }
+      ],
+      "opt1": [
+        {
+          "recover_after_fix_push": 252.25099992752075,
+          "fix_push_to_applied": 161.17499995231628,
+          "degraded_after_bad_applied": 602.6280000209808,
+          "degraded_after_first_fail": 544.1710000038147
+        },
+        {
+          "recover_after_fix_push": 258.99700021743774,
+          "fix_push_to_applied": 176.132000207901,
+          "degraded_after_bad_applied": 600.704999923706,
+          "degraded_after_first_fail": 546.3440001010895
+        },
+        {
+          "recover_after_fix_push": 229.36499977111816,
+          "fix_push_to_applied": 143.6269998550415,
+          "degraded_after_bad_applied": 601.1470000743866,
+          "degraded_after_first_fail": 544.9170000553131
+        }
+      ],
+      "opt2": [
+        {
+          "recover_after_fix_push": 262.28599977493286,
+          "fix_push_to_applied": 176.11099982261658,
+          "degraded_after_bad_applied": 181.96099996566772,
+          "degraded_after_first_fail": 120.6159999370575
+        },
+        {
+          "recover_after_fix_push": 258.89400005340576,
+          "fix_push_to_applied": 177.02999997138977,
+          "degraded_after_bad_applied": 181.08100008964539,
+          "degraded_after_first_fail": 125.2829999923706
+        },
+        {
+          "recover_after_fix_push": 232.05700016021729,
+          "fix_push_to_applied": 146.70600008964539,
+          "degraded_after_bad_applied": 179.5699999332428,
+          "degraded_after_first_fail": 125.26300001144409
+        }
+      ]
+    }
+  }
+}

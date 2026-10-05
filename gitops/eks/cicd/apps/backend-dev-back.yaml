@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cicd-backend-dev-back
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  sources:
+    - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+      targetRevision: eks
+      path: charts/backend
+      helm:
+        releaseName: backend-dev-back
+        valueFiles:
+          - values.yaml
+          - $cicd/eks/cicd/values/backend-dev-back.yaml
+    - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+      targetRevision: eks
+      ref: cicd
+    - repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+      targetRevision: eks
+      path: eks/cicd/resources/dev-back
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev-back
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
