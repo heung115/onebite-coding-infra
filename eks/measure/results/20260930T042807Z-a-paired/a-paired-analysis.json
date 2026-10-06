@@ -1,0 +1,130 @@
+{
+  "phase": "final",
+  "decision": "final_directional_result",
+  "stop_after_12": false,
+  "criteria_passed": true,
+  "thresholds": {
+    "min_valid_trials_per_condition": 10,
+    "min_complete_valid_pairs": 10,
+    "min_paired_difference_direction_share": 0.75,
+    "outlier_sensitivity": "median sign must remain the same after removing the 1 and 2 largest absolute paired differences"
+  },
+  "attempted_runs": {
+    "ca": 12,
+    "karpenter": 12
+  },
+  "valid_runs": {
+    "ca": 12,
+    "karpenter": 11
+  },
+  "complete_valid_pair_count": 11,
+  "paired_difference_definition": "Karpenter scale-request-to-all-Pods-Ready seconds minus CA seconds; positive means Karpenter took longer",
+  "paired_difference_direction_counts": {
+    "positive": 0,
+    "negative": 11,
+    "ties": 0
+  },
+  "dominant_direction": "negative",
+  "dominant_direction_share": 1.0,
+  "required_direction_count": 9,
+  "paired_difference_median_seconds": -28.344,
+  "paired_difference_range_seconds": [
+    -39.238,
+    -16.529
+  ],
+  "trimmed_medians_seconds": {
+    "drop_largest_1_absolute_differences": -28.167,
+    "drop_largest_2_absolute_differences": -27.991
+  },
+  "complete_pairs": [
+    {
+      "pair": 2,
+      "ca_seconds": 65.403,
+      "karpenter_seconds": 36.09,
+      "difference_seconds": -29.313
+    },
+    {
+      "pair": 3,
+      "ca_seconds": 61.77,
+      "karpenter_seconds": 33.78,
+      "difference_seconds": -27.991
+    },
+    {
+      "pair": 4,
+      "ca_seconds": 59.91,
+      "karpenter_seconds": 34.323,
+      "difference_seconds": -25.587
+    },
+    {
+      "pair": 5,
+      "ca_seconds": 62.121,
+      "karpenter_seconds": 33.778,
+      "difference_seconds": -28.344
+    },
+    {
+      "pair": 6,
+      "ca_seconds": 50.237,
+      "karpenter_seconds": 33.708,
+      "difference_seconds": -16.529
+    },
+    {
+      "pair": 7,
+      "ca_seconds": 60.632,
+      "karpenter_seconds": 33.907,
+      "difference_seconds": -26.725
+    },
+    {
+      "pair": 8,
+      "ca_seconds": 65.335,
+      "karpenter_seconds": 34.203,
+      "difference_seconds": -31.131
+    },
+    {
+      "pair": 9,
+      "ca_seconds": 64.058,
+      "karpenter_seconds": 36.09,
+      "difference_seconds": -27.969
+    },
+    {
+      "pair": 10,
+      "ca_seconds": 75.326,
+      "karpenter_seconds": 36.088,
+      "difference_seconds": -39.238
+    },
+    {
+      "pair": 11,
+      "ca_seconds": 67.395,
+      "karpenter_seconds": 33.757,
+      "difference_seconds": -33.638
+    },
+    {
+      "pair": 12,
+      "ca_seconds": 65.242,
+      "karpenter_seconds": 34.398,
+      "difference_seconds": -30.845
+    }
+  ],
+  "failed_or_incomplete_trials": [
+    {
+      "file": "a-karpenter-01.json",
+      "condition": "karpenter",
+      "pair": 1,
+      "error": "Setup failure: Karpenter EC2NodeClass was rejected because amiFamily: AL2023 is required when selecting an AMI by ID. Collector was stopped before its 900-second timeout; raw snapshots show no experiment nodes or new EC2 launches."
+    }
+  ],
+  "reasons_to_continue_or_limit_claim": [],
+  "condition_ready_time_seconds": {
+    "ca": {
+      "n": 12,
+      "median_seconds": 63.09,
+      "min_seconds": 50.237,
+      "max_seconds": 75.326
+    },
+    "karpenter": {
+      "n": 11,
+      "median_seconds": 34.203,
+      "min_seconds": 33.708,
+      "max_seconds": 36.09
+    }
+  }
+}

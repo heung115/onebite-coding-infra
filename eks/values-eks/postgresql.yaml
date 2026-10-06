@@ -1,0 +1,17 @@
+# EKS 차이만 덮어쓴다 (원본: values/postgresql.yaml)
+# - 비밀번호: values 평문 대신 Secrets Manager(onebite-postgresql) → ExternalSecret(postgresql-auth)
+# - 이미지: docker.io/bitnami 태그가 내려가서 같은 태그의 bitnamilegacy 를 쓴다
+global:
+    security:
+        allowInsecureImages: true
+
+image:
+    repository: bitnamilegacy/postgresql
+    tag: 17.2.0-debian-12-r8
+
+auth:
+    existingSecret: postgresql-auth
+
+primary:
+    persistence:
+        storageClass: gp3

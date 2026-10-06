@@ -1,0 +1,21 @@
+{
+  "condition": "karpenter",
+  "trial": 1,
+  "pair": 1,
+  "pair_first": "ca",
+  "app": "scale-probe",
+  "replicas": 2,
+  "expected_experiment_workers": 2,
+  "pretrial_experiment_workers": 0,
+  "kubeconfig": "<operator-path>",
+  "started_at_utc": "2026-09-30T04:33:18.692513+00:00",
+  "scale_requested_at_utc": "2026-09-30T04:34:10.212038+00:00",
+  "failed_at_utc": "2026-09-30T04:34:48Z",
+  "succeeded": false,
+  "error": "Setup failure: Karpenter EC2NodeClass was rejected because amiFamily: AL2023 is required when selecting an AMI by ID. Collector was stopped before its 900-second timeout; raw snapshots show no experiment nodes or new EC2 launches.",
+  "limitations": [
+    "This attempt is invalid for comparison and is excluded from paired differences.",
+    "Both benchmark Pods remained Pending; the raw timeline and selector error are preserved."
+  ],
+  "raw_file": "eks/measure/results/20260930T042807Z-a-paired/a-karpenter-01.jsonl"
+}

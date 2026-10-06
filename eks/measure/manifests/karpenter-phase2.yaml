@@ -1,0 +1,119 @@
+apiVersion: karpenter.k8s.aws/v1
+kind: EC2NodeClass
+metadata:
+  name: phase2
+spec:
+  instanceProfile: onebite-eks-measure-karpenter-node
+  amiFamily: AL2023
+  amiSelectorTerms:
+    - id: __EXPERIMENT_AMI_ID__
+  subnetSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: onebite-eks-measure
+        onebite:measure-experiment: "true"
+  securityGroupSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: onebite-eks-measure
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs:
+        volumeSize: 30Gi
+        volumeType: gp3
+        encrypted: true
+        deleteOnTermination: true
+  tags:
+    Project: onebite
+    Temporary: "true"
+    measure-pool: experiment
+    karpenter.sh/discovery: onebite-eks-measure
+---
+apiVersion: karpenter.sh/v1
+kind: NodePool
+metadata:
+  name: phase2-fixed
+spec:
+  template:
+    metadata:
+      labels:
+        measure-pool: experiment
+        measure-condition: fixed
+    spec:
+      nodeClassRef:
+        group: karpenter.k8s.aws
+        kind: EC2NodeClass
+        name: phase2
+      taints:
+        - key: measure/only
+          value: experiment
+          effect: NoSchedule
+      requirements:
+        - key: kubernetes.io/arch
+          operator: In
+          values: [amd64]
+        - key: kubernetes.io/os
+          operator: In
+          values: [linux]
+        - key: karpenter.sh/capacity-type
+          operator: In
+          values: [on-demand]
+        - key: node.kubernetes.io/instance-type
+          operator: In
+          values: [m7i-flex.large]
+        - key: topology.kubernetes.io/zone
+          operator: In
+          values: [__EXPERIMENT_AZ__]
+  limits:
+    cpu: "8"
+  disruption:
+    consolidationPolicy: WhenEmpty
+    consolidateAfter: 10s
+---
+apiVersion: karpenter.sh/v1
+kind: NodePool
+metadata:
+  name: phase2-flexible
+spec:
+  template:
+    metadata:
+      labels:
+        measure-pool: experiment
+        measure-condition: flexible
+    spec:
+      nodeClassRef:
+        group: karpenter.k8s.aws
+        kind: EC2NodeClass
+        name: phase2
+      taints:
+        - key: measure/only
+          value: experiment
+          effect: NoSchedule
+      requirements:
+        - key: kubernetes.io/arch
+          operator: In
+          values: [amd64]
+        - key: kubernetes.io/os
+          operator: In
+          values: [linux]
+        - key: karpenter.sh/capacity-type
+          operator: In
+          values: [on-demand]
+        - key: karpenter.k8s.aws/instance-category
+          operator: In
+          values: [c, m, r]
+        - key: karpenter.k8s.aws/instance-generation
+          operator: Gte
+          values: ["7"]
+        - key: karpenter.k8s.aws/instance-family
+          operator: In
+          values: [c7i, c8i, m7i, m8i, r7i, r8i]
+        - key: karpenter.k8s.aws/instance-size
+          operator: In
+          values: [large, xlarge]
+        - key: topology.kubernetes.io/zone
+          operator: In
+          values: [__EXPERIMENT_AZ__]
+  limits:
+    cpu: "8"
+  disruption:
+    consolidationPolicy: WhenEmpty
+    consolidateAfter: 10s

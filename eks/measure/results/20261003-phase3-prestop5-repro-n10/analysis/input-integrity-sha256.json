@@ -1,0 +1,22 @@
+[
+  {
+    "path": "measure/results/20261003-phase3-prestop5/preregistered-rules.json",
+    "sha256": "3ed421ab825af4ab3182f1b14f2182f499c1eac9e42fadc3f57484666c65ea79"
+  },
+  {
+    "path": "measure/results/20261003-phase3-prestop5/PHASE3-PRESTOP5-REPORT.md",
+    "sha256": "a9c4e41998233ea0d44dcff9ad3f521f100790ee8657e713afe44e8decb8170d"
+  },
+  {
+    "path": "measure/results/20261003-phase3-prestop5/analysis/phase3-prestop5-comparison.json",
+    "sha256": "7b78667fa4ab88307356cda910b96e4967ee8587d4d764cc8f9dfff626f3da05"
+  },
+  {
+    "path": "measure/results/20261003-phase3-prestop5-repro-n10/preregistered-rules.json",
+    "sha256": "c3f0c44109d0670cc095e6c702cc95641949eeeced4618b5a42c07abfa8a5e87"
+  },
+  {
+    "path": "measure/results/20261003-phase3-prestop5-repro-n10/run-order.json",
+    "sha256": "b92715a8137e48633b30fdada0afe7b17f40a2424ef75f8416c2d826cc23e17b"
+  }
+]

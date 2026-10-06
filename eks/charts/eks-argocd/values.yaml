@@ -1,0 +1,3 @@
+repoURL: git@github.com:heung115/tmp-onebite-gitops.git
+targetRevision: eks
+path: eks/apps

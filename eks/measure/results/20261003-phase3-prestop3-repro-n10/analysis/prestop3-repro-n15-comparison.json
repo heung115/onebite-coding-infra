@@ -1,0 +1,1476 @@
+{
+  "batch_id": "20261003-phase3-prestop3-repro-n10",
+  "window_definition": {
+    "anchor": "target-matched EC2 Spot Interruption Warning EventBridge eventTime",
+    "start_inclusive": "warning - 30 seconds",
+    "end_exclusive": "warning + 90 seconds",
+    "duration_seconds": 120,
+    "request_counting_rule": "Include request rows with started_at_utc in [window_start, window_end).",
+    "failure_rule": "A status not starting with 2, including empty status, is a failure."
+  },
+  "condition_equivalence": {
+    "manifests_byte_identical": true,
+    "preregistered_load_and_window_inputs_match": true,
+    "available_trial_workload_signatures_match": true,
+    "previous_batch_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d",
+    "new_batch_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d",
+    "previous_workload_signature_variants": 1,
+    "new_workload_signature_variants": 1,
+    "pooled_condition_allowed": true,
+    "limits": "This verifies saved workload/run metadata and the identical manifest. Persistent cluster identity, Karpenter 1.14.1, active addon/CNI versions, and FIS template are captured in preflight snapshots; no infrastructure changes are performed by this batch."
+  },
+  "conditions": {
+    "no-preStop baseline": {
+      "attempts": 5,
+      "complete_window_n": 5,
+      "http_requests": 6000,
+      "http_failed_requests": 70,
+      "aggregate_failure_rate_percent": 1.1666666666666667,
+      "runs_with_failure": 5,
+      "per_run_failure_rate_percent": {
+        "median": 1.0833333333333333,
+        "min": 0.6666666666666666,
+        "max": 1.6666666666666667,
+        "valid_n": 5
+      },
+      "max_contiguous_failure_window_seconds": {
+        "median": 0.216384,
+        "min": 0.213889,
+        "max": 0.21804,
+        "valid_n": 5
+      },
+      "warning_to_last_failed_response_completion_seconds": {
+        "median": 10.042559,
+        "min": 8.987969,
+        "max": 12.046505,
+        "valid_n": 5
+      },
+      "attempts_with_warning_and_csv": 5,
+      "incomplete_windows_excluded": 0
+    },
+    "preStop 2s": {
+      "attempts": 4,
+      "complete_window_n": 4,
+      "http_requests": 4800,
+      "http_failed_requests": 1,
+      "aggregate_failure_rate_percent": 0.020833333333333332,
+      "runs_with_failure": 1,
+      "per_run_failure_rate_percent": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.08333333333333333,
+        "valid_n": 4
+      },
+      "max_contiguous_failure_window_seconds": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.115241,
+        "valid_n": 4
+      },
+      "warning_to_last_failed_response_completion_seconds": {
+        "median": 4.272564,
+        "min": 4.272564,
+        "max": 4.272564,
+        "valid_n": 1
+      },
+      "attempts_with_warning_and_csv": 4,
+      "incomplete_windows_excluded": 0
+    },
+    "preStop 3s": {
+      "attempts": 15,
+      "complete_window_n": 15,
+      "http_requests": 18001,
+      "http_failed_requests": 0,
+      "aggregate_failure_rate_percent": 0.0,
+      "runs_with_failure": 0,
+      "per_run_failure_rate_percent": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "valid_n": 15
+      },
+      "max_contiguous_failure_window_seconds": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "valid_n": 15
+      },
+      "warning_to_last_failed_response_completion_seconds": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "valid_n": 0
+      },
+      "attempts_with_warning_and_csv": 15,
+      "incomplete_windows_excluded": 0
+    },
+    "preStop 5s": {
+      "attempts": 15,
+      "complete_window_n": 15,
+      "http_requests": 18000,
+      "http_failed_requests": 0,
+      "aggregate_failure_rate_percent": 0.0,
+      "runs_with_failure": 0,
+      "per_run_failure_rate_percent": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "valid_n": 15
+      },
+      "max_contiguous_failure_window_seconds": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "valid_n": 15
+      },
+      "warning_to_last_failed_response_completion_seconds": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "valid_n": 0
+      },
+      "attempts_with_warning_and_csv": 15,
+      "incomplete_windows_excluded": 0
+    }
+  },
+  "previous_preStop3_attempts": [
+    {
+      "attempt": 1,
+      "batch": "20261003-phase3-prestop3-window120",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPeteDsxm4AZ3tdvS",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T06:56:40Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 32.0,
+      "warning_to_replacement_pod_ready_seconds": 37.0,
+      "warning_to_ready_replica_2_seconds": 37.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0fb6f0367a40ab44b",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T06:56:46+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-01.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-01.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-01.jsonl",
+      "queue_preflight_path": null
+    },
+    {
+      "attempt": 2,
+      "batch": "20261003-phase3-prestop3-window120",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPxwum496itPQWoRc",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T07:02:49Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 29.0,
+      "warning_to_replacement_pod_ready_seconds": 34.0,
+      "warning_to_ready_replica_2_seconds": 34.0,
+      "interrupted_instance_type": "c8i-flex.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0e76603ed45755ba2",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T07:02:55+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-02.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-02.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-02.jsonl",
+      "queue_preflight_path": null
+    },
+    {
+      "attempt": 3,
+      "batch": "20261003-phase3-prestop3-window120",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPzuEwDUZQsdn9xfU",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T07:08:55Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 29.0,
+      "warning_to_replacement_pod_ready_seconds": 34.0,
+      "warning_to_ready_replica_2_seconds": 34.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0f4da40c42d2e1ff9",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T07:09:00+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-03.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-03.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-03.jsonl",
+      "queue_preflight_path": null
+    },
+    {
+      "attempt": 4,
+      "batch": "20261003-phase3-prestop3-window120",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPqjPSTnNqnyrkk9Y",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T07:15:01Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 31.0,
+      "warning_to_replacement_pod_ready_seconds": 36.0,
+      "warning_to_ready_replica_2_seconds": 36.0,
+      "interrupted_instance_type": "c8i-flex.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-02e19ec58dbffb7c8",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T07:15:07+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-04.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-04.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-04.jsonl",
+      "queue_preflight_path": null
+    },
+    {
+      "attempt": 5,
+      "batch": "20261003-phase3-prestop3-window120",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPBVJP7P3M3cDHDy4",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T07:21:01Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 31.0,
+      "warning_to_replacement_pod_ready_seconds": 36.0,
+      "warning_to_ready_replica_2_seconds": 36.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0af948d1f5645b7af",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T07:21:07+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-05.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-05.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-05.jsonl",
+      "queue_preflight_path": null
+    }
+  ],
+  "new_fixed_attempts": [
+    {
+      "attempt": 1,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPyWzdGLepMdVjKAa",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T11:42:56Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 34.0,
+      "warning_to_replacement_pod_ready_seconds": 41.0,
+      "warning_to_ready_replica_2_seconds": 41.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-07b7483a1ee51187e",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T11:43:02+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-01.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-01.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-01.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-01.json"
+    },
+    {
+      "attempt": 2,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPWsvAWg2UMUYmrgS",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T11:49:05Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 31.0,
+      "warning_to_replacement_pod_ready_seconds": 36.0,
+      "warning_to_ready_replica_2_seconds": 36.0,
+      "interrupted_instance_type": "c7i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-031e68378734e2cb0",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T11:49:10+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-02.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-02.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-02.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-02.json"
+    },
+    {
+      "attempt": 3,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPmVDMSHD9g89ycCz",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T11:55:11Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 30.0,
+      "warning_to_replacement_pod_ready_seconds": 35.0,
+      "warning_to_ready_replica_2_seconds": 35.0,
+      "interrupted_instance_type": "c8i-flex.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0093084b525d40ba1",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T11:55:17+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-03.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-03.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-03.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-03.json"
+    },
+    {
+      "attempt": 4,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPrJNHtB4jNF7kqd4",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T12:01:17Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 32.0,
+      "warning_to_replacement_pod_ready_seconds": 38.0,
+      "warning_to_ready_replica_2_seconds": 38.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-003ed4919668fb93c",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T12:01:23+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-04.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-04.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-04.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-04.json"
+    },
+    {
+      "attempt": 5,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXP5vQbcFpKBUksDBp",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T12:07:16Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 32.0,
+      "warning_to_replacement_pod_ready_seconds": 38.0,
+      "warning_to_ready_replica_2_seconds": 38.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0e4e384e1796dcafc",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T12:07:22+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-05.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-05.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-05.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-05.json"
+    },
+    {
+      "attempt": 6,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXP3dKo4Y95dpDiw4v",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T12:13:18Z",
+      "http_window_requests": 1201,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 34.0,
+      "warning_to_replacement_pod_ready_seconds": 40.0,
+      "warning_to_ready_replica_2_seconds": 40.0,
+      "interrupted_instance_type": "c7i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-041f8ef5e0b06202c",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T12:13:25+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-06.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-06.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-06.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-06.json"
+    },
+    {
+      "attempt": 7,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPxDbFnEezq45ehzJ",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T12:19:22Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 31.0,
+      "warning_to_replacement_pod_ready_seconds": 37.0,
+      "warning_to_ready_replica_2_seconds": 37.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0d2e347f26765bab8",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T12:19:29+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-07.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-07.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-07.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-07.json"
+    },
+    {
+      "attempt": 8,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPCDmBiMqLaqB1JKk",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T12:25:26Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 29.0,
+      "warning_to_replacement_pod_ready_seconds": 35.0,
+      "warning_to_ready_replica_2_seconds": 35.0,
+      "interrupted_instance_type": "c8i-flex.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0142e1f4c5e08c8d6",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T12:25:31+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-08.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-08.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-08.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-08.json"
+    },
+    {
+      "attempt": 9,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXPetLFTBYmTfDoZQW",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T12:31:29Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 31.0,
+      "warning_to_replacement_pod_ready_seconds": 36.0,
+      "warning_to_ready_replica_2_seconds": 36.0,
+      "interrupted_instance_type": "c8i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-04d3d5d65722c9436",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T12:31:35+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-09.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-09.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-09.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-09.json"
+    },
+    {
+      "attempt": 10,
+      "batch": "20261003-phase3-prestop3-repro-n10",
+      "status": "valid_interruption_window",
+      "fis_started": true,
+      "fis_experiment_id": "EXP68sbnj8C9MXUbYW",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T12:37:32Z",
+      "http_window_requests": 1200,
+      "http_window_failures": 0,
+      "http_window_failure_rate_percent": 0.0,
+      "failure_observed": false,
+      "maximum_contiguous_failure_seconds": 0.0,
+      "warning_to_last_failure_completion_seconds": null,
+      "warning_to_node_ready_seconds": 31.0,
+      "warning_to_replacement_pod_ready_seconds": 36.0,
+      "warning_to_ready_replica_2_seconds": 36.0,
+      "interrupted_instance_type": "c7i.large",
+      "interrupted_az": "ap-northeast-2c",
+      "replacement_instance": {
+        "instance_id": "i-0edbb8ec6dd9e60d7",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "launch_time_utc": "2026-10-03T12:37:38+00:00",
+        "state_at_last_observation": "running"
+      },
+      "failure_reason": null,
+      "workload_signature": {
+        "condition": "prestop3-window120",
+        "pre_stop_sleep_seconds": 3,
+        "cluster": "onebite-eks-measure",
+        "region": "ap-northeast-2",
+        "account_suffix": "0497",
+        "karpenter_version": "1.14.1",
+        "workload": {
+          "replicas": 2,
+          "rps": 10.0,
+          "duration_seconds": 125.0,
+          "failure_after_seconds": 18.0,
+          "spot_notice_to_termination_seconds": 120,
+          "pdb_min_available": 1,
+          "pod_termination_grace_period_seconds": 30,
+          "topology_spread": "hostname, maxSkew=1, minDomains=2, DoNotSchedule"
+        },
+        "environment_lifecycle": "persistent_across_batch",
+        "workload_manifest_sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+      },
+      "summary_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-10.json",
+      "failure_path": null,
+      "raw_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-10.jsonl",
+      "gate_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-10.jsonl",
+      "queue_preflight_path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-10.json"
+    }
+  ],
+  "pooled_preStop3_recovery_timeline_seconds": {
+    "warning_to_node_ready_seconds": {
+      "median": 31.0,
+      "min": 29.0,
+      "max": 34.0,
+      "valid_n": 15
+    },
+    "warning_to_replacement_pod_ready_seconds": {
+      "median": 36.0,
+      "min": 34.0,
+      "max": 41.0,
+      "valid_n": 15
+    },
+    "warning_to_ready_replica_2_seconds": {
+      "median": 36.0,
+      "min": 34.0,
+      "max": 41.0,
+      "valid_n": 15
+    }
+  },
+  "historical_unwindowed_attempts": [
+    {
+      "condition": "preStop 2s",
+      "trial": 2,
+      "failure_cause": "RuntimeError: Both registered Pod IP targets did not become healthy within 15 minutes",
+      "fis_experiment_id": null,
+      "has_summary": false,
+      "has_csv": false,
+      "has_warning_timestamp": false,
+      "failure_record_path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-02.failure.json"
+    }
+  ],
+  "decision": {
+    "fixed_attempts_recorded": 10,
+    "new_complete_interruption_windows": 10,
+    "previous_complete_interruption_windows": 5,
+    "combined_preStop3_complete_n": 15,
+    "all_ten_new_attempts_are_complete_windows": true,
+    "new_valid_windows_with_http_failure": 0,
+    "classification": "preStop3_total_n15_no_failure_observed_under_current_conditions",
+    "automatic_follow_up": false,
+    "wording_limit": "Do not describe any zero-failure result as a general no-downtime guarantee."
+  },
+  "source_sha256": [
+    {
+      "path": "measure/results/20261002-phase3-spot-interruption-v5/execution-01/http-metrics-derived.json",
+      "sha256": "e2f33447953b5cd0762d4cdd545e72d4c661f6b6a3b9e4b2ea6844a31500e180"
+    },
+    {
+      "path": "measure/results/20261002-phase3-spot-interruption-v5/execution-01/spot-interruption-02.csv",
+      "sha256": "af6c8a12e6d22e1f9f7334318d4b671caba79b66f25f807c2d8f7bc1582b536e"
+    },
+    {
+      "path": "measure/results/20261002-phase3-spot-interruption-v5/execution-01/spot-interruption-03.csv",
+      "sha256": "5fc5004b57806f439f933f7159826b231d337f7ccf567d31fc0971882cdccc72"
+    },
+    {
+      "path": "measure/results/20261002-phase3-v6-baseline/execution-01/spot-interruption-01.csv",
+      "sha256": "9912a6df1a9c92e98df32c172ef02af3f444eb66662b2a0a7b7bc5570b5dd505"
+    },
+    {
+      "path": "measure/results/20261002-phase3-v6-baseline/execution-01/spot-interruption-01.json",
+      "sha256": "e234909ff167083cb5de2cd489d8c364da8db9d84641526f06dabb0cab72622f"
+    },
+    {
+      "path": "measure/results/20261002-phase3-v6-baseline/execution-01/spot-interruption-02.csv",
+      "sha256": "808ed08a807df16ca96ab6bbca3cb24cbba4b87a6386098d9860b90ed69f952c"
+    },
+    {
+      "path": "measure/results/20261002-phase3-v6-baseline/execution-01/spot-interruption-02.json",
+      "sha256": "981b6d225df54552b6035e7c66fe707b7961e9be68d4417ed0d615beac02a6fb"
+    },
+    {
+      "path": "measure/results/20261002-phase3-v6-baseline/execution-01/spot-interruption-03.csv",
+      "sha256": "1a64402c3111f412a57eac41cf4db3e6367b3a076315de5eea95522a37c2390e"
+    },
+    {
+      "path": "measure/results/20261002-phase3-v6-baseline/execution-01/spot-interruption-03.json",
+      "sha256": "6a2b2648513e224ce023c583fc97f610ce62e0471797f7f435df920b030c2a0e"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-01.csv",
+      "sha256": "e26ce1471b2169f52ef40c8869161548fcede3dc14b4df647d8b746db191b356"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-01.json",
+      "sha256": "1731c26b70fd223fe17a1a393f95723cf550221c51f710b137effd1c110b9192"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-02.failure.json",
+      "sha256": "e5d33a81dd3adb458be2df4620921f3ba53c032ac386bb95d94a3af28602ea64"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-02.jsonl",
+      "sha256": "5578bcca463b5d8b10bf80dde2deb169f885f1262456870fa47474e0eb034863"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-03.csv",
+      "sha256": "a505acd5bdb1c4cdd697f1201f1739dd8b04b06d4e5230bcd76c47043e190225"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-03.json",
+      "sha256": "f23c053dc68e08fd587abe887f05a690398e8da1672223ae2f4ead4551b6990c"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-04.csv",
+      "sha256": "ab3e9f2bc809908d1f4b53b1a2d2c9b05a2b14996787822eb88a10128ef8ae46"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-04.json",
+      "sha256": "2666f1a3cd2423cf93f46a3af21ba565dbb2592c0895d81e92d7c14f84ca2674"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-05.csv",
+      "sha256": "bd096387dddb20fffec5c9457315978f1f55368a4cdb353f09bcdfa293e610fe"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop2-window120/execution-01/spot-interruption-05.json",
+      "sha256": "63c80008efdadfbaabc193b21d6e60287fd68ee4f6950678b3ce00e352f51bd3"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/config/spot-recovery-app-prestop3.yaml",
+      "sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-01.json",
+      "sha256": "b8a25c74217a2fb1bbaafe511a3df51da8d0159befe2696e11603f6f6460b06b"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-02.json",
+      "sha256": "c38cfe0f5f241b0fc399f15de1f6ad78465a047c9be8b217c3de528bd1f0a249"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-03.json",
+      "sha256": "823e7e8c5663de37921dca4d27f376949f89b148809c77bef11c3e604b2cc715"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-04.json",
+      "sha256": "ccd56c7c4bd30b170154d870448452a041f32a1dd6dbee4e07b53511f3494611"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-05.json",
+      "sha256": "dda948b840f236fadcf48ea6a90fb6a4b8e76ce93b0fc0ca5d657428d72f298c"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-06.json",
+      "sha256": "3ef18a1ff061fdf8fa18b84288c72f6ce42e3339f3800fd07459470687fc2c1f"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-07.json",
+      "sha256": "c275ff87b7973f8a48dc6145586c5489c915687f8800c510e96927ac8cbc9a52"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-08.json",
+      "sha256": "18a522b04d6e107e8b13f6cd93e0fa6d8e20709058e297704c3e6db85c3f1e4c"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-09.json",
+      "sha256": "815e815357ac703f8af4ef6447f4d6ffc44ab630bff74f692cfd0c2d50413960"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-fis-queue-10.json",
+      "sha256": "6b6e537aac018ffe5ebbdc7790f64ecb5ff40950f8e946229351ddb091c6aa6f"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-01.jsonl",
+      "sha256": "eb285169b31f1eda7aeffb5a35b692efc11ae9691811aa6d179d5f328edf0ebc"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-02.jsonl",
+      "sha256": "2983d29176a3cb582267fde2e6c370951437a4f1b7f7637f387984e84c7ba3f4"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-03.jsonl",
+      "sha256": "1690869a71531c10271ba54946a1d412b05e6b89a7793aa170d66647d10863f8"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-04.jsonl",
+      "sha256": "2ff79615a37dccf8df7995984351e9a186c4947be8a9bf716f3d5566a85cd396"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-05.jsonl",
+      "sha256": "e9923e3f164b0969fe10f96a6ab4131f37b43e01ecbd1d43463ecb277244ed40"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-06.jsonl",
+      "sha256": "59fad3ec47c89dbd8b560df18860430dd7c51352735d68658f75e30252c9abad"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-07.jsonl",
+      "sha256": "c9c4a8e75f6a7bda5d34babb523e4537b7ff770da815c7653ca0afc1d2c46c75"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-08.jsonl",
+      "sha256": "56fb3f1b8915f21d375f9f7cefabb6bf8c66372c95b7b9e25a91f3a006e28b63"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-09.jsonl",
+      "sha256": "d94686d96cd616f14315586864363dcda3a88ce6392dbc2c7e457a49969ccf74"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/pre-attempt-steady-state-10.jsonl",
+      "sha256": "da50703c7c5e73e1de1b14116882a454246c8143dcef8d1f0a3f7c1a0e497cf7"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-01.csv",
+      "sha256": "028c3a0d08bc5c1023e86452dcad98cc65c0a8eac15005fbeb4e4e17759a7407"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-01.json",
+      "sha256": "94f3c6e6d85654d7fa0da5731904b3f7b02e9e601f729211f0eb4e17d9943aca"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-01.jsonl",
+      "sha256": "1cde650648d5959105c357939d360f49d1aec39391cbc649c0534d55ebb54595"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-02.csv",
+      "sha256": "ba37494422ead49340e7fb15c9c3d65224f0dd7a74ba3d32586b26b2980f596e"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-02.json",
+      "sha256": "617bac3b7ab4d6dfc275d5c153b8575851296507098fd379ebcebc51bb470d1a"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-02.jsonl",
+      "sha256": "07d77a2e82dabd190ed273f5882738e5430a76c944773278197edcceb3501f95"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-03.csv",
+      "sha256": "76e53f0554fd1de92aefeb1e6b43be0cb8db3d478f9fdd6d14fc4f6c68317f96"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-03.json",
+      "sha256": "9a1aca92b728d5a2065e3daa1fed3263225ca1995ef39b79716bad5121259462"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-03.jsonl",
+      "sha256": "89872ab4929000e7a6132cd2960744c19ade3a56deb360464fd2faa6a6d3f751"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-04.csv",
+      "sha256": "074206d51abae611880692bb639e630d7fded2a66899b5a3976bb7332d833e02"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-04.json",
+      "sha256": "6f412ca9ef8779158a5fccf627e70e49ef62e28cadef93452cd3a352e8868868"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-04.jsonl",
+      "sha256": "e3897fac55580d105132dd6791ea5d7ef130e32be1c5324d7d42c6413ff8b0dc"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-05.csv",
+      "sha256": "850cce7e0f41e98ed53b5f5d0a29d52604b1293ba55b7d68d0ef410f9793f30e"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-05.json",
+      "sha256": "50b251cb1a36bb11a958e9588c2d676385b393d598abe27abe0212f89ad0da7d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-05.jsonl",
+      "sha256": "17b73f05daf151638316a64f3e13f7210145a7b2ab965935ff1cef8989822599"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-06.csv",
+      "sha256": "62a1472e8653fb51c9621bab8a14e17b7d0085ac38a73354e94c0193b0e67238"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-06.json",
+      "sha256": "fa233dd50e085933e4883d0aa8c329371fb2fd14af1ffad96b262bd0d72a2dc6"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-06.jsonl",
+      "sha256": "48c64ffcf7e703694d7fa8f76ce83f53bc23de9f92187d9af187d9da21c4bfdb"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-07.csv",
+      "sha256": "c92f524bd1e08d47677fd75abb6ebe0d3620dc419f3a44d228a3c80a208b0953"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-07.json",
+      "sha256": "050bc545453c580a0ed4f34ec41923135ec80601a3a1adcb0962fbd04be564db"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-07.jsonl",
+      "sha256": "64b964e5f7a10f23a94ffc68e8df9d286e7c750ffbafe8cfb2fc6f4b0fd56c45"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-08.csv",
+      "sha256": "ed734b89199da620fd1ef507367519ac300881a11dc35a456b35b208caedfb76"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-08.json",
+      "sha256": "19cf60ce3fbd466df96a88bec2c514f1c9c135dbc5aa323d3752a6fc41331938"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-08.jsonl",
+      "sha256": "8710ab7d48dc10fd8597fb6a615a1b8cf8b410770aa7edba043beab984a4efc7"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-09.csv",
+      "sha256": "6367d603e7521156f5fc19765b9d40dbb38998696dd59600ba5debc014dece8c"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-09.json",
+      "sha256": "81e80905542b87851e80fe92506e62509abc5d76cd7c88b244ec94499aa64b92"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-09.jsonl",
+      "sha256": "0696b3f97dfe55e597ec7f09428eede6e232cfe2f9f3f0c0b7ebb7e841818f4d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-10.csv",
+      "sha256": "a1b500a5c0a55488c8f0753b4cb9a4d2c37102aa75e4f255f8ef11d0b6be19b9"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-10.json",
+      "sha256": "3d8eada8696159bc6ead03df55bfce33b0d3adaab1d3565329e9de0a4b8045af"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/execution-01/spot-interruption-10.jsonl",
+      "sha256": "d91e290be82e4f935b1715baa284ff56f108e7bfdeeb77943323e716d9e7fb57"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/preregistered-rules.json",
+      "sha256": "5ebbe57eaf3cd95332c129e6b55e19c5c2854346c78052f8dad05ea5dd6fd3c8"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-repro-n10/run-order.json",
+      "sha256": "f7b4baf73afd53822824f1bf3cba1ac2a209458685b4c8f9b84fc1f2d25ba1f4"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/config/spot-recovery-app-prestop3.yaml",
+      "sha256": "4758ed124ea9e17f834041d1327f1cd4a8288557e35088162bcd185f77c1f87d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-01.jsonl",
+      "sha256": "b0a9669508246cbc5c14847da232c10595497e5912a20a9a50b18029258b6f9f"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-02.jsonl",
+      "sha256": "9e5e73ecbd857004b2c3c8bc0418c58324414ce1acfe960cc04c33789e9c84eb"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-03.jsonl",
+      "sha256": "f9c891e3eeb37325a0cd93f72ede5759452817c6a007cf5153860c256afa7f78"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-04.jsonl",
+      "sha256": "03734c7650cadc440e3e81fe5a5e1ef80e5a610f542ffbd5d9ed3c35aa9e5196"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/pre-attempt-steady-state-05.jsonl",
+      "sha256": "4b67adc9bab98b7266d1ede27d53762ac3c4b0c6a96ce6eefa6ff5bb04a0266b"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-01.csv",
+      "sha256": "0b4967572c43890a6c6e26ff0b3cd9cf49fa978fb997dfc3a07bcbc000da50c6"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-01.json",
+      "sha256": "cbf5a7aea57a8df844591677dfd21aff405bef9f0dcd20446f50970c2ab8947a"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-01.jsonl",
+      "sha256": "dd9c614a72412fa9b7263c38a4719a080b5dd5c5d6405c3def8b2b9b7dba0484"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-02.csv",
+      "sha256": "bfe5cb40a0192a5589aab2f65a26c082c0c86ecafe848e78b4624ce1395bd721"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-02.json",
+      "sha256": "cfd8484c664f81e113ad00113e0b9be2038e1f26208330d5e5d2e3bfbffe3bec"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-02.jsonl",
+      "sha256": "9eff7e279bdc2fe9c8e2b1a72a5e37ea84d5b9a82d48e8bf442226a7ea50d39d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-03.csv",
+      "sha256": "6095f9fe5f52d497d50fac570959085dfa127dd669ea52623cf4f5df66c5a927"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-03.json",
+      "sha256": "6973485483400c139e7096e10a037025be84f5a0ed34aa477bb06f06d3f5dca3"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-03.jsonl",
+      "sha256": "b4ce9e7ea174511f9966bae2232be2985d3aefaff00ac42992b354e72038d2cd"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-04.csv",
+      "sha256": "5aa445967b2a5ffcbf3a804a2e9ec7d8a23e8346b66c12574b04d309ee982626"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-04.json",
+      "sha256": "c260ab84bebadcc701df81242e9b532e02b3849c24cb9f884f49e72da562ba82"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-04.jsonl",
+      "sha256": "3c419c1c2264c80e9443ca1c654e3981a2ac361085c3fad6dafa5f13c4825167"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-05.csv",
+      "sha256": "168ffc99122b2570f59193aa39babf58c71f46bafa40921442c29e1785b45d09"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-05.json",
+      "sha256": "8c92a89f149dfc6c4885ac40ee2f3ac1ad7b6104f28b6c8570ae4c9e213e0285"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/execution-01/spot-interruption-05.jsonl",
+      "sha256": "a2927608fb578a73211714380ae8ea1387deae51619cabe60a76c71ff93ca813"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop3-window120/preregistered-rules.json",
+      "sha256": "b70f20ed82f5c2354061b7bd4896912153e8222ce1cf5904b8e9b64a1f154f8a"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-01.csv",
+      "sha256": "a27f5789cad7afc1e06854dd14668ca54aa46b418abbab61f2246b1b0a1e5b55"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-01.json",
+      "sha256": "5f6a9886f9181a972efd783e58136ef6c8fbb913d5db77d01972b4f4d7019b27"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-02.csv",
+      "sha256": "87a78b4340e5b4dde5077675237d3124fa613a687d55b79c71d0ad1382cf4ee1"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-02.json",
+      "sha256": "79efd7c9e0a636989518e63e35c1b0ae01440cc5ca5e64e5e46dc4e488357ddd"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-03.csv",
+      "sha256": "d83a682aee9280119a80bb726aa9027064734ffea127ef68cf885eeb7ae76c45"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-03.json",
+      "sha256": "281615a2c21fa8159130bbf7c7d1e4f015c2a0964a1504c5f968e983c0d2294d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-04.csv",
+      "sha256": "f5c7601f17fcc3c932d7167c8a62de394e4f5c4451f9b757471be435b2236105"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-04.json",
+      "sha256": "4a984ac335b9788fea1f1057beee2583af1adb007afba9328fddf288a5fc614b"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-05.csv",
+      "sha256": "9001ecdf7b9f27f1ab34f684d68c3fb9a56972f910631b43a7c58f2df95839ee"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5/execution-01/spot-interruption-05.json",
+      "sha256": "64727ecb48160efe87ba9a61adf75cec031cbda6c38da39b5de3bc697ceaa130"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-01.csv",
+      "sha256": "23e18452ad1b97e6e669dc95e5123227e8a67a6e0ade85677f66de93ded75294"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-01.json",
+      "sha256": "193d216b26b5942586a8cb013d20efeb20d5ed24ca6131168a8c11cf1b992dc6"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-02.csv",
+      "sha256": "2accd141e3ed8379dff8331f1569d0835d7a45c62d038bed520efb3db59ca59b"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-02.json",
+      "sha256": "0dc597d45dda9239799728797af3bc74922126372e81a650ccf79c90e810a36a"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-03.csv",
+      "sha256": "ab563b3f459ba8e45d3835c5befa97f691f8d8dd3911ab891faee5fd3859487f"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-03.json",
+      "sha256": "e4ac30bc1da3d0344cefe374fc6c585929debff9ee72edbfef56b21457bc317d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-04.csv",
+      "sha256": "772e1d4c4106bdf3fc2c4a4583174dc090b492054e9ecc24c13815426be65476"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-04.json",
+      "sha256": "7d7ece98f8eadf17f303a629b2904336474a3878d10a0912b05aa3499b65253c"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-05.csv",
+      "sha256": "d4d37a8bd03bc11987a2ca81289e0c1b143f4500a0299160d6d1f366a655b756"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-05.json",
+      "sha256": "15d0e20b5ad39f650c36789fa86f0a98c28e5310fa2e717877f370cc588810bc"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-06.csv",
+      "sha256": "b5c3a90058a93ab8ab5fc0cec03caad6a9817922160eac234b635fff4290dd24"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-06.json",
+      "sha256": "05bd20f8efd9cdcfb1a96def34c3b2e3f87eea842c310602e5e783a80c6375bf"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-07.csv",
+      "sha256": "f6e7da02b646a6c41f1ecd45db379fdb97d98734fe15fda7522482c32a5e3e1e"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-07.json",
+      "sha256": "0456954d5d4a89fbdabfaeca0aea4696d93f5ba8928397271076b00185a5089d"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-08.csv",
+      "sha256": "d57661ab45246251b0aac1b1f5e1a72d05c64b23e8009be7544b41e40b9797be"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-08.json",
+      "sha256": "bba6bf113162db4ef4bcfb8bdbe6352bb1211879e4e50cf293f8150277a3a5ca"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-09.csv",
+      "sha256": "83e988f6558beedb0620bdfc61071ee2b0aabe3a858898418c012ed7bbe3ebca"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-09.json",
+      "sha256": "44a322aae4256b75b09b80b0e08493e47b5ab6d6200a30a0a1766ef9c5e085ca"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-10.csv",
+      "sha256": "2653e4c9b1c9a4b00f7c0aaaf044a168f98d176be5cb09ac9ed8d643b669f151"
+    },
+    {
+      "path": "measure/results/20261003-phase3-prestop5-repro-n10/execution-01/spot-interruption-10.json",
+      "sha256": "7cc3684e7e451cffffa42e3c079cc1401cbdf4190406b2a63d400cd128856fa7"
+    }
+  ]
+}

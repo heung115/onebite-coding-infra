@@ -1,0 +1,107 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-probe
+  namespace: measure
+  labels:
+    app: backend-probe
+    measure-experiment: phase3-spot
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-probe
+  template:
+    metadata:
+      labels:
+        app: backend-probe
+        measure-experiment: phase3-spot
+    spec:
+      nodeSelector:
+        measure-pool: experiment
+        measure-experiment: phase3-spot
+      tolerations:
+        - key: measure/only
+          operator: Equal
+          value: experiment
+          effect: NoSchedule
+      topologySpreadConstraints:
+        - maxSkew: 1
+          minDomains: 2
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: backend-probe
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: nginx
+          image: nginx:1.27.5-alpine
+          ports:
+            - name: http
+              containerPort: 80
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "sleep 3"]
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            periodSeconds: 2
+            timeoutSeconds: 1
+            failureThreshold: 2
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-probe
+  namespace: measure
+spec:
+  selector:
+    app: backend-probe
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: backend-probe
+  namespace: measure
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: backend-probe
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend-probe
+  namespace: measure
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/healthcheck-path: /
+    alb.ingress.kubernetes.io/tags: Project=onebite,Temporary=true,measure-experiment=phase3-spot-20261003-v8
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-probe
+                port:
+                  number: 80

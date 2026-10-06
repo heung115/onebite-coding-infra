@@ -1,0 +1,1590 @@
+{
+  "experiment": "Phase 3 preStop 5-second repeatability",
+  "combined_batch_id": "20261003-phase3-prestop5-n15",
+  "condition": "container preStop exec sleep 5 seconds",
+  "condition_match": {
+    "workload_settings_match": true,
+    "manifest_diff": "Only alb.ingress.kubernetes.io/tags measure-experiment value changed for batch identity.",
+    "manifest_diff_file": "analysis/prestop5-manifest-condition-diff.txt",
+    "measurement_definition": "HTTP JSONL/CSV and warning-to-Node/Pod/Ready-replica timestamps use the same collector definitions.",
+    "environment_lifecycle_note": "The new n=10 batch kept one EKS/Karpenter/ALB/workload environment for all ten attempts. The combined n=15 is a descriptive pool across prior n=5 and new n=10; it is not fifteen independent fresh clusters.",
+    "workload_payloads_match": true,
+    "same_cluster_name": true,
+    "same_region": true,
+    "same_karpenter_version": true,
+    "both_prestop_sleep_seconds_5": true,
+    "workload_manifest_diff_only_batch_tag": true,
+    "karpenter_nodepool_diff_only_batch_tag": true,
+    "environment_lifecycle_identical": false,
+    "pooled_summary_scope": "descriptive per-run aggregate; two batches have separately preserved raw and the new n=10 uses one persistent cluster",
+    "settings_match_for_pooled_descriptive_summary": true
+  },
+  "batch_counts": {
+    "prior_prestop5_batch": {
+      "batch_id": "20261003-phase3-prestop5",
+      "attempts": 5,
+      "valid_interruption_n": 5,
+      "total_http_requests": 30002,
+      "failed_http_requests": 0
+    },
+    "new_persistent_cluster_batch": {
+      "batch_id": "20261003-phase3-prestop5-repro-n10",
+      "attempts": 10,
+      "valid_interruption_n": 10,
+      "gate_failures": 0,
+      "all_fis_completed": true,
+      "total_http_requests": 60001,
+      "failed_http_requests": 0,
+      "raw_csv_summary_counts_match": true
+    },
+    "combined": {
+      "attempts": 15,
+      "valid_interruption_n": 15,
+      "http_runs_with_failure": 0,
+      "total_http_requests": 90003,
+      "failed_http_requests": 0
+    }
+  },
+  "metrics_median_min_max_n": {
+    "http_failure_rate_percent": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "valid_n": 15
+    },
+    "http_max_contiguous_failure_window_seconds": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "valid_n": 15
+    },
+    "warning_to_replacement_node_ready_seconds": {
+      "median": 31.0,
+      "min": 30.0,
+      "max": 32.0,
+      "valid_n": 15
+    },
+    "warning_to_replacement_pod_ready_seconds": {
+      "median": 37.0,
+      "min": 35.0,
+      "max": 38.0,
+      "valid_n": 15
+    },
+    "warning_to_ready_replicas_2_seconds": {
+      "median": 37.0,
+      "min": 35.0,
+      "max": 38.0,
+      "valid_n": 15
+    },
+    "killing_to_pod_absence_proxy_seconds": {
+      "median": 8.763638,
+      "min": 7.352353,
+      "max": 10.928746,
+      "valid_n": 15
+    }
+  },
+  "baseline_without_prestop_n5": {
+    "http_failure_rate_percent": {
+      "median": 0.216631,
+      "min": 0.133311,
+      "max": 0.333278,
+      "valid_n": 5
+    },
+    "http_max_contiguous_failure_window_seconds": {
+      "median": 0.216384,
+      "min": 0.213889,
+      "max": 0.21804,
+      "valid_n": 5
+    },
+    "warning_to_replacement_pod_ready_seconds": {
+      "median": 37.0,
+      "min": 36.0,
+      "max": 38.0,
+      "valid_n": 5
+    },
+    "warning_to_ready_replicas_2_seconds": {
+      "median": 40.778,
+      "min": 40.31265,
+      "max": 42.156912,
+      "valid_n": 5
+    },
+    "failed_requests_total": 70,
+    "total_requests": 30004
+  },
+  "prior_prestop5_n5": {
+    "metrics_median_min_max_n": {
+      "http_failure_rate_percent": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "valid_n": 5
+      },
+      "http_max_contiguous_failure_window_seconds": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "valid_n": 5
+      },
+      "warning_to_third_2xx_after_last_failure_seconds": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "valid_n": 0
+      },
+      "warning_to_replacement_pod_ready_seconds": {
+        "median": 37.0,
+        "min": 35.0,
+        "max": 38.0,
+        "valid_n": 5
+      },
+      "warning_to_ready_replicas_2_seconds": {
+        "median": 37.0,
+        "min": 35.0,
+        "max": 38.0,
+        "valid_n": 5
+      },
+      "warning_to_pod_killing_seconds": {
+        "median": 2.0,
+        "min": 1.0,
+        "max": 3.0,
+        "valid_n": 5
+      },
+      "killing_to_container_terminated_seconds": {
+        "median": null,
+        "min": null,
+        "max": null,
+        "valid_n": 0
+      },
+      "killing_to_pod_absence_observed_seconds": {
+        "median": 8.148869,
+        "min": 7.352353,
+        "max": 9.611178,
+        "valid_n": 5
+      }
+    }
+  },
+  "runs": [
+    {
+      "batch": "20261003-phase3-prestop5",
+      "trial": 1,
+      "valid_interruption": true,
+      "condition": "prestop-sleep-5s",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPcPyuYDihM7Wx3W2",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T00:41:28Z",
+      "target": {
+        "instance_id": "i-0bfeb78a8975ad8d5",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-059893beda126ea10",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T00:41:34+00:00",
+        "state": "running"
+      },
+      "http": {
+        "total_requests": 6001,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 32.0,
+        "warning_to_replacement_pod_ready": 37.0,
+        "warning_to_ready_replicas_2": 37.0,
+        "killing_to_pod_absence_proxy": 7.684058
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:39:17.283326+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:39:17.283390+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:39:26.710097+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:40:34.727491+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:40:38.871288+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:40:39.472322+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8692,
+        "jsonl_http_requests": 6001,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6001,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5",
+      "trial": 2,
+      "valid_interruption": true,
+      "condition": "prestop-sleep-5s",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPYVWNN6SyxdAZ91L",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T00:56:46Z",
+      "target": {
+        "instance_id": "i-0638ba0d458ac7882",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0c950818c12b2b323",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T00:56:52+00:00",
+        "state": "running"
+      },
+      "http": {
+        "total_requests": 6001,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 30.0,
+        "warning_to_replacement_pod_ready": 35.0,
+        "warning_to_ready_replicas_2": 35.0,
+        "killing_to_pod_absence_proxy": 8.6789
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:52:18.945410+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:52:18.945475+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:52:24.394348+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:55:51.981909+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:55:56.142697+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T00:55:56.607658+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8673,
+        "jsonl_http_requests": 6001,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6001,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5",
+      "trial": 3,
+      "valid_interruption": true,
+      "condition": "prestop-sleep-5s",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPHDP9ngG8pnCspst",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T01:12:04Z",
+      "target": {
+        "instance_id": "i-021299c62d870f4aa",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0fe8efd056c961773",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T01:12:10+00:00",
+        "state": "running"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 31.0,
+        "warning_to_replacement_pod_ready": 37.0,
+        "warning_to_ready_replicas_2": 37.0,
+        "killing_to_pod_absence_proxy": 7.352353
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:07:27.026077+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:07:27.026140+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:07:32.384119+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:11:09.933891+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:11:14.087508+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:11:14.538291+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8586,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5",
+      "trial": 4,
+      "valid_interruption": true,
+      "condition": "prestop-sleep-5s",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPTcyz65Rpwny5uo8",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T01:27:21Z",
+      "target": {
+        "instance_id": "i-0618ccb26e52fbb20",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0678c21a12e76f232",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T01:27:27+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 30.0,
+        "warning_to_replacement_pod_ready": 35.0,
+        "warning_to_ready_replicas_2": 35.0,
+        "killing_to_pod_absence_proxy": 9.611178
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:22:53.745984+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:22:53.746151+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:22:59.480546+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:26:26.755151+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:26:30.950913+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:26:31.381149+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8667,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5",
+      "trial": 5,
+      "valid_interruption": true,
+      "condition": "prestop-sleep-5s",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPc1jQEhcELTn7A7c",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T01:42:39Z",
+      "target": {
+        "instance_id": "i-01cc4675bcdad122c",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0fa55475c9bd77c55",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T01:42:46+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 31.0,
+        "warning_to_replacement_pod_ready": 38.0,
+        "warning_to_ready_replicas_2": 38.0,
+        "killing_to_pod_absence_proxy": 8.148869
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:37:56.303823+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:37:56.303986+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:38:01.319952+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:41:44.022686+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:41:48.160320+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T01:41:48.591580+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8694,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 1,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPwtHCqyKHKUcS6g2",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T03:09:00Z",
+      "target": {
+        "instance_id": "i-0d6134dac4608ab05",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-02eb058f1b1abecec",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T03:09:06+00:00",
+        "state": "running"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 30.0,
+        "warning_to_replacement_pod_ready": 35.0,
+        "warning_to_ready_replicas_2": 35.0,
+        "killing_to_pod_absence_proxy": 9.042847
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:06:30.591055+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:06:30.591120+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:06:39.509656+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:08:08.668232+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:08:12.832741+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:08:13.265887+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8706,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 2,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPPDjJ1zjmgCMm6xS",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T03:19:32Z",
+      "target": {
+        "instance_id": "i-03e2b0620a0c2c02b",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-08a550c1ac48e0c1e",
+        "instance_type": "m8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T03:19:38+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 32.0,
+        "warning_to_replacement_pod_ready": 38.0,
+        "warning_to_ready_replicas_2": 38.0,
+        "killing_to_pod_absence_proxy": 8.048172
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:18:29.315479+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:18:29.315659+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:18:35.033313+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:18:38.824036+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:18:42.950333+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:18:43.363328+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8663,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 3,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPMwTGLkWhgViUCQz",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T03:30:00Z",
+      "target": {
+        "instance_id": "i-08a550c1ac48e0c1e",
+        "instance_type": "m8i-flex.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-040112005d5884963",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T03:30:06+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 32.0,
+        "warning_to_replacement_pod_ready": 37.0,
+        "warning_to_ready_replicas_2": 37.0,
+        "killing_to_pod_absence_proxy": 10.928746
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:28:58.212044+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:28:58.212111+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:29:03.413523+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:29:07.180490+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:29:11.323335+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:29:11.742563+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8619,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 4,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPxXcVDbV7jP5Qs4v",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T03:40:30Z",
+      "target": {
+        "instance_id": "i-040112005d5884963",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0e6385174f357b978",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T03:40:36+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 30.0,
+        "warning_to_replacement_pod_ready": 35.0,
+        "warning_to_ready_replicas_2": 35.0,
+        "killing_to_pod_absence_proxy": 9.762511
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:39:29.273731+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:39:29.273798+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:39:34.823770+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:39:38.919784+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:39:43.052851+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:39:43.480797+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8587,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 5,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPVibH6EoeX7jXk4z",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T03:51:04Z",
+      "target": {
+        "instance_id": "i-0e6385174f357b978",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0f71fa6a6573b09fa",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T03:51:11+00:00",
+        "state": "running"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 31.0,
+        "warning_to_replacement_pod_ready": 35.0,
+        "warning_to_ready_replicas_2": 35.0,
+        "killing_to_pod_absence_proxy": 8.86234
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:50:00.360894+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:50:00.361084+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:50:06.077353+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:50:09.940730+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:50:14.109182+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T03:50:14.555052+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8533,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 6,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPueT79gZhbNSwX6A",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T04:01:32Z",
+      "target": {
+        "instance_id": "i-0f71fa6a6573b09fa",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0927ee415582f7166",
+        "instance_type": "m8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T04:01:37+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 30.0,
+        "warning_to_replacement_pod_ready": 35.0,
+        "warning_to_ready_replicas_2": 35.0,
+        "killing_to_pod_absence_proxy": 9.5734
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:00:29.696196+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:00:29.696375+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:00:34.432834+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:00:38.196451+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:00:42.320499+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:00:42.745390+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8621,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 7,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXP7i9QfBrmEW7FDQn",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T04:12:03Z",
+      "target": {
+        "instance_id": "i-0927ee415582f7166",
+        "instance_type": "m8i-flex.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-01146173adf8ef5c4",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T04:12:09+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 31.0,
+        "warning_to_replacement_pod_ready": 37.0,
+        "warning_to_ready_replicas_2": 37.0,
+        "killing_to_pod_absence_proxy": 10.676711
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:11:00.384745+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:11:00.384915+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:11:05.905816+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:11:09.601472+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:11:13.744596+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:11:14.149997+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8635,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 8,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPJoARxkmEaNQsBsg",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T04:22:33Z",
+      "target": {
+        "instance_id": "i-02eb058f1b1abecec",
+        "instance_type": "c7i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-0339a292002ee5789",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T04:22:40+00:00",
+        "state": "pending"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 32.0,
+        "warning_to_replacement_pod_ready": 38.0,
+        "warning_to_ready_replicas_2": 38.0,
+        "killing_to_pod_absence_proxy": 7.891921
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:21:30.918006+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:21:30.918182+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:21:36.188929+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:21:40.030626+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:21:44.152620+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:21:44.584813+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8592,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 9,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXPEJGyx7KQsqwEGa6",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T04:33:00Z",
+      "target": {
+        "instance_id": "i-0339a292002ee5789",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-01834ed97c70cb650",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T04:33:07+00:00",
+        "state": "running"
+      },
+      "http": {
+        "total_requests": 6000,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 31.0,
+        "warning_to_replacement_pod_ready": 38.0,
+        "warning_to_ready_replicas_2": 38.0,
+        "killing_to_pod_absence_proxy": 8.763638
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:31:57.626216+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:31:57.626290+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:32:03.522479+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:32:07.197441+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:32:11.367832+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:32:11.788340+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8601,
+        "jsonl_http_requests": 6000,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6000,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    },
+    {
+      "batch": "20261003-phase3-prestop5-repro-n10",
+      "trial": 10,
+      "valid_interruption": true,
+      "condition": "prestop5",
+      "pre_stop_sleep_seconds": 5,
+      "fis_experiment_id": "EXP7cwyzNuCEQNqyrS",
+      "fis_final_status": "completed",
+      "warning_at_utc": "2026-10-03T04:43:27Z",
+      "target": {
+        "instance_id": "i-01834ed97c70cb650",
+        "instance_type": "c8i-flex.large",
+        "availability_zone": "ap-northeast-2c"
+      },
+      "replacement": {
+        "instance_id": "i-097661673e69f918f",
+        "instance_type": "c8i.large",
+        "availability_zone": "ap-northeast-2c",
+        "instance_lifecycle": "spot",
+        "launch_time_utc": "2026-10-03T04:43:33+00:00",
+        "state": "running"
+      },
+      "http": {
+        "total_requests": 6001,
+        "failed_requests": 0,
+        "failure_rate_percent": 0.0,
+        "max_contiguous_failure_window_seconds": 0.0
+      },
+      "recovery_seconds": {
+        "warning_to_node_ready": 32.0,
+        "warning_to_replacement_pod_ready": 37.0,
+        "warning_to_ready_replicas_2": 37.0,
+        "killing_to_pod_absence_proxy": 8.697811
+      },
+      "ready_replicas": {
+        "before": 2,
+        "minimum_observed": 1,
+        "final": 2
+      },
+      "pre_fis_gate": {
+        "steps": [
+          {
+            "step": 1,
+            "name": "spot_workers_2_ready",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:42:25.851951+00:00"
+          },
+          {
+            "step": 2,
+            "name": "pods_2_ready_on_distinct_workers",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:42:25.852121+00:00"
+          },
+          {
+            "step": 3,
+            "name": "pod_ip_80_http_200",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:42:30.868295+00:00"
+          },
+          {
+            "step": 4,
+            "name": "target_group_2_healthy",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:42:34.568464+00:00"
+          },
+          {
+            "step": 5,
+            "name": "alb_http_2xx_five_consecutive",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:42:38.706751+00:00"
+          },
+          {
+            "step": 6,
+            "name": "node_sg_self_reference_tcp_80_present",
+            "passed": true,
+            "observed_at_utc": "2026-10-03T04:42:39.167499+00:00"
+          }
+        ],
+        "all_six_passed": true
+      },
+      "raw_integrity": {
+        "jsonl_lines": 8618,
+        "jsonl_http_requests": 6001,
+        "jsonl_http_failures": 0,
+        "csv_http_requests": 6001,
+        "csv_http_failures": 0,
+        "request_counts_match_summary_and_csv": true,
+        "fis_start_count": 1,
+        "fis_terminal_statuses": [
+          "completed"
+        ],
+        "target_resolved_instance_ids": []
+      }
+    }
+  ],
+  "interpretation": [
+    "15회에서 HTTP 실패 미관측; 이번 표본에서 실패가 없었다는 뜻이며 일반적인 무중단 보장이 아니다.",
+    "preStop hook 완료 timestamp는 보존되지 않았다. killing-to-Pod-absence는 약 2초 polling이 포함된 API snapshot proxy다.",
+    "마지막 실패 이후 3회 연속 2xx 시간은 15회 모두 HTTP 실패가 없어 적용할 수 없다.",
+    "새 n=10은 같은 persistent cluster에서 연속 수행됐다. 열 개의 독립 EKS 환경으로 해석하지 않는다."
+  ],
+  "limitations": [
+    "Small stateless nginx workload, two replicas, one chosen Spot interruption target per attempt.",
+    "The ten new attempts share one cluster and sequential node/resource history.",
+    "The preceding preStop5 n=5 is a separate batch; raw files remain separate.",
+    "No direct hook-completion or container-terminated timestamp was captured."
+  ]
+}

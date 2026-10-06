@@ -1,0 +1,209 @@
+{
+  "condition": "ca",
+  "trial": 2,
+  "pair": 2,
+  "pair_first": "ca",
+  "app": "scale-probe",
+  "replicas": 2,
+  "expected_experiment_workers": 2,
+  "pretrial_experiment_workers": 0,
+  "kubeconfig": "<operator-path>",
+  "started_at_utc": "2026-09-30T04:35:33.104142+00:00",
+  "scale_requested_at_utc": "2026-09-30T04:35:37.274068+00:00",
+  "finished_at_utc": "2026-09-30T04:36:42.677233+00:00",
+  "elapsed_seconds": 69.573,
+  "scale_request_to_all_pods_ready_seconds": 65.403,
+  "succeeded": true,
+  "markers": {
+    "first_pod_observed_at_utc": "2026-09-30T04:35:39.007286+00:00",
+    "first_pending_observed_at_utc": "2026-09-30T04:35:39.007286+00:00",
+    "first_new_worker_observed_at_utc": "2026-09-30T04:36:27.916857+00:00",
+    "first_new_worker_ready_at_utc": "2026-09-30T04:36:36Z",
+    "first_ec2_launch_at_utc": "2026-09-30T04:36:10+00:00",
+    "first_node_registered_at_utc": "2026-09-30T04:36:26Z",
+    "first_unschedulable_at_utc": "2026-09-30T04:35:37Z",
+    "node_timestamps": {
+      "ip-10-40-2-14.ap-northeast-2.compute.internal": {
+        "registered_at_utc": "2026-09-30T04:36:26Z",
+        "ready_at_utc": "2026-09-30T04:36:36Z",
+        "provider_id": "aws:///ap-northeast-2a/i-09ea482de5e2851bf"
+      },
+      "ip-10-40-2-62.ap-northeast-2.compute.internal": {
+        "registered_at_utc": "2026-09-30T04:36:27Z",
+        "ready_at_utc": "2026-09-30T04:36:37Z",
+        "provider_id": "aws:///ap-northeast-2a/i-04c65fe6368dbc521"
+      }
+    },
+    "pod_ready_timestamps": {
+      "scale-probe-687968c7df-z4sxt": "2026-09-30T04:36:38Z",
+      "scale-probe-687968c7df-8tw79": "2026-09-30T04:36:39Z"
+    },
+    "all_pods_ready_at_utc": "2026-09-30T04:36:42.677096+00:00"
+  },
+  "final_pods": [
+    {
+      "name": "scale-probe-687968c7df-8tw79",
+      "created_at_utc": "2026-09-30T04:35:37Z",
+      "phase": "Running",
+      "ready": true,
+      "node": "ip-10-40-2-62.ap-northeast-2.compute.internal",
+      "pod_ip": "10.40.12.49",
+      "pod_ips": [
+        "10.40.12.49"
+      ],
+      "reason": null,
+      "conditions": [
+        {
+          "type": "PodReadyToStartContainers",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:38Z"
+        },
+        {
+          "type": "Initialized",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:37Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:39Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:39Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:37Z"
+        }
+      ],
+      "unschedulable_at_utc": null,
+      "ready_at_utc": "2026-09-30T04:36:39Z"
+    },
+    {
+      "name": "scale-probe-687968c7df-z4sxt",
+      "created_at_utc": "2026-09-30T04:35:37Z",
+      "phase": "Running",
+      "ready": true,
+      "node": "ip-10-40-2-14.ap-northeast-2.compute.internal",
+      "pod_ip": "10.40.13.16",
+      "pod_ips": [
+        "10.40.13.16"
+      ],
+      "reason": null,
+      "conditions": [
+        {
+          "type": "PodReadyToStartContainers",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:36Z"
+        },
+        {
+          "type": "Initialized",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:36Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:38Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:38Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "reason": null,
+          "last_transition_at_utc": "2026-09-30T04:36:36Z"
+        }
+      ],
+      "unschedulable_at_utc": null,
+      "ready_at_utc": "2026-09-30T04:36:38Z"
+    }
+  ],
+  "final_experiment_nodes": [
+    {
+      "name": "ip-10-40-2-14.ap-northeast-2.compute.internal",
+      "created_at_utc": "2026-09-30T04:36:26Z",
+      "provider_id": "aws:///ap-northeast-2a/i-09ea482de5e2851bf",
+      "ready": true,
+      "ready_at_utc": "2026-09-30T04:36:36Z",
+      "zone": "ap-northeast-2a",
+      "instance_type": "m7i-flex.large",
+      "capacity_pods": "29",
+      "allocatable_pods": "29",
+      "capacity_cpu": "2",
+      "allocatable_cpu": "1930m",
+      "capacity_memory": "7965196Ki",
+      "allocatable_memory": "7275020Ki"
+    },
+    {
+      "name": "ip-10-40-2-62.ap-northeast-2.compute.internal",
+      "created_at_utc": "2026-09-30T04:36:27Z",
+      "provider_id": "aws:///ap-northeast-2a/i-04c65fe6368dbc521",
+      "ready": true,
+      "ready_at_utc": "2026-09-30T04:36:37Z",
+      "zone": "ap-northeast-2a",
+      "instance_type": "m7i-flex.large",
+      "capacity_pods": "29",
+      "allocatable_pods": "29",
+      "capacity_cpu": "2",
+      "allocatable_cpu": "1930m",
+      "capacity_memory": "7965196Ki",
+      "allocatable_memory": "7275020Ki"
+    }
+  ],
+  "final_experiment_instances": [
+    {
+      "instance_id": "i-043c35a2d0adf3306",
+      "launch_time": "2026-09-30T04:31:49+00:00",
+      "state": "terminated",
+      "instance_type": "m7i-flex.large",
+      "ami_id": "ami-0aadb3cf154aff503",
+      "zone": "ap-northeast-2a",
+      "subnet_id": null
+    },
+    {
+      "instance_id": "i-060be25252d70785d",
+      "launch_time": "2026-09-30T04:31:49+00:00",
+      "state": "terminated",
+      "instance_type": "m7i-flex.large",
+      "ami_id": "ami-0aadb3cf154aff503",
+      "zone": "ap-northeast-2a",
+      "subnet_id": null
+    },
+    {
+      "instance_id": "i-09ea482de5e2851bf",
+      "launch_time": "2026-09-30T04:36:10+00:00",
+      "state": "running",
+      "instance_type": "m7i-flex.large",
+      "ami_id": "ami-0aadb3cf154aff503",
+      "zone": "ap-northeast-2a",
+      "subnet_id": "subnet-0c6183c9ef10f6eae"
+    },
+    {
+      "instance_id": "i-04c65fe6368dbc521",
+      "launch_time": "2026-09-30T04:36:10+00:00",
+      "state": "running",
+      "instance_type": "m7i-flex.large",
+      "ami_id": "ami-0aadb3cf154aff503",
+      "zone": "ap-northeast-2a",
+      "subnet_id": "subnet-0c6183c9ef10f6eae"
+    }
+  ],
+  "limitations": [],
+  "raw_file": "eks/measure/results/20260930T042807Z-a-paired/a-ca-02.jsonl"
+}

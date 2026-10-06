@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scale-probe
+  namespace: measure
+  labels:
+    app: scale-probe
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: scale-probe
+  template:
+    metadata:
+      labels:
+        app: scale-probe
+    spec:
+      nodeSelector:
+        measure-pool: experiment
+      tolerations:
+        - key: measure/only
+          operator: Equal
+          value: experiment
+          effect: NoSchedule
+      containers:
+        - name: pause
+          image: registry.k8s.io/pause:3.10
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 256Mi

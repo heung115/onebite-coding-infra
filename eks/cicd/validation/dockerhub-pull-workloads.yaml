@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dockerhub-pull-validation
+  labels:
+    app.kubernetes.io/part-of: onebite-cicd
+    purpose: dockerhub-pull-validation
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-image-pull-check
+  namespace: dockerhub-pull-validation
+  labels:
+    app.kubernetes.io/part-of: onebite-cicd
+    purpose: dockerhub-pull-validation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-image-pull-check
+  template:
+    metadata:
+      labels:
+        app: backend-image-pull-check
+        purpose: dockerhub-pull-validation
+    spec:
+      containers:
+        - name: backend
+          image: heung115/spaghetti-be:20250610-95d3ad6
+          imagePullPolicy: Always
+          command: ["/bin/sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-image-pull-check
+  namespace: dockerhub-pull-validation
+  labels:
+    app.kubernetes.io/part-of: onebite-cicd
+    purpose: dockerhub-pull-validation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-image-pull-check
+  template:
+    metadata:
+      labels:
+        app: frontend-image-pull-check
+        purpose: dockerhub-pull-validation
+    spec:
+      containers:
+        - name: frontend
+          image: heung115/spaghetti-fe:20250610-a24c927
+          imagePullPolicy: Always
+          command: ["/bin/sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi

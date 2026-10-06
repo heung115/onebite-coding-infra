@@ -1,0 +1,21 @@
+# app-of-apps: GitOps eks 브랜치의 eks/apps/ (backend-<env> Application 3개)를 배포한다.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: onebite-eks-apps
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: {{ .Values.repoURL }}
+    targetRevision: {{ .Values.targetRevision }}
+    path: {{ .Values.path }}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

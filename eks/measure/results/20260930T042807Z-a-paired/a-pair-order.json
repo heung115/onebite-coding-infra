@@ -1,0 +1,167 @@
+{
+  "created_at_utc": "2026-09-30T04:30:39.493721+00:00",
+  "seed": 17020896964574132097,
+  "method": "first 12 pairs balanced 6/6 and randomized; remaining 8 balanced 4/4 and randomized; total 10/10",
+  "pairs": [
+    {
+      "pair": 1,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 2,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 3,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 4,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 5,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 6,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 7,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 8,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 9,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 10,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 11,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 12,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 13,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 14,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 15,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 16,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 17,
+      "first": "ca",
+      "order": [
+        "ca",
+        "karpenter"
+      ]
+    },
+    {
+      "pair": 18,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 19,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    },
+    {
+      "pair": 20,
+      "first": "karpenter",
+      "order": [
+        "karpenter",
+        "ca"
+      ]
+    }
+  ]
+}

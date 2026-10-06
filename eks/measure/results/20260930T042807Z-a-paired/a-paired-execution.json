@@ -1,0 +1,177 @@
+{
+  "finished_at_utc": "2026-09-30T05:30:59.544012+00:00",
+  "attempted_runs": 24,
+  "attempted_pairs": 12,
+  "stopped_after_12_pairs": true,
+  "failed_runs": 1,
+  "trials": [
+    {
+      "file": "a-ca-01.json",
+      "condition": "ca",
+      "pair": 1,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-02.json",
+      "condition": "ca",
+      "pair": 2,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-03.json",
+      "condition": "ca",
+      "pair": 3,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-04.json",
+      "condition": "ca",
+      "pair": 4,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-05.json",
+      "condition": "ca",
+      "pair": 5,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-06.json",
+      "condition": "ca",
+      "pair": 6,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-07.json",
+      "condition": "ca",
+      "pair": 7,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-08.json",
+      "condition": "ca",
+      "pair": 8,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-09.json",
+      "condition": "ca",
+      "pair": 9,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-10.json",
+      "condition": "ca",
+      "pair": 10,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-11.json",
+      "condition": "ca",
+      "pair": 11,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-ca-12.json",
+      "condition": "ca",
+      "pair": 12,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-01.json",
+      "condition": "karpenter",
+      "pair": 1,
+      "succeeded": false,
+      "error": "Setup failure: Karpenter EC2NodeClass was rejected because amiFamily: AL2023 is required when selecting an AMI by ID. Collector was stopped before its 900-second timeout; raw snapshots show no experiment nodes or new EC2 launches."
+    },
+    {
+      "file": "a-karpenter-02.json",
+      "condition": "karpenter",
+      "pair": 2,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-03.json",
+      "condition": "karpenter",
+      "pair": 3,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-04.json",
+      "condition": "karpenter",
+      "pair": 4,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-05.json",
+      "condition": "karpenter",
+      "pair": 5,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-06.json",
+      "condition": "karpenter",
+      "pair": 6,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-07.json",
+      "condition": "karpenter",
+      "pair": 7,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-08.json",
+      "condition": "karpenter",
+      "pair": 8,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-09.json",
+      "condition": "karpenter",
+      "pair": 9,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-10.json",
+      "condition": "karpenter",
+      "pair": 10,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-11.json",
+      "condition": "karpenter",
+      "pair": 11,
+      "succeeded": true,
+      "error": null
+    },
+    {
+      "file": "a-karpenter-12.json",
+      "condition": "karpenter",
+      "pair": 12,
+      "succeeded": true,
+      "error": null
+    }
+  ]
+}

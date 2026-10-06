@@ -1,0 +1,4 @@
+# EKS 차이만 덮어쓴다 (원본: values/ai-backend.yaml)
+# 차트 Secret 을 만들지 않고, ExternalSecret 이 ai-backend-<env>-secret 을 만든다
+# (GEMINI_API_KEY, GEMINI_MODEL 은 Secrets Manager onebite-ai-backend)
+secret: null

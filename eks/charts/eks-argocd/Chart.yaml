@@ -1,0 +1,5 @@
+apiVersion: v2
+name: eks-argocd
+description: onebite EKS - ArgoCD 저장소 연결 + 루트 Application (GitOps eks 브랜치)
+type: application
+version: 0.1.0

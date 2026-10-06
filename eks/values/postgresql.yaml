@@ -1,0 +1,21 @@
+auth:
+    username: "test_user_123"
+    database: "testdatabase"
+
+#################################
+# 마스터(프라이머리) PVC 설정
+#################################
+primary:
+    persistence:
+        enabled: true
+        size: 1Gi
+        # 헬름 릴리즈가 지워지면 pvc도 같이 삭제
+        deleteClaim: true
+
+#################################
+# 아키텍처 (standalone 또는 replication)
+#################################
+architecture: standalone
+#################################
+# Docker 이미지 태그
+#################################

@@ -1,0 +1,886 @@
+{
+  "created_at_utc": "2026-09-30T10:54:26.565513+00:00",
+  "planned_runs": 18,
+  "attempted_runs": 18,
+  "missing_runs": [],
+  "profiles": {
+    "general": {
+      "fixed": {
+        "attempted": 3,
+        "valid": 3,
+        "failed": [],
+        "instance_type_counts": {
+          "m7i-flex.large": 6
+        },
+        "instance_family_counts": {
+          "m7i-flex": 6
+        },
+        "instance_size_counts": {
+          "large": 6
+        },
+        "pod_packing_by_trial": [
+          {
+            "trial": 1,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-556866dd88-jt7m9"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-556866dd88-ktqpk"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 2,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-556866dd88-d7ksb"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-556866dd88-mgc7l"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 3,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-556866dd88-dc82v"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-556866dd88-v5zp5"
+                ]
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "node_count": {
+            "n": 3,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          },
+          "allocatable.cpu": {
+            "n": 3,
+            "median": 3860.0,
+            "min": 3860.0,
+            "max": 3860.0
+          },
+          "allocatable.memory_mib": {
+            "n": 3,
+            "median": 14209.02,
+            "min": 14209.01,
+            "max": 14209.02
+          },
+          "all_scheduled_pod_requested.cpu": {
+            "n": 3,
+            "median": 2360.0,
+            "min": 2360.0,
+            "max": 2360.0
+          },
+          "all_scheduled_pod_requested.memory_mib": {
+            "n": 3,
+            "median": 720.0,
+            "min": 720.0,
+            "max": 720.0
+          },
+          "unused.cpu": {
+            "n": 3,
+            "median": 1500.0,
+            "min": 1500.0,
+            "max": 1500.0
+          },
+          "unused.memory_mib": {
+            "n": 3,
+            "median": 13489.02,
+            "min": 13489.01,
+            "max": 13489.02
+          },
+          "provisioned_ec2_capacity_rate_usd_per_hour": {
+            "n": 3,
+            "median": 0.23542,
+            "min": 0.23542,
+            "max": 0.23542
+          },
+          "ready_seconds": {
+            "n": 3,
+            "median": 33.935,
+            "min": 33.843,
+            "max": 34.226
+          }
+        }
+      },
+      "flexible": {
+        "attempted": 3,
+        "valid": 3,
+        "failed": [],
+        "instance_type_counts": {
+          "c7i.xlarge": 3
+        },
+        "instance_family_counts": {
+          "c7i": 3
+        },
+        "instance_size_counts": {
+          "xlarge": 3
+        },
+        "pod_packing_by_trial": [
+          {
+            "trial": 1,
+            "nodes": [
+              {
+                "instance_type": "c7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-5584659489-8xzcg",
+                  "phase2-probe-5584659489-c9zzc"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 2,
+            "nodes": [
+              {
+                "instance_type": "c7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-5584659489-gm8ch",
+                  "phase2-probe-5584659489-gsfg7"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 3,
+            "nodes": [
+              {
+                "instance_type": "c7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-5584659489-2bm9t",
+                  "phase2-probe-5584659489-jszfn"
+                ]
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "node_count": {
+            "n": 3,
+            "median": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "allocatable.cpu": {
+            "n": 3,
+            "median": 3920.0,
+            "min": 3920.0,
+            "max": 3920.0
+          },
+          "allocatable.memory_mib": {
+            "n": 3,
+            "median": 6784.99,
+            "min": 6784.99,
+            "max": 6784.99
+          },
+          "all_scheduled_pod_requested.cpu": {
+            "n": 3,
+            "median": 2180.0,
+            "min": 2180.0,
+            "max": 2180.0
+          },
+          "all_scheduled_pod_requested.memory_mib": {
+            "n": 3,
+            "median": 616.0,
+            "min": 616.0,
+            "max": 616.0
+          },
+          "unused.cpu": {
+            "n": 3,
+            "median": 1740.0,
+            "min": 1740.0,
+            "max": 1740.0
+          },
+          "unused.memory_mib": {
+            "n": 3,
+            "median": 6168.99,
+            "min": 6168.99,
+            "max": 6168.99
+          },
+          "provisioned_ec2_capacity_rate_usd_per_hour": {
+            "n": 3,
+            "median": 0.2016,
+            "min": 0.2016,
+            "max": 0.2016
+          },
+          "ready_seconds": {
+            "n": 3,
+            "median": 32.967,
+            "min": 30.703,
+            "max": 34.009
+          }
+        }
+      }
+    },
+    "cpu-heavy": {
+      "fixed": {
+        "attempted": 3,
+        "valid": 3,
+        "failed": [],
+        "instance_type_counts": {
+          "m7i-flex.large": 6
+        },
+        "instance_family_counts": {
+          "m7i-flex": 6
+        },
+        "instance_size_counts": {
+          "large": 6
+        },
+        "pod_packing_by_trial": [
+          {
+            "trial": 1,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-7c8c4c7989-cfx9p"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-7c8c4c7989-vklms"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 2,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-7c8c4c7989-lmrw4"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-7c8c4c7989-kmkrs"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 3,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-7c8c4c7989-96bw2"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-7c8c4c7989-6vjxl"
+                ]
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "node_count": {
+            "n": 3,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          },
+          "allocatable.cpu": {
+            "n": 3,
+            "median": 3860.0,
+            "min": 3860.0,
+            "max": 3860.0
+          },
+          "allocatable.memory_mib": {
+            "n": 3,
+            "median": 14209.02,
+            "min": 14209.02,
+            "max": 14209.02
+          },
+          "all_scheduled_pod_requested.cpu": {
+            "n": 3,
+            "median": 3160.0,
+            "min": 3160.0,
+            "max": 3160.0
+          },
+          "all_scheduled_pod_requested.memory_mib": {
+            "n": 3,
+            "median": 720.0,
+            "min": 720.0,
+            "max": 720.0
+          },
+          "unused.cpu": {
+            "n": 3,
+            "median": 700.0,
+            "min": 700.0,
+            "max": 700.0
+          },
+          "unused.memory_mib": {
+            "n": 3,
+            "median": 13489.02,
+            "min": 13489.02,
+            "max": 13489.02
+          },
+          "provisioned_ec2_capacity_rate_usd_per_hour": {
+            "n": 3,
+            "median": 0.23542,
+            "min": 0.23542,
+            "max": 0.23542
+          },
+          "ready_seconds": {
+            "n": 3,
+            "median": 34.153,
+            "min": 33.312,
+            "max": 35.793
+          }
+        }
+      },
+      "flexible": {
+        "attempted": 3,
+        "valid": 3,
+        "failed": [],
+        "instance_type_counts": {
+          "c7i.xlarge": 3
+        },
+        "instance_family_counts": {
+          "c7i": 3
+        },
+        "instance_size_counts": {
+          "xlarge": 3
+        },
+        "pod_packing_by_trial": [
+          {
+            "trial": 1,
+            "nodes": [
+              {
+                "instance_type": "c7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-5bdf595f4-qbmkc",
+                  "phase2-probe-5bdf595f4-thgvq"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 2,
+            "nodes": [
+              {
+                "instance_type": "c7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-5bdf595f4-bqq4f",
+                  "phase2-probe-5bdf595f4-vsh95"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 3,
+            "nodes": [
+              {
+                "instance_type": "c7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-5bdf595f4-78lfn",
+                  "phase2-probe-5bdf595f4-7fnlh"
+                ]
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "node_count": {
+            "n": 3,
+            "median": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "allocatable.cpu": {
+            "n": 3,
+            "median": 3920.0,
+            "min": 3920.0,
+            "max": 3920.0
+          },
+          "allocatable.memory_mib": {
+            "n": 3,
+            "median": 6784.99,
+            "min": 6784.99,
+            "max": 6784.99
+          },
+          "all_scheduled_pod_requested.cpu": {
+            "n": 3,
+            "median": 2980.0,
+            "min": 2980.0,
+            "max": 2980.0
+          },
+          "all_scheduled_pod_requested.memory_mib": {
+            "n": 3,
+            "median": 616.0,
+            "min": 616.0,
+            "max": 616.0
+          },
+          "unused.cpu": {
+            "n": 3,
+            "median": 940.0,
+            "min": 940.0,
+            "max": 940.0
+          },
+          "unused.memory_mib": {
+            "n": 3,
+            "median": 6168.99,
+            "min": 6168.99,
+            "max": 6168.99
+          },
+          "provisioned_ec2_capacity_rate_usd_per_hour": {
+            "n": 3,
+            "median": 0.2016,
+            "min": 0.2016,
+            "max": 0.2016
+          },
+          "ready_seconds": {
+            "n": 3,
+            "median": 33.564,
+            "min": 33.415,
+            "max": 35.632
+          }
+        }
+      }
+    },
+    "memory-heavy": {
+      "fixed": {
+        "attempted": 3,
+        "valid": 3,
+        "failed": [],
+        "instance_type_counts": {
+          "m7i-flex.large": 6
+        },
+        "instance_family_counts": {
+          "m7i-flex": 6
+        },
+        "instance_size_counts": {
+          "large": 6
+        },
+        "pod_packing_by_trial": [
+          {
+            "trial": 1,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-f5976bbf5-228tn"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-f5976bbf5-5w6p4"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 2,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-f5976bbf5-5qwlk"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-f5976bbf5-g2nv6"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 3,
+            "nodes": [
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-f5976bbf5-xbpcd"
+                ]
+              },
+              {
+                "instance_type": "m7i-flex.large",
+                "benchmark_pod_count": 1,
+                "benchmark_pod_names": [
+                  "phase2-probe-f5976bbf5-rszrx"
+                ]
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "node_count": {
+            "n": 3,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          },
+          "allocatable.cpu": {
+            "n": 3,
+            "median": 3860.0,
+            "min": 3860.0,
+            "max": 3860.0
+          },
+          "allocatable.memory_mib": {
+            "n": 3,
+            "median": 14209.01,
+            "min": 14209.01,
+            "max": 14209.01
+          },
+          "all_scheduled_pod_requested.cpu": {
+            "n": 3,
+            "median": 2360.0,
+            "min": 2360.0,
+            "max": 2360.0
+          },
+          "all_scheduled_pod_requested.memory_mib": {
+            "n": 3,
+            "median": 8400.0,
+            "min": 8400.0,
+            "max": 8400.0
+          },
+          "unused.cpu": {
+            "n": 3,
+            "median": 1500.0,
+            "min": 1500.0,
+            "max": 1500.0
+          },
+          "unused.memory_mib": {
+            "n": 3,
+            "median": 5809.01,
+            "min": 5809.01,
+            "max": 5809.01
+          },
+          "provisioned_ec2_capacity_rate_usd_per_hour": {
+            "n": 3,
+            "median": 0.23542,
+            "min": 0.23542,
+            "max": 0.23542
+          },
+          "ready_seconds": {
+            "n": 3,
+            "median": 34.277,
+            "min": 33.562,
+            "max": 34.573
+          }
+        }
+      },
+      "flexible": {
+        "attempted": 3,
+        "valid": 3,
+        "failed": [],
+        "instance_type_counts": {
+          "m7i.xlarge": 3
+        },
+        "instance_family_counts": {
+          "m7i": 3
+        },
+        "instance_size_counts": {
+          "xlarge": 3
+        },
+        "pod_packing_by_trial": [
+          {
+            "trial": 1,
+            "nodes": [
+              {
+                "instance_type": "m7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-547d5447bd-47f4z",
+                  "phase2-probe-547d5447bd-fmz7d"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 2,
+            "nodes": [
+              {
+                "instance_type": "m7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-547d5447bd-98zhd",
+                  "phase2-probe-547d5447bd-jg7j7"
+                ]
+              }
+            ]
+          },
+          {
+            "trial": 3,
+            "nodes": [
+              {
+                "instance_type": "m7i.xlarge",
+                "benchmark_pod_count": 2,
+                "benchmark_pod_names": [
+                  "phase2-probe-547d5447bd-g85d9",
+                  "phase2-probe-547d5447bd-vm4np"
+                ]
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "node_count": {
+            "n": 3,
+            "median": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "allocatable.cpu": {
+            "n": 3,
+            "median": 3920.0,
+            "min": 3920.0,
+            "max": 3920.0
+          },
+          "allocatable.memory_mib": {
+            "n": 3,
+            "median": 14710.99,
+            "min": 14710.99,
+            "max": 14710.99
+          },
+          "all_scheduled_pod_requested.cpu": {
+            "n": 3,
+            "median": 2180.0,
+            "min": 2180.0,
+            "max": 2180.0
+          },
+          "all_scheduled_pod_requested.memory_mib": {
+            "n": 3,
+            "median": 8296.0,
+            "min": 8296.0,
+            "max": 8296.0
+          },
+          "unused.cpu": {
+            "n": 3,
+            "median": 1740.0,
+            "min": 1740.0,
+            "max": 1740.0
+          },
+          "unused.memory_mib": {
+            "n": 3,
+            "median": 6414.99,
+            "min": 6414.99,
+            "max": 6414.99
+          },
+          "provisioned_ec2_capacity_rate_usd_per_hour": {
+            "n": 3,
+            "median": 0.2478,
+            "min": 0.2478,
+            "max": 0.2478
+          },
+          "ready_seconds": {
+            "n": 3,
+            "median": 33.834,
+            "min": 33.209,
+            "max": 34.073
+          }
+        }
+      }
+    }
+  },
+  "paired_differences": {
+    "general": [
+      {
+        "pair": "general-01",
+        "fixed_file": "phase2-general-fixed-01.json",
+        "flexible_file": "phase2-general-flexible-01.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": -7424.030000000001,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": -7320.030000000001,
+          "provisioned_ec2_capacity_rate_usd_per_hour": -0.03381999999999999,
+          "ready_seconds": -1.2590000000000003
+        }
+      },
+      {
+        "pair": "general-02",
+        "fixed_file": "phase2-general-fixed-02.json",
+        "flexible_file": "phase2-general-flexible-02.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": -7424.02,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": -7320.02,
+          "provisioned_ec2_capacity_rate_usd_per_hour": -0.03381999999999999,
+          "ready_seconds": -3.232000000000003
+        }
+      },
+      {
+        "pair": "general-03",
+        "fixed_file": "phase2-general-fixed-03.json",
+        "flexible_file": "phase2-general-flexible-03.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": -7424.030000000001,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": -7320.030000000001,
+          "provisioned_ec2_capacity_rate_usd_per_hour": -0.03381999999999999,
+          "ready_seconds": 0.16599999999999682
+        }
+      }
+    ],
+    "cpu-heavy": [
+      {
+        "pair": "cpu-heavy-01",
+        "fixed_file": "phase2-cpu-heavy-fixed-01.json",
+        "flexible_file": "phase2-cpu-heavy-flexible-01.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": -7424.030000000001,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": -7320.030000000001,
+          "provisioned_ec2_capacity_rate_usd_per_hour": -0.03381999999999999,
+          "ready_seconds": 1.4789999999999992
+        }
+      },
+      {
+        "pair": "cpu-heavy-02",
+        "fixed_file": "phase2-cpu-heavy-fixed-02.json",
+        "flexible_file": "phase2-cpu-heavy-flexible-02.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": -7424.030000000001,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": -7320.030000000001,
+          "provisioned_ec2_capacity_rate_usd_per_hour": -0.03381999999999999,
+          "ready_seconds": 0.10300000000000153
+        }
+      },
+      {
+        "pair": "cpu-heavy-03",
+        "fixed_file": "phase2-cpu-heavy-fixed-03.json",
+        "flexible_file": "phase2-cpu-heavy-flexible-03.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": -7424.030000000001,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": -7320.030000000001,
+          "provisioned_ec2_capacity_rate_usd_per_hour": -0.03381999999999999,
+          "ready_seconds": -2.228999999999999
+        }
+      }
+    ],
+    "memory-heavy": [
+      {
+        "pair": "memory-heavy-01",
+        "fixed_file": "phase2-memory-heavy-fixed-01.json",
+        "flexible_file": "phase2-memory-heavy-flexible-01.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": 501.97999999999956,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": 605.9799999999996,
+          "provisioned_ec2_capacity_rate_usd_per_hour": 0.012380000000000002,
+          "ready_seconds": 0.27200000000000557
+        }
+      },
+      {
+        "pair": "memory-heavy-02",
+        "fixed_file": "phase2-memory-heavy-fixed-02.json",
+        "flexible_file": "phase2-memory-heavy-flexible-02.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": 501.97999999999956,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": 605.9799999999996,
+          "provisioned_ec2_capacity_rate_usd_per_hour": 0.012380000000000002,
+          "ready_seconds": -0.5
+        }
+      },
+      {
+        "pair": "memory-heavy-03",
+        "fixed_file": "phase2-memory-heavy-fixed-03.json",
+        "flexible_file": "phase2-memory-heavy-flexible-03.json",
+        "flexible_minus_fixed": {
+          "node_count": -1.0,
+          "allocatable.cpu": 60.0,
+          "allocatable.memory_mib": 501.97999999999956,
+          "all_scheduled_pod_requested.cpu": -180.0,
+          "all_scheduled_pod_requested.memory_mib": -104.0,
+          "unused.cpu": 240.0,
+          "unused.memory_mib": 605.9799999999996,
+          "provisioned_ec2_capacity_rate_usd_per_hour": 0.012380000000000002,
+          "ready_seconds": -1.0679999999999978
+        }
+      }
+    ]
+  }
+}
