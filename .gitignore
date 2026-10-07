@@ -48,3 +48,19 @@ terraform.rc
 **/env/**
 logs/
 .DS_Store
+
+# CI/EKS generated outputs and private inputs
+**/.helm/
+**/__pycache__/
+*.pyc
+*.tfplan
+*.plan
+*.pcap
+*.pcapng
+**/measure-output/
+.env
+.env.*
+*.pem
+*.key
+**/kubeconfig*
+*.secret-input.json

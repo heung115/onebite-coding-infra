@@ -1,4 +1,12 @@
-# spaghetti-infra
+# 한입코딩 인프라
+
+Terraform·Helm 기반 서비스 구성과 CI/CD·GitOps·EKS 구현 코드를 관리한다.
+
+- [CI/CD·EKS 코드와 검증 결과](EVIDENCE.md): 사례별 구현 파일, 측정 수치와 조건
+- [백엔드 빌드·CI](cicd/backend): reproducible JAR·JRE·직접 Buildx push
+- [GitOps 배포 선언](gitops): 환경별 Application·ExternalSecret·SHA image
+- [EKS·Karpenter](eks): 플랫폼·확장·용량·Spot 종료 대응
+
 
 > 이 저장소는 원래 프라이빗으로 운영하던 인프라 코드를 포트폴리오 공개용으로 퍼블릭 전환한 것입니다. 커밋 히스토리(날짜, 메시지)는 그대로 보존했고, 코드에 평문으로 있던 API 키·비밀번호 등 시크릿만 제거했습니다.
 
